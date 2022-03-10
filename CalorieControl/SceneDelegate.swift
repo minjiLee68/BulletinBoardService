@@ -10,12 +10,23 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    private let viewModel = LoginViewModel.shared
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        
+        if viewModel.isLogin == true {
+            guard let mainVC = sb.instantiateViewController(withIdentifier: "MainViewController") as? MainViewController else { return }
+            window?.rootViewController = mainVC
+        } else {
+            guard let loginVC = sb.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController else { return }
+            window?.rootViewController = loginVC
+        }
+        
         guard let _ = (scene as? UIWindowScene) else { return }
     }
 

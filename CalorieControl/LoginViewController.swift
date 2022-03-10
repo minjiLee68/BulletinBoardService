@@ -6,14 +6,14 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class LoginViewController: UIViewController {
     @IBOutlet weak var IdTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var signUpButton: UIButton!
-    
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -33,7 +33,18 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginBtn(_ sender: UIButton) {
-        
+        guard let email = IdTextField.text, let password = passwordTextField.text else { return }
+        Auth.auth().signIn(withEmail: email, password: password) { user, error in
+            if user != nil {
+                self.staySignedIn(email: email, password: password)
+                guard let dvc = self.storyboard?.instantiateViewController(withIdentifier: "MainViewController") as? MainViewController else { return }
+                dvc.modalTransitionStyle = .coverVertical
+                dvc.modalPresentationStyle = .fullScreen
+                self.present(dvc, animated: true, completion: nil)
+            } else {
+                print("로그인 실패")
+            }
+        }
     }
     
     @IBAction func signUpBtn(_ sender: UIButton) {
@@ -42,12 +53,11 @@ class LoginViewController: UIViewController {
         signUpVC.modalTransitionStyle = .coverVertical
         self.present(signUpVC, animated: true, completion: nil)
     }
+    
+    func staySignedIn(email: String, password: String) {
+        let ud = UserDefaults.standard
+        ud.set(email, forKey: "email")
+        ud.set(password, forKey: "password")
+        ud.set(true, forKey: "login")
+    }
 }
-
-//extension UITextField {
-//    func addLeftPadding() {
-//        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: self.frame.height))
-//        self.leftView = paddingView
-//        self.leftViewMode = ViewMode.always
-//    }
-//}

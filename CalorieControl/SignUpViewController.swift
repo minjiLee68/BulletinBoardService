@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class SignUpViewController: UIViewController {
     @IBOutlet weak var idTextField: UITextField!
@@ -32,7 +33,14 @@ class SignUpViewController: UIViewController {
     }
     
     @IBAction func signUpBtn(_ sender: UIButton) {
-        
+        guard let email = idTextField.text, let password = passwordTextField.text else { return }
+        Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+            if let e = error {
+                print(e.localizedDescription)
+            } else {
+                self.dismiss(animated: true, completion: nil)
+            }
+        }
     }
     
     @IBAction func loginBtn(_ sender: UIButton) {
