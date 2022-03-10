@@ -8,11 +8,16 @@
 import UIKit
 
 class dietCategoryViewController: UIViewController {
+    @IBOutlet weak var viewBG: UIView!
+    
     let viewmodel = dietViewModel.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        viewBG.layer.borderWidth = 1
+        viewBG.layer.cornerRadius = 12
+        viewBG.layer.borderColor = UIColor.lightGray.cgColor
     }
 }
 
@@ -30,11 +35,19 @@ extension dietCategoryViewController: UICollectionViewDataSource {
     }
 }
 
+extension dietCategoryViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 140, height: 180)
+    }
+}
+
 class dietCell: UICollectionViewCell {
     @IBOutlet weak var categoryImage: UIImageView!
     
     func updateUI(image: UIImage) {
         categoryImage.image = image
+        
+        categoryImage.layer.cornerRadius = 10
     }
 }
 

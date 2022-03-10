@@ -8,22 +8,34 @@
 import UIKit
 
 class BestArticleViewController: UIViewController {
-
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var viewBG: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        
+        tableView.rowHeight = 90
+        viewBG.layer.borderWidth = 1
+        viewBG.layer.cornerRadius = 12
+        viewBG.layer.borderColor = UIColor.lightGray.cgColor
+    }
+}
+
+extension BestArticleViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "bestArticleCell", for: indexPath) as? bestArticleCell else { return UITableViewCell() }
+        return cell
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
     }
-    */
+}
 
+class bestArticleCell: UITableViewCell {
+    @IBOutlet weak var nickName: UILabel!
+    @IBOutlet weak var profile: UIImageView!
+    @IBOutlet weak var time: UILabel!
+    @IBOutlet weak var title: UILabel!
 }
