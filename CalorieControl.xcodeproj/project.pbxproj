@@ -75,6 +75,12 @@
 		0A7E46B727D3999D001AD8F7 = {
 			isa = PBXGroup;
 			children = (
+				0AEFAFE827DB37FE0034A7B0 /* viewModel */,
+				0AEFAFE727DB37B70034A7B0 /* Privacy */,
+				0AEFAFE627DB378A0034A7B0 /* Community */,
+				0AEFAFE527DB37760034A7B0 /* Diet */,
+				0AEFAFE427DB37600034A7B0 /* Main */,
+				0AEFAFE327DB373F0034A7B0 /* UIStyle */,
 				0A7E46C227D3999D001AD8F7 /* CalorieControl */,
 				0AA069B027DA1AD1009D71E8 /* GoogleService-Info.plist */,
 				0A7E46C127D3999D001AD8F7 /* Products */,
@@ -97,20 +103,62 @@
 				0A7E46C327D3999D001AD8F7 /* AppDelegate.swift */,
 				0A7E46C527D3999D001AD8F7 /* SceneDelegate.swift */,
 				0A7E46C927D3999D001AD8F7 /* Main.storyboard */,
-				0AA069BD27DA3471009D71E8 /* dietCategoryViewController.swift */,
-				0A60BD0527D91B140046C8CB /* SignUpViewController.swift */,
 				0A60BD0327D8EC080046C8CB /* CategoryViewController.swift */,
-				0A60BD0127D8EBF30046C8CB /* MainViewController.swift */,
-				0AEFAFE127DB33770034A7B0 /* UIViewStyle.swift */,
-				0AA069BF27DA354E009D71E8 /* BestArticleViewController.swift */,
-				0A60BCFF27D8D7F30046C8CB /* LoginViewController.swift */,
-				0AA069BB27DA2D7F009D71E8 /* LoginViewModel.swift */,
-				0A60BD0727D91BFA0046C8CB /* UITextField.swift */,
 				0A7E46CC27D3999D001AD8F7 /* Assets.xcassets */,
 				0A7E46CE27D3999D001AD8F7 /* LaunchScreen.storyboard */,
 				0A7E46D127D3999D001AD8F7 /* Info.plist */,
 			);
 			path = CalorieControl;
+			sourceTree = "<group>";
+		};
+		0AEFAFE327DB373F0034A7B0 /* UIStyle */ = {
+			isa = PBXGroup;
+			children = (
+				0AEFAFE127DB33770034A7B0 /* UIViewStyle.swift */,
+				0A60BD0727D91BFA0046C8CB /* UITextField.swift */,
+			);
+			path = UIStyle;
+			sourceTree = "<group>";
+		};
+		0AEFAFE427DB37600034A7B0 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				0A60BD0127D8EBF30046C8CB /* MainViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		0AEFAFE527DB37760034A7B0 /* Diet */ = {
+			isa = PBXGroup;
+			children = (
+				0AA069BD27DA3471009D71E8 /* dietCategoryViewController.swift */,
+			);
+			path = Diet;
+			sourceTree = "<group>";
+		};
+		0AEFAFE627DB378A0034A7B0 /* Community */ = {
+			isa = PBXGroup;
+			children = (
+				0AA069BF27DA354E009D71E8 /* BestArticleViewController.swift */,
+			);
+			path = Community;
+			sourceTree = "<group>";
+		};
+		0AEFAFE727DB37B70034A7B0 /* Privacy */ = {
+			isa = PBXGroup;
+			children = (
+				0A60BCFF27D8D7F30046C8CB /* LoginViewController.swift */,
+				0A60BD0527D91B140046C8CB /* SignUpViewController.swift */,
+			);
+			path = Privacy;
+			sourceTree = "<group>";
+		};
+		0AEFAFE827DB37FE0034A7B0 /* viewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0AA069BB27DA2D7F009D71E8 /* LoginViewModel.swift */,
+			);
+			path = viewModel;
 			sourceTree = "<group>";
 		};
 		77C056EC68A7BB8F86B18968 /* Pods */ = {
