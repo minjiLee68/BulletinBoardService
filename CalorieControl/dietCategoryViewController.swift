@@ -15,9 +15,9 @@ class dietCategoryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        viewBG.layer.borderWidth = 1
-        viewBG.layer.cornerRadius = 12
-        viewBG.layer.borderColor = UIColor.lightGray.cgColor
+//        viewBG.layer.borderWidth = 1
+//        viewBG.layer.borderColor = UIColor.primaryColor?.cgColor
+        UIViewStyle.viewStyle(view: viewBG)
     }
 }
 
@@ -42,12 +42,16 @@ extension dietCategoryViewController: UICollectionViewDelegateFlowLayout {
 }
 
 class dietCell: UICollectionViewCell {
+    @IBOutlet weak var imageViewBG: UIView!
     @IBOutlet weak var categoryImage: UIImageView!
     
     func updateUI(image: UIImage) {
         categoryImage.image = image
         
         categoryImage.layer.cornerRadius = 10
+//        imageViewBG.layer.borderWidth = 1
+        imageViewBG.layer.cornerRadius = 10
+        imageViewBG.layer.masksToBounds = true
     }
 }
 

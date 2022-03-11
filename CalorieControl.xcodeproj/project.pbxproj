@@ -11,7 +11,7 @@
 		0A60BD0227D8EBF30046C8CB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A60BD0127D8EBF30046C8CB /* MainViewController.swift */; };
 		0A60BD0427D8EC080046C8CB /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A60BD0327D8EC080046C8CB /* CategoryViewController.swift */; };
 		0A60BD0627D91B140046C8CB /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A60BD0527D91B140046C8CB /* SignUpViewController.swift */; };
-		0A60BD0827D91BFA0046C8CB /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A60BD0727D91BFA0046C8CB /* ProgressBar.swift */; };
+		0A60BD0827D91BFA0046C8CB /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A60BD0727D91BFA0046C8CB /* UITextField.swift */; };
 		0A7E46C427D3999D001AD8F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7E46C327D3999D001AD8F7 /* AppDelegate.swift */; };
 		0A7E46C627D3999D001AD8F7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7E46C527D3999D001AD8F7 /* SceneDelegate.swift */; };
 		0A7E46CB27D3999D001AD8F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A7E46C927D3999D001AD8F7 /* Main.storyboard */; };
@@ -25,6 +25,7 @@
 		0AA069BC27DA2D7F009D71E8 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA069BB27DA2D7F009D71E8 /* LoginViewModel.swift */; };
 		0AA069BE27DA3471009D71E8 /* dietCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA069BD27DA3471009D71E8 /* dietCategoryViewController.swift */; };
 		0AA069C027DA354E009D71E8 /* BestArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA069BF27DA354E009D71E8 /* BestArticleViewController.swift */; };
+		0AEFAFE227DB33770034A7B0 /* UIViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEFAFE127DB33770034A7B0 /* UIViewStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,7 +33,7 @@
 		0A60BD0127D8EBF30046C8CB /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		0A60BD0327D8EC080046C8CB /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		0A60BD0527D91B140046C8CB /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
-		0A60BD0727D91BFA0046C8CB /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
+		0A60BD0727D91BFA0046C8CB /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		0A7E46C027D3999D001AD8F7 /* CalorieControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CalorieControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A7E46C327D3999D001AD8F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0A7E46C527D3999D001AD8F7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -44,6 +45,7 @@
 		0AA069BB27DA2D7F009D71E8 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		0AA069BD27DA3471009D71E8 /* dietCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dietCategoryViewController.swift; sourceTree = "<group>"; };
 		0AA069BF27DA354E009D71E8 /* BestArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestArticleViewController.swift; sourceTree = "<group>"; };
+		0AEFAFE127DB33770034A7B0 /* UIViewStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewStyle.swift; sourceTree = "<group>"; };
 		1B593F83D26A44265B2A0EF8 /* Pods-CalorieControl.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalorieControl.debug.xcconfig"; path = "Target Support Files/Pods-CalorieControl/Pods-CalorieControl.debug.xcconfig"; sourceTree = "<group>"; };
 		DD2C77A4C8C40F4ECEF24D61 /* Pods-CalorieControl.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalorieControl.release.xcconfig"; path = "Target Support Files/Pods-CalorieControl/Pods-CalorieControl.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -99,10 +101,11 @@
 				0A60BD0527D91B140046C8CB /* SignUpViewController.swift */,
 				0A60BD0327D8EC080046C8CB /* CategoryViewController.swift */,
 				0A60BD0127D8EBF30046C8CB /* MainViewController.swift */,
+				0AEFAFE127DB33770034A7B0 /* UIViewStyle.swift */,
 				0AA069BF27DA354E009D71E8 /* BestArticleViewController.swift */,
 				0A60BCFF27D8D7F30046C8CB /* LoginViewController.swift */,
 				0AA069BB27DA2D7F009D71E8 /* LoginViewModel.swift */,
-				0A60BD0727D91BFA0046C8CB /* ProgressBar.swift */,
+				0A60BD0727D91BFA0046C8CB /* UITextField.swift */,
 				0A7E46CC27D3999D001AD8F7 /* Assets.xcassets */,
 				0A7E46CE27D3999D001AD8F7 /* LaunchScreen.storyboard */,
 				0A7E46D127D3999D001AD8F7 /* Info.plist */,
@@ -227,6 +230,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A60BD0627D91B140046C8CB /* SignUpViewController.swift in Sources */,
+				0AEFAFE227DB33770034A7B0 /* UIViewStyle.swift in Sources */,
 				0A60BD0427D8EC080046C8CB /* CategoryViewController.swift in Sources */,
 				0A60BD0027D8D7F30046C8CB /* LoginViewController.swift in Sources */,
 				0A7E46C427D3999D001AD8F7 /* AppDelegate.swift in Sources */,
@@ -235,7 +239,7 @@
 				0AA069BC27DA2D7F009D71E8 /* LoginViewModel.swift in Sources */,
 				0A7E46C627D3999D001AD8F7 /* SceneDelegate.swift in Sources */,
 				0A60BD0227D8EBF30046C8CB /* MainViewController.swift in Sources */,
-				0A60BD0827D91BFA0046C8CB /* ProgressBar.swift in Sources */,
+				0A60BD0827D91BFA0046C8CB /* UITextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,13 +8,16 @@
 import UIKit
 
 class MainViewController: UIViewController {
-    @IBOutlet weak var viewBG: UILabel!
+    @IBOutlet weak var viewBG: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
-        viewBG.layer.cornerRadius = 15
+        UIViewStyle.viewStyle(view: viewBG)
     }
-   
+}
+
+extension UIColor {
+    class var primaryColor: UIColor? { return UIColor(named: "PrimaryColor") }
 }

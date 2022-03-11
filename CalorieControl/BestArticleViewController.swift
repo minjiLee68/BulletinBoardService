@@ -16,9 +16,10 @@ class BestArticleViewController: UIViewController {
 
         
         tableView.rowHeight = 90
-        viewBG.layer.borderWidth = 1
+//        viewBG.layer.borderWidth = 1
         viewBG.layer.cornerRadius = 12
-        viewBG.layer.borderColor = UIColor.lightGray.cgColor
+        UIViewStyle.viewStyle(view: viewBG)
+//        viewBG.layer.borderColor = UIColor.primaryColor?.cgColor
     }
 }
 
