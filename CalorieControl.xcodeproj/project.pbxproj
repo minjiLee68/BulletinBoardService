@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A2010EF27E0CFBB008B0BFE /* ProfileSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2010EE27E0CFBB008B0BFE /* ProfileSettingViewController.swift */; };
 		0A60BD0027D8D7F30046C8CB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A60BCFF27D8D7F30046C8CB /* LoginViewController.swift */; };
 		0A60BD0227D8EBF30046C8CB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A60BD0127D8EBF30046C8CB /* MainViewController.swift */; };
 		0A60BD0427D8EC080046C8CB /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A60BD0327D8EC080046C8CB /* CategoryViewController.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A2010EE27E0CFBB008B0BFE /* ProfileSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingViewController.swift; sourceTree = "<group>"; };
 		0A60BCFF27D8D7F30046C8CB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0A60BD0127D8EBF30046C8CB /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		0A60BD0327D8EC080046C8CB /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 		0A7E46B727D3999D001AD8F7 = {
 			isa = PBXGroup;
 			children = (
+				0A2010EE27E0CFBB008B0BFE /* ProfileSettingViewController.swift */,
 				0AEFAFE827DB37FE0034A7B0 /* viewModel */,
 				0AEFAFE727DB37B70034A7B0 /* Privacy */,
 				0AEFAFE627DB378A0034A7B0 /* Community */,
@@ -288,6 +291,7 @@
 				0A7E46C627D3999D001AD8F7 /* SceneDelegate.swift in Sources */,
 				0A60BD0227D8EBF30046C8CB /* MainViewController.swift in Sources */,
 				0A60BD0827D91BFA0046C8CB /* UITextField.swift in Sources */,
+				0A2010EF27E0CFBB008B0BFE /* ProfileSettingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
