@@ -36,7 +36,7 @@ class SignUpViewController: UIViewController {
         guard let email = idTextField.text, let password = passwordTextField.text else { return }
         Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
             if let e = error {
-                print(e.localizedDescription)
+                print("실패 \(e.localizedDescription)")
             } else {
                 self.dismiss(animated: true, completion: nil)
             }

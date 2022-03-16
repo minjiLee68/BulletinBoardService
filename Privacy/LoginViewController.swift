@@ -37,7 +37,7 @@ class LoginViewController: UIViewController {
         Auth.auth().signIn(withEmail: email, password: password) { user, error in
             if user != nil {
                 self.staySignedIn(email: email, password: password)
-                guard let dvc = self.storyboard?.instantiateViewController(withIdentifier: "MainViewController") as? MainViewController else { return }
+                guard let dvc = self.storyboard?.instantiateViewController(withIdentifier: "profileSetting") as? ProfileSettingViewController else { return }
                 dvc.modalTransitionStyle = .coverVertical
                 dvc.modalPresentationStyle = .fullScreen
                 self.present(dvc, animated: true, completion: nil)

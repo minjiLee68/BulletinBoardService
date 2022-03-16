@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0A2010EF27E0CFBB008B0BFE /* ProfileSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2010EE27E0CFBB008B0BFE /* ProfileSettingViewController.swift */; };
+		0A381AC027E1B7E500ECD255 /* dietViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A381ABF27E1B7E500ECD255 /* dietViewModel.swift */; };
+		0A381AC227E1C85100ECD255 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A381AC127E1C85100ECD255 /* ProfileViewModel.swift */; };
+		0A381AC427E1C87F00ECD255 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A381AC327E1C87F00ECD255 /* UserInfo.swift */; };
 		0A60BD0027D8D7F30046C8CB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A60BCFF27D8D7F30046C8CB /* LoginViewController.swift */; };
 		0A60BD0227D8EBF30046C8CB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A60BD0127D8EBF30046C8CB /* MainViewController.swift */; };
 		0A60BD0427D8EC080046C8CB /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A60BD0327D8EC080046C8CB /* CategoryViewController.swift */; };
@@ -31,6 +34,9 @@
 
 /* Begin PBXFileReference section */
 		0A2010EE27E0CFBB008B0BFE /* ProfileSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingViewController.swift; sourceTree = "<group>"; };
+		0A381ABF27E1B7E500ECD255 /* dietViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dietViewModel.swift; sourceTree = "<group>"; };
+		0A381AC127E1C85100ECD255 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		0A381AC327E1C87F00ECD255 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		0A60BCFF27D8D7F30046C8CB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0A60BD0127D8EBF30046C8CB /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		0A60BD0327D8EC080046C8CB /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
@@ -74,10 +80,27 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		0A7E46B727D3999D001AD8F7 = {
+		0A381AC527E1C88F00ECD255 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				0A381AC327E1C87F00ECD255 /* UserInfo.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		0A381AC627E1C98900ECD255 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
 				0A2010EE27E0CFBB008B0BFE /* ProfileSettingViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		0A7E46B727D3999D001AD8F7 = {
+			isa = PBXGroup;
+			children = (
+				0A381AC627E1C98900ECD255 /* Profile */,
+				0A381AC527E1C88F00ECD255 /* model */,
 				0AEFAFE827DB37FE0034A7B0 /* viewModel */,
 				0AEFAFE727DB37B70034A7B0 /* Privacy */,
 				0AEFAFE627DB378A0034A7B0 /* Community */,
@@ -160,6 +183,8 @@
 			isa = PBXGroup;
 			children = (
 				0AA069BB27DA2D7F009D71E8 /* LoginViewModel.swift */,
+				0A381ABF27E1B7E500ECD255 /* dietViewModel.swift */,
+				0A381AC127E1C85100ECD255 /* ProfileViewModel.swift */,
 			);
 			path = viewModel;
 			sourceTree = "<group>";
@@ -286,11 +311,14 @@
 				0A60BD0027D8D7F30046C8CB /* LoginViewController.swift in Sources */,
 				0A7E46C427D3999D001AD8F7 /* AppDelegate.swift in Sources */,
 				0AA069BE27DA3471009D71E8 /* dietCategoryViewController.swift in Sources */,
+				0A381AC227E1C85100ECD255 /* ProfileViewModel.swift in Sources */,
 				0AA069C027DA354E009D71E8 /* BestArticleViewController.swift in Sources */,
 				0AA069BC27DA2D7F009D71E8 /* LoginViewModel.swift in Sources */,
 				0A7E46C627D3999D001AD8F7 /* SceneDelegate.swift in Sources */,
 				0A60BD0227D8EBF30046C8CB /* MainViewController.swift in Sources */,
+				0A381AC027E1B7E500ECD255 /* dietViewModel.swift in Sources */,
 				0A60BD0827D91BFA0046C8CB /* UITextField.swift in Sources */,
+				0A381AC427E1C87F00ECD255 /* UserInfo.swift in Sources */,
 				0A2010EF27E0CFBB008B0BFE /* ProfileSettingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

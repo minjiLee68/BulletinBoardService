@@ -15,8 +15,6 @@ class dietCategoryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        viewBG.layer.borderWidth = 1
-//        viewBG.layer.borderColor = UIColor.primaryColor?.cgColor
         UIViewStyle.viewStyle(view: viewBG)
     }
 }
@@ -30,7 +28,8 @@ extension dietCategoryViewController: UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "dietCell", for: indexPath) as? dietCell else { return UICollectionViewCell() }
         
         let image = UIImage(named: viewmodel.items[indexPath.item]) ?? UIImage()
-        cell.updateUI(image: image)
+        let text = viewmodel.itemText[indexPath.item]
+        cell.updateUI(image: image, text: text)
         return cell
     }
 }
@@ -44,22 +43,14 @@ extension dietCategoryViewController: UICollectionViewDelegateFlowLayout {
 class dietCell: UICollectionViewCell {
     @IBOutlet weak var imageViewBG: UIView!
     @IBOutlet weak var categoryImage: UIImageView!
+    @IBOutlet weak var categoryLabel: UILabel!
     
-    func updateUI(image: UIImage) {
+    func updateUI(image: UIImage, text: String) {
         categoryImage.image = image
+        categoryLabel.text = text
         
         categoryImage.layer.cornerRadius = 10
-//        imageViewBG.layer.borderWidth = 1
         imageViewBG.layer.cornerRadius = 10
         imageViewBG.layer.masksToBounds = true
-    }
-}
-
-class dietViewModel {
-    static let shared = dietViewModel()
-    var items: [String] = ["diet1", "diet2", "diet3", "diet4"]
-    
-    var numOfItems: Int{
-        return items.count
     }
 }
