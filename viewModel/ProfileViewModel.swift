@@ -6,7 +6,12 @@
 //
 
 import UIKit
+import Firebase
 
 class ProfileViewModel {
+    let storage = Storage.storage()
     
+    func fireStorage(image: URL) {
+        
+    }
 }

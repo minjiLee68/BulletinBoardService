@@ -12,9 +12,9 @@ struct UserInfo {
     var kg: String
     var cm: String
     var porpuse: String
-    var profile: UIImage
+    var profile: URL
     
-    init(nickName: String, kg: String, cm: String, porpuse: String, profile: UIImage) {
+    init(nickName: String, kg: String, cm: String, porpuse: String, profile: URL) {
         self.nickName = nickName
         self.kg = kg
         self.cm = cm

@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Firebase
 import Photos
 
 class ProfileSettingViewController: UIViewController {
@@ -19,8 +18,8 @@ class ProfileSettingViewController: UIViewController {
     @IBOutlet weak var cm: UITextField!
     @IBOutlet weak var kg: UITextField!
     
-    let storage = Storage.storage()
     var selectCity = ""
+    var profile: URL? = nil
     let porpuseData = ["벌크업", "린매스업", "다이어트", "비건"]
     
     let picker = UIImagePickerController()
@@ -64,6 +63,7 @@ extension ProfileSettingViewController:  UIImagePickerControllerDelegate & UINav
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             profileImage.image = image
+            profile = info[UIImagePickerController.InfoKey.imageURL] as? URL
         }
         dismiss(animated: true, completion: nil)
     }
