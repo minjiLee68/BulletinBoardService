@@ -11,18 +11,17 @@ import Photos
 class ProfileSettingViewController: UIViewController {
     @IBOutlet weak var porpusePicker: UITextField!
     @IBOutlet weak var pickerView: UIPickerView!
-    @IBOutlet weak var back: UIButton!
-    @IBOutlet weak var save: UIButton!
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var nickName: UITextField!
     @IBOutlet weak var cm: UITextField!
     @IBOutlet weak var kg: UITextField!
     
+    var imgURL: URL? = nil
     var selectCity = ""
-    var profile: URL? = nil
     let porpuseData = ["벌크업", "린매스업", "다이어트", "비건"]
     
     let picker = UIImagePickerController()
+    let viewModel = ProfileViewModel.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,7 +49,7 @@ class ProfileSettingViewController: UIViewController {
     }
     
     @IBAction func saveBtn(_ sender: UIButton) {
-        
+        viewModel.fireStorage(image: profileImage.image!)
     }
 }
 
@@ -63,7 +62,6 @@ extension ProfileSettingViewController:  UIImagePickerControllerDelegate & UINav
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             profileImage.image = image
-            profile = info[UIImagePickerController.InfoKey.imageURL] as? URL
         }
         dismiss(animated: true, completion: nil)
     }

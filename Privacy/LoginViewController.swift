@@ -22,10 +22,7 @@ class LoginViewController: UIViewController {
     }
     
     func textFieldStyle() {
-        IdTextField.addLeftPadding()
-        IdTextField.borderStyle = .roundedRect
-        passwordTextField.addLeftPadding()
-        passwordTextField.borderStyle = .roundedRect
+        UITextField.textField(email: IdTextField, password: passwordTextField)
     }
     
     func btnStyle() {

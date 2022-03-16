@@ -13,4 +13,17 @@ extension UITextField {
         self.leftView = paddingView
         self.leftViewMode = ViewMode.always
     }
+    
+    static func textField(email: UITextField, password: UITextField) {
+        email.addLeftPadding()
+        email.layer.borderWidth = 1
+        email.layer.borderColor = UIColor.lightGray.cgColor
+        email.layer.cornerRadius = 5
+        email.borderStyle = .none
+        password.addLeftPadding()
+        password.layer.borderWidth = 1
+        password.layer.borderColor = UIColor.lightGray.cgColor
+        password.layer.cornerRadius = 5
+        password.borderStyle = .none
+    }
 }
