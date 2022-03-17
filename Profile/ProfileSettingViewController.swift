@@ -49,7 +49,13 @@ class ProfileSettingViewController: UIViewController {
     }
     
     @IBAction func saveBtn(_ sender: UIButton) {
-        viewModel.fireStorage(image: profileImage.image!)
+        viewModel.fireStorage(
+            image: profileImage.image!,
+            name: nickName.text ?? "",
+            kg: kg.text ?? "",
+            cm: cm.text ?? "",
+            porpuse: porpusePicker.text ?? ""
+        )
     }
 }
 
