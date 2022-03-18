@@ -6,11 +6,10 @@
 //
 
 import UIKit
-import Photos
+import PhotosUI
 
 class ProfileSettingViewController: UIViewController {
     @IBOutlet weak var porpusePicker: UITextField!
-    @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var nickName: UITextField!
     @IBOutlet weak var cm: UITextField!
@@ -20,19 +19,19 @@ class ProfileSettingViewController: UIViewController {
     var selectCity = ""
     let porpuseData = ["벌크업", "린매스업", "다이어트", "비건"]
     
-    let picker = UIImagePickerController()
+    let pickerView = UIPickerView()
+    var configration = PHPickerConfiguration()
     let viewModel = ProfileViewModel.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        porpusePicker.delegate = self
+        pickerView.delegate = self
         porpusePicker.inputView = pickerView
-        
     }
     
     @IBAction func imageBtn(_ sender: UIButton) {
-        phPhotoLibrary()
+        openLibray()
     }
     
     @IBAction func backBtn(_ sender: UIButton) {
@@ -45,23 +44,23 @@ class ProfileSettingViewController: UIViewController {
 }
 
 extension ProfileSettingViewController {
-    func phPhotoLibrary() {
-        PHPhotoLibrary.requestAuthorization(for: .addOnly) { status in
-            switch status {
-            case .authorized:
-                print("권한허용")
-                DispatchQueue.main.async {
-                    self.openLibray()
-                }
-            case .denied:
-                print("권한거부")
-            case .restricted, .notDetermined:
-                print("선택하지 않음")
-            default:
-                break
-            }
-        }
-    }
+//    func phPhotoLibrary() {
+//        PHPhotoLibrary.requestAuthorization(for: .addOnly) { status in
+//            switch status {
+//            case .authorized:
+//                print("권한허용")
+//                DispatchQueue.main.async {
+//                    self.openLibray()
+//                }
+//            case .denied:
+//                print("권한거부")
+//            case .restricted, .notDetermined:
+//                print("선택하지 않음")
+//            default:
+//                break
+//            }
+//        }
+//    }
     
     func saveUserInfo() {
         viewModel.fireStorage(
@@ -85,18 +84,33 @@ extension ProfileSettingViewController: UITextFieldDelegate {
     }
 }
 
-extension ProfileSettingViewController:  UIImagePickerControllerDelegate & UINavigationControllerDelegate  {
+extension ProfileSettingViewController: PHPickerViewControllerDelegate {
     func openLibray() {
-        picker.sourceType = .photoLibrary
-        present(picker, animated: false, completion: nil)
+        configration.selectionLimit = 0
+        configration.filter = .images
+        let picker = PHPickerViewController(configuration: configration)
+        picker.delegate = self
+        self.present(picker, animated: true, completion: nil)
     }
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            profileImage.image = image
+    func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
+        let itemProvider = results.first?.itemProvider
+        if let itemProvider = itemProvider,itemProvider.canLoadObject(ofClass: UIImage.self) {
+            itemProvider.loadObject(ofClass: UIImage.self) { image, error in
+                DispatchQueue.main.sync {
+                    self.profileImage.image = image as? UIImage
+                }
+            }
         }
-        dismiss(animated: true, completion: nil)
+        picker.dismiss(animated: true, completion: nil)
     }
+    
+//    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+//        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+//            profileImage.image = image
+//        }
+//        dismiss(animated: true, completion: nil)
+//    }
 }
 
 extension ProfileSettingViewController: UIPickerViewDelegate, UIPickerViewDataSource {

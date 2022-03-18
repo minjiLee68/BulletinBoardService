@@ -44,4 +44,22 @@ class ProfileViewModel {
             print("Error writing city to Firestore: \(error)")
         }
     }
+    
+    func getData() {
+        fireStore.collection("UserInfo").getDocuments { (querySnapshot, error) in
+            if let err = error {
+                print("There was an issue retrieving data from Firestore \(err)")
+            } else {
+                self.snapshotDoc(querySnapshot: querySnapshot)
+            }
+        }
+    }
+    
+    func snapshotDoc(querySnapshot: QuerySnapshot?) {
+        if let snapshotDocuments = querySnapshot?.documents {
+            for doc in snapshotDocuments {
+                print(doc.data())
+            }
+        }
+    }
 }

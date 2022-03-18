@@ -204,13 +204,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="이미지 사진" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ejE-pU-f5J">
-                                <rect key="frame" x="175" y="264" width="65" height="17"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="61Q-nr-jHN">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                 <subviews>
@@ -418,7 +411,6 @@
                         <outlet property="cm" destination="f6e-Uc-tdy" id="PZf-ux-kiW"/>
                         <outlet property="kg" destination="Z9C-rM-wnX" id="p7C-Ql-lDh"/>
                         <outlet property="nickName" destination="ijI-5h-yvf" id="JpY-rC-791"/>
-                        <outlet property="pickerView" destination="UxQ-J3-Bik" id="B45-hG-J6e"/>
                         <outlet property="porpusePicker" destination="8be-2H-Job" id="dRl-7S-8dK"/>
                         <outlet property="profileImage" destination="bKT-Bf-uuK" id="Hky-N7-Ylb"/>
                     </connections>
