@@ -17,9 +17,10 @@ class ProfileViewModel {
     let fireStore = Firestore.firestore()
     let uid = Auth.auth().currentUser?.uid
     
+    var users: UserInfo? = nil
+    
     func fireStorage(image: UIImage, name: String, kg: String, cm: String, porpuse: String) {
         let metaData = StorageMetadata()
-        //        let imageName = UUID().uuidString + String(Date().timeIntervalSince1970)
         let storageRef = storage.reference().child("\(uid!).jpg")
         
         guard let images = image.jpegData(compressionQuality: 0.4) else { return }
@@ -36,7 +37,7 @@ class ProfileViewModel {
     }
     
     func fireStoreSetDB(url: URL, name: String, kg: String, cm: String, porpuse: String) {
-        let users = UserInfo(nickName: name, kg: kg, cm: cm, porpuse: porpuse, profile: url)
+        users = UserInfo(nickName: name, kg: kg, cm: cm, porpuse: porpuse, profile: url)
         do {
             try fireStore.collection("UserInfo").document(uid!).setData(from: users)
         } catch let error {

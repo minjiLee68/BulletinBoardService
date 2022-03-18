@@ -229,6 +229,9 @@
                                         <buttonConfiguration key="configuration" style="plain" image="chevron.left" catalog="system">
                                             <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="20"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="backBtn:" destination="iZ8-ul-ZoI" eventType="touchUpInside" id="amc-5O-ktT"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OHM-RG-3EU">
                                         <rect key="frame" x="349" y="55" width="40" height="38"/>
@@ -281,6 +284,9 @@
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="iZ8-ul-ZoI" id="UIW-df-L06"/>
+                                        </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="키 / 몸무게" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cwm-Tf-4Ya">
                                         <rect key="frame" x="15.5" y="135" width="81" height="23"/>
@@ -296,6 +302,9 @@
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="iZ8-ul-ZoI" id="s84-3W-Xb8"/>
+                                        </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z9C-rM-wnX">
                                         <rect key="frame" x="231" y="129.5" width="86" height="34"/>
@@ -306,6 +315,9 @@
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="iZ8-ul-ZoI" id="Lbi-oh-BJq"/>
+                                        </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8be-2H-Job">
                                         <rect key="frame" x="105" y="222.5" width="214" height="34"/>
@@ -316,6 +328,9 @@
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="iZ8-ul-ZoI" id="t3s-Ny-4YD"/>
+                                        </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="cm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Irq-GX-Rlv">
                                         <rect key="frame" x="195.5" y="142.5" width="23" height="20"/>
@@ -583,7 +598,8 @@
                     <tabBarItem key="tabBarItem" title="Main" image="icon1" id="VFz-YV-2WY"/>
                     <navigationItem key="navigationItem" id="FW8-tz-gsU"/>
                     <connections>
-                        <outlet property="viewBG" destination="aqO-Y5-LNp" id="mLa-OF-cE8"/>
+                        <outlet property="profileImg" destination="FF0-Ff-cTe" id="exF-61-oag"/>
+                        <outlet property="viewBG" destination="FF0-Ff-cTe" id="Zla-lF-Fe9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -758,7 +774,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4NJ-Af-gGU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1509" y="315"/>
+            <point key="canvasLocation" x="1509" y="242"/>
         </scene>
         <!--Diet Category View Controller-->
         <scene sceneID="ysE-hi-27Z">
@@ -868,7 +884,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s2I-KV-BBV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1508.6956521739132" y="-67.633928571428569"/>
+            <point key="canvasLocation" x="1509" y="-112"/>
         </scene>
     </scenes>
     <resources>

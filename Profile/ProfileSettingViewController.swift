@@ -26,11 +26,26 @@ class ProfileSettingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        picker.delegate = self
+        porpusePicker.delegate = self
         porpusePicker.inputView = pickerView
+        
     }
     
     @IBAction func imageBtn(_ sender: UIButton) {
+        phPhotoLibrary()
+    }
+    
+    @IBAction func backBtn(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func saveBtn(_ sender: UIButton) {
+        saveUserInfo()
+    }
+}
+
+extension ProfileSettingViewController {
+    func phPhotoLibrary() {
         PHPhotoLibrary.requestAuthorization(for: .addOnly) { status in
             switch status {
             case .authorized:
@@ -48,7 +63,7 @@ class ProfileSettingViewController: UIViewController {
         }
     }
     
-    @IBAction func saveBtn(_ sender: UIButton) {
+    func saveUserInfo() {
         viewModel.fireStorage(
             image: profileImage.image!,
             name: nickName.text ?? "",
@@ -56,6 +71,17 @@ class ProfileSettingViewController: UIViewController {
             cm: cm.text ?? "",
             porpuse: porpusePicker.text ?? ""
         )
+        guard let sb = self.storyboard?.instantiateViewController(withIdentifier: "MainViewController") as? MainViewController else { return }
+        sb.modalTransitionStyle = .flipHorizontal
+        sb.modalPresentationStyle = .fullScreen
+        self.present(sb, animated: true, completion: nil)
+    }
+}
+
+extension ProfileSettingViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }
 

@@ -9,6 +9,7 @@ import UIKit
 
 class MainViewController: UIViewController {
     @IBOutlet weak var viewBG: UIView!
+    @IBOutlet weak var profileImg: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
