@@ -10,6 +10,7 @@ import FirebaseAuth
 import FirebaseStorage
 import FirebaseFirestore
 import FirebaseFirestoreSwift
+import simd
 
 class ProfileViewModel {
     static let shared = ProfileViewModel()
@@ -17,7 +18,7 @@ class ProfileViewModel {
     let fireStore = Firestore.firestore()
     let uid = Auth.auth().currentUser?.uid
     
-    var users: UserInfo? = nil
+    var users: UserInfo?
     
     func fireStorage(image: UIImage, name: String, kg: String, cm: String, porpuse: String) {
         let metaData = StorageMetadata()
@@ -45,21 +46,29 @@ class ProfileViewModel {
         }
     }
     
+    //mapping
     func getData() {
-        fireStore.collection("UserInfo").getDocuments { (querySnapshot, error) in
-            if let err = error {
-                print("There was an issue retrieving data from Firestore \(err)")
-            } else {
-                self.snapshotDoc(querySnapshot: querySnapshot)
-            }
+        fireStore.collection("UserInfo").document(uid!).getDocument { querySnapshot, error in
+            let data = querySnapshot?.data()
+            let name = data?["nickName"] as? String ?? ""
+            print("-->\(name)")
         }
-    }
-    
-    func snapshotDoc(querySnapshot: QuerySnapshot?) {
-        if let snapshotDocuments = querySnapshot?.documents {
-            for doc in snapshotDocuments {
-                print(doc.data())
-            }
-        }
+//        fireStore.collection("UserInfo").addSnapshotListener { snapshot, error in
+//            guard let documents = snapshot?.documents else {
+//                print("ERROR Firestore Fetching document \(String(describing: error))")
+//                return
+//            }
+//
+//            let data = documents.compactMap { doc -> UserInfo? in
+//                do {
+//                    let jsonDB = try JSONSerialization.data(withJSONObject: doc.data(), options: [])
+//                    let userDB = try JSONDecoder().decode(UserInfo.self, from: jsonDB)
+//                    return userDB
+//                } catch let error {
+//                    print("ERROR JSON Pasing \(error)")
+//                    return nil
+//                }
+//            }
+//        }
     }
 }
