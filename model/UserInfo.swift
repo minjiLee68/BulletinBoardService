@@ -15,18 +15,12 @@ struct UserInfo: Codable {
     var porpuse: String
     var profile: URL
     
-//    init(nickName: String, kg: String, cm: String, porpuse: String) {
-//        self.nickName = nickName
-//        self.kg = kg
-//        self.cm = cm
-//        self.porpuse = porpuse
-//    }
-    
-    enum CodingKeys: String, CodingKey {
-        case nickName
-        case kg
-        case cm
-        case porpuse
-        case profile
+    init(nickName: String, kg: String, cm: String, porpuse: String, profile: URL) {
+        self.nickName = nickName
+        self.kg = kg
+        self.cm = cm
+        self.porpuse = porpuse
+        self.profile = profile
     }
 }
+

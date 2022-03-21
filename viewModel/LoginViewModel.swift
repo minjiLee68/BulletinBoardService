@@ -11,8 +11,6 @@ import FirebaseFirestore
 class LoginViewModel {
     static let shared = LoginViewModel()
     
-    let db = Firestore.firestore()
-    
     var email: String = {
         return UserDefaults.standard.string(forKey: "email")
     }() ?? "nil"

@@ -10,7 +10,6 @@ import FirebaseAuth
 import FirebaseStorage
 import FirebaseFirestore
 import FirebaseFirestoreSwift
-import simd
 
 class ProfileViewModel {
     static let shared = ProfileViewModel()
@@ -49,10 +48,25 @@ class ProfileViewModel {
     //mapping
     func getData() {
         fireStore.collection("UserInfo").document(uid!).getDocument { querySnapshot, error in
-            let data = querySnapshot?.data()
-            let name = data?["nickName"] as? String ?? ""
-            print("-->\(name)")
+            guard let documents = querySnapshot?.data() else {
+                print("ERROR Firestore Fetching document \(String(describing: error))")
+                return
+            }
+            let data = documents
+            do {
+                let jsonDB = try JSONSerialization.data(withJSONObject: data, options: [])
+                let userDB = try JSONDecoder().decode(UserInfo.self, from: jsonDB)
+//                self.name = userDB.nickName
+//                self.image = userDB.profile
+//                self.cm = userDB.cm
+//                self.kg = userDB.kg
+//                self.porpuse = userDB.porpuse
+                
+            } catch let error {
+                print("ERROR JSON Pasing \(error)")
+            }
         }
+
 //        fireStore.collection("UserInfo").addSnapshotListener { snapshot, error in
 //            guard let documents = snapshot?.documents else {
 //                print("ERROR Firestore Fetching document \(String(describing: error))")
