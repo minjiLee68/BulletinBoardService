@@ -590,6 +590,7 @@
                     <tabBarItem key="tabBarItem" title="Main" image="icon1" id="VFz-YV-2WY"/>
                     <navigationItem key="navigationItem" id="FW8-tz-gsU"/>
                     <connections>
+                        <outlet property="name" destination="TLz-1B-Hrs" id="NbU-MB-uDd"/>
                         <outlet property="profileImg" destination="FF0-Ff-cTe" id="exF-61-oag"/>
                         <outlet property="viewBG" destination="FF0-Ff-cTe" id="Zla-lF-Fe9"/>
                     </connections>

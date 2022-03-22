@@ -37,7 +37,7 @@ class ProfileViewModel {
     }
     
     func fireStoreSetDB(url: URL, name: String, kg: String, cm: String, porpuse: String) {
-        users = UserInfo(nickName: name, kg: kg, cm: cm, porpuse: porpuse, profile: url)
+        let users = UserInfo(nickName: name, kg: kg, cm: cm, porpuse: porpuse, profile: url)
         do {
             try fireStore.collection("UserInfo").document(uid!).setData(from: users)
         } catch let error {
@@ -46,9 +46,9 @@ class ProfileViewModel {
     }
     
     //mapping
-    func getData() {
-        fireStore.collection("UserInfo").document(uid!).getDocument { querySnapshot, error in
-            guard let documents = querySnapshot?.data() else {
+    func getData(completionHandler: @escaping(String) -> ()) {
+        fireStore.collection("UserInfo").document(uid!).getDocument { snapshot, error in
+            guard let documents = snapshot?.data() else {
                 print("ERROR Firestore Fetching document \(String(describing: error))")
                 return
             }
@@ -56,17 +56,19 @@ class ProfileViewModel {
             do {
                 let jsonDB = try JSONSerialization.data(withJSONObject: data, options: [])
                 let userDB = try JSONDecoder().decode(UserInfo.self, from: jsonDB)
+                DispatchQueue.main.async {
+                    completionHandler(userDB.nickName)
+                }
 //                self.name = userDB.nickName
 //                self.image = userDB.profile
 //                self.cm = userDB.cm
 //                self.kg = userDB.kg
 //                self.porpuse = userDB.porpuse
-                
             } catch let error {
                 print("ERROR JSON Pasing \(error)")
             }
         }
-
+        
 //        fireStore.collection("UserInfo").addSnapshotListener { snapshot, error in
 //            guard let documents = snapshot?.documents else {
 //                print("ERROR Firestore Fetching document \(String(describing: error))")

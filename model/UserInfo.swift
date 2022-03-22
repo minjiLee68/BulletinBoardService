@@ -9,6 +9,7 @@ import UIKit
 import FirebaseFirestoreSwift
 
 struct UserInfo: Codable {
+//    @DocumentID var id: String?
     var nickName: String
     var kg: String
     var cm: String

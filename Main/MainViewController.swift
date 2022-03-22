@@ -10,13 +10,16 @@ import UIKit
 class MainViewController: UIViewController {
     @IBOutlet weak var viewBG: UIView!
     @IBOutlet weak var profileImg: UIImageView!
+    @IBOutlet weak var name: UILabel!
     
     let viewModel = ProfileViewModel.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        viewModel.getData()
+        viewModel.getData() { name in
+            self.name.text = name
+        }
         UIViewStyle.viewStyle(view: viewBG)
     }
 }
