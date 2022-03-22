@@ -17,8 +17,9 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        viewModel.getData() { name in
-            self.name.text = name
+        viewModel.getData() { info in
+            let name = info.nickName
+            self.name.text = name + "님"
         }
         UIViewStyle.viewStyle(view: viewBG)
     }

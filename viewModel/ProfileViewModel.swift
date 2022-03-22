@@ -46,7 +46,7 @@ class ProfileViewModel {
     }
     
     //mapping
-    func getData(completionHandler: @escaping(String) -> ()) {
+    func getData(completionHandler: @escaping(UserInfo) -> ()) {
         fireStore.collection("UserInfo").document(uid!).getDocument { snapshot, error in
             guard let documents = snapshot?.data() else {
                 print("ERROR Firestore Fetching document \(String(describing: error))")
@@ -57,7 +57,7 @@ class ProfileViewModel {
                 let jsonDB = try JSONSerialization.data(withJSONObject: data, options: [])
                 let userDB = try JSONDecoder().decode(UserInfo.self, from: jsonDB)
                 DispatchQueue.main.async {
-                    completionHandler(userDB.nickName)
+                    completionHandler(userDB)
                 }
 //                self.name = userDB.nickName
 //                self.image = userDB.profile

@@ -419,7 +419,7 @@
             </objects>
             <point key="canvasLocation" x="-46.376811594202906" y="81.696428571428569"/>
         </scene>
-        <!--Main-->
+        <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="MainViewController" id="BYZ-38-t0r" customClass="MainViewController" customModule="CalorieControl" customModuleProvider="target" sceneMemberID="viewController">
@@ -587,7 +587,7 @@
                             <constraint firstItem="aC7-ju-cvy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="vmm-RL-OC6"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Main" image="icon1" id="VFz-YV-2WY"/>
+                    <tabBarItem key="tabBarItem" title="" image="fork.knife.circle.fill" catalog="system" id="VFz-YV-2WY"/>
                     <navigationItem key="navigationItem" id="FW8-tz-gsU"/>
                     <connections>
                         <outlet property="name" destination="TLz-1B-Hrs" id="NbU-MB-uDd"/>
@@ -598,6 +598,32 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="725" y="82"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="db6-Mq-vOb">
+            <objects>
+                <viewController id="9xO-SO-M9a" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lRf-Ol-OuY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p12-fX-TtR">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="OMI-Cs-OMT"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="OMI-Cs-OMT" firstAttribute="trailing" secondItem="p12-fX-TtR" secondAttribute="trailing" id="89G-6L-xhU"/>
+                            <constraint firstAttribute="top" secondItem="p12-fX-TtR" secondAttribute="top" id="B8n-Ug-RhS"/>
+                            <constraint firstItem="p12-fX-TtR" firstAttribute="leading" secondItem="OMI-Cs-OMT" secondAttribute="leading" id="Zds-Mb-kYL"/>
+                            <constraint firstAttribute="bottom" secondItem="p12-fX-TtR" secondAttribute="bottom" id="r3B-WI-kud"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mhF-tX-bcv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="108.69565217391305" y="813.61607142857144"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Xlp-Wd-Zd7">
@@ -612,6 +638,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="pGE-Tj-N7L"/>
+                        <segue destination="Khn-Fy-FFV" kind="relationship" relationship="viewControllers" id="sd1-W0-W01"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Woi-Ui-9J7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -767,7 +794,68 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4NJ-Af-gGU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1509" y="242"/>
+            <point key="canvasLocation" x="1451" y="256"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="a04-3t-8vt">
+            <objects>
+                <viewController id="Khn-Fy-FFV" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qYN-uh-gCO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="당근토끼님에게 추천합니다!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tco-I8-6dG">
+                                <rect key="frame" x="20" y="68" width="374" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2sU-VY-s8l">
+                                <rect key="frame" x="82" y="112" width="73" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="마른체형" cornerStyle="capsule">
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseBackgroundColor" name="PrimaryColor"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SqH-v0-S94">
+                                <rect key="frame" x="20" y="109" width="54" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" name="PrimaryColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="text.aligncenter" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="19"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pNK-qw-WkQ">
+                                <rect key="frame" x="261" y="112" width="61" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="벌크업" cornerStyle="capsule">
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseBackgroundColor" name="PrimaryColor"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Rm-0l-TXh">
+                                <rect key="frame" x="177" y="112" width="61" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="단기간" cornerStyle="capsule">
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseBackgroundColor" name="PrimaryColor"/>
+                                </buttonConfiguration>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vA9-Eb-m6O"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="figure.walk" catalog="system" id="Lix-MZ-5bi"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eQK-cG-OVL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2254" y="82"/>
         </scene>
         <!--Diet Category View Controller-->
         <scene sceneID="ysE-hi-27Z">
@@ -877,19 +965,21 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s2I-KV-BBV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1509" y="-112"/>
+            <point key="canvasLocation" x="1451" y="-112"/>
         </scene>
     </scenes>
     <resources>
         <image name="chevron.left" catalog="system" width="96" height="128"/>
         <image name="circle.hexagonpath.fill" catalog="system" width="128" height="112"/>
         <image name="diet" width="100" height="100"/>
+        <image name="figure.walk" catalog="system" width="95" height="128"/>
+        <image name="fork.knife.circle.fill" catalog="system" width="128" height="121"/>
         <image name="heart.fill" catalog="system" width="128" height="109"/>
-        <image name="icon1" width="24" height="24"/>
         <image name="message" catalog="system" width="128" height="113"/>
         <image name="person.circle" catalog="system" width="128" height="121"/>
         <image name="person.crop.circle" catalog="system" width="128" height="121"/>
         <image name="profile" width="640" height="640"/>
+        <image name="text.aligncenter" catalog="system" width="128" height="100"/>
         <namedColor name="PrimaryColor">
             <color red="0.54117647058823526" green="0.77254901960784317" blue="0.24705882352941178" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
