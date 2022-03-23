@@ -59,11 +59,6 @@ class ProfileViewModel {
                 DispatchQueue.main.async {
                     completionHandler(userDB)
                 }
-//                self.name = userDB.nickName
-//                self.image = userDB.profile
-//                self.cm = userDB.cm
-//                self.kg = userDB.kg
-//                self.porpuse = userDB.porpuse
             } catch let error {
                 print("ERROR JSON Pasing \(error)")
             }
