@@ -13,12 +13,31 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var signUpButton: UIButton!
+    
+    
+    let viewModel = ProfileViewModel.shared
         
     override func viewDidLoad() {
         super.viewDidLoad()
 
         textFieldStyle()
         btnStyle()
+    }
+    
+    func thePresenceOrAbsence() {
+        viewModel.ifProfile() { bool in
+            if bool == true {
+                guard let dvc = self.storyboard?.instantiateViewController(withIdentifier: "profileSetting") as? ProfileSettingViewController else { return }
+                dvc.modalTransitionStyle = .coverVertical
+                dvc.modalPresentationStyle = .fullScreen
+                self.present(dvc, animated: true, completion: nil)
+            } else {
+                guard let dvc = self.storyboard?.instantiateViewController(withIdentifier: "MainViewController") as? MainViewController else { return }
+                dvc.modalTransitionStyle = .coverVertical
+                dvc.modalPresentationStyle = .fullScreen
+                self.present(dvc, animated: true, completion: nil)
+            }
+        }
     }
     
     func textFieldStyle() {
@@ -33,11 +52,8 @@ class LoginViewController: UIViewController {
         guard let email = IdTextField.text, let password = passwordTextField.text else { return }
         Auth.auth().signIn(withEmail: email, password: password) { user, error in
             if user != nil {
+                self.thePresenceOrAbsence()
                 self.staySignedIn(email: email, password: password)
-                guard let dvc = self.storyboard?.instantiateViewController(withIdentifier: "profileSetting") as? ProfileSettingViewController else { return }
-                dvc.modalTransitionStyle = .coverVertical
-                dvc.modalPresentationStyle = .fullScreen
-                self.present(dvc, animated: true, completion: nil)
             } else {
                 print("로그인 실패")
             }

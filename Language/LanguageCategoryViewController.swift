@@ -9,35 +9,32 @@ import UIKit
 
 class LanguageCategoryViewController: UIViewController {
     @IBOutlet weak var viewBG: UIView!
-    @IBOutlet weak var language: UILabel!
-    
+    @IBOutlet weak var collectionView: UICollectionView!
     
     let viewmodel = LanguageViewModel.shared
+    var lanSwift: String?
+    var lanKotlin: String?
+    var lanJava: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        language.text = "iOS-Swift"
         UIViewStyle.viewStyle(view: viewBG)
     }
 }
 
 extension LanguageCategoryViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if language.text == "iOS-Swift" {
-            return viewmodel.SWnumOfItems
-        } else {
-            return 0
-        }
+        return viewmodel.SWnumOfItems
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "LanguageCell", for: indexPath) as? LanguageCell else { return UICollectionViewCell() }
         
-        let image = UIImage(named: viewmodel.swiftImage[indexPath.item]) ?? UIImage()
-        let text = viewmodel.swiftItem[indexPath.item]
-        cell.updateUI(image: image, text: text)
-        return cell
+            let image = UIImage(named: viewmodel.swiftImage[indexPath.item]) ?? UIImage()
+            let text = viewmodel.swiftItem[indexPath.item]
+            cell.updateUI(image: image, text: text)
+            return cell
     }
 }
 

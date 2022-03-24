@@ -19,7 +19,7 @@ class MainViewController: UIViewController {
         
         viewModel.getData() { info in
             let name = info.nickName
-            self.name.text = name + "님"
+            self.name.text = name + "님 환영합니다."
         }
         UIViewStyle.viewStyle(view: viewBG)
     }

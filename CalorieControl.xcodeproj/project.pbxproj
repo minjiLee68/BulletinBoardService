@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A0AE5D627EC894F006B8083 /* RecommendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0AE5D527EC894F006B8083 /* RecommendViewController.swift */; };
 		0A2010EF27E0CFBB008B0BFE /* ProfileSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2010EE27E0CFBB008B0BFE /* ProfileSettingViewController.swift */; };
 		0A381AC027E1B7E500ECD255 /* LanguageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A381ABF27E1B7E500ECD255 /* LanguageViewModel.swift */; };
 		0A381AC227E1C85100ECD255 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A381AC127E1C85100ECD255 /* ProfileViewModel.swift */; };
@@ -30,9 +31,11 @@
 		0AA069BE27DA3471009D71E8 /* LanguageCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA069BD27DA3471009D71E8 /* LanguageCategoryViewController.swift */; };
 		0AA069C027DA354E009D71E8 /* BestArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA069BF27DA354E009D71E8 /* BestArticleViewController.swift */; };
 		0AEFAFE227DB33770034A7B0 /* UIViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEFAFE127DB33770034A7B0 /* UIViewStyle.swift */; };
+		905D427911C4D36D3BD2C076 /* Pods_CalorieControl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ACDD3164E5AB99F44E4DB19 /* Pods_CalorieControl.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A0AE5D527EC894F006B8083 /* RecommendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendViewController.swift; sourceTree = "<group>"; };
 		0A2010EE27E0CFBB008B0BFE /* ProfileSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingViewController.swift; sourceTree = "<group>"; };
 		0A381ABF27E1B7E500ECD255 /* LanguageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageViewModel.swift; sourceTree = "<group>"; };
 		0A381AC127E1C85100ECD255 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
@@ -54,6 +57,7 @@
 		0AA069BD27DA3471009D71E8 /* LanguageCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageCategoryViewController.swift; sourceTree = "<group>"; };
 		0AA069BF27DA354E009D71E8 /* BestArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestArticleViewController.swift; sourceTree = "<group>"; };
 		0AEFAFE127DB33770034A7B0 /* UIViewStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewStyle.swift; sourceTree = "<group>"; };
+		1ACDD3164E5AB99F44E4DB19 /* Pods_CalorieControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CalorieControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B593F83D26A44265B2A0EF8 /* Pods-CalorieControl.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalorieControl.debug.xcconfig"; path = "Target Support Files/Pods-CalorieControl/Pods-CalorieControl.debug.xcconfig"; sourceTree = "<group>"; };
 		DD2C77A4C8C40F4ECEF24D61 /* Pods-CalorieControl.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalorieControl.release.xcconfig"; path = "Target Support Files/Pods-CalorieControl/Pods-CalorieControl.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -67,6 +71,7 @@
 				0AA069BA27DA1BC3009D71E8 /* FirebaseStorage in Frameworks */,
 				0AA069B427DA1BC3009D71E8 /* FirebaseAuth in Frameworks */,
 				0AA069B627DA1BC3009D71E8 /* FirebaseFirestore in Frameworks */,
+				905D427911C4D36D3BD2C076 /* Pods_CalorieControl.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,8 +81,17 @@
 		0662B7E7D3EAF68CC02A4626 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1ACDD3164E5AB99F44E4DB19 /* Pods_CalorieControl.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0A0AE5D427EC88BF006B8083 /* Recommend */ = {
+			isa = PBXGroup;
+			children = (
+				0A0AE5D527EC894F006B8083 /* RecommendViewController.swift */,
+			);
+			path = Recommend;
 			sourceTree = "<group>";
 		};
 		0A381AC527E1C88F00ECD255 /* model */ = {
@@ -99,6 +113,7 @@
 		0A7E46B727D3999D001AD8F7 = {
 			isa = PBXGroup;
 			children = (
+				0A0AE5D427EC88BF006B8083 /* Recommend */,
 				0A381AC627E1C98900ECD255 /* Profile */,
 				0A381AC527E1C88F00ECD255 /* model */,
 				0AEFAFE827DB37FE0034A7B0 /* viewModel */,
@@ -209,6 +224,7 @@
 				0A7E46BC27D3999D001AD8F7 /* Sources */,
 				0A7E46BD27D3999D001AD8F7 /* Frameworks */,
 				0A7E46BE27D3999D001AD8F7 /* Resources */,
+				2FF767BE0408D94F379ED6F0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -276,6 +292,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		2FF767BE0408D94F379ED6F0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CalorieControl/Pods-CalorieControl-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CalorieControl/Pods-CalorieControl-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CalorieControl/Pods-CalorieControl-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		5F1E273887017D22EE1CA23E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -306,6 +339,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A60BD0627D91B140046C8CB /* SignUpViewController.swift in Sources */,
+				0A0AE5D627EC894F006B8083 /* RecommendViewController.swift in Sources */,
 				0AEFAFE227DB33770034A7B0 /* UIViewStyle.swift in Sources */,
 				0A60BD0427D8EC080046C8CB /* CategoryViewController.swift in Sources */,
 				0A60BD0027D8D7F30046C8CB /* LoginViewController.swift in Sources */,

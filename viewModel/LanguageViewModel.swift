@@ -9,11 +9,27 @@ import UIKit
 
 class LanguageViewModel {
     static let shared = LanguageViewModel()
-    var swiftItem: [String] = ["Swift 기초문법", "Swift 심화학습", "Swift로 앱만들기", "빠르게 배우는 Swift"]
+    var swiftItem: [String] = ["Swift 기초문법", "Swift 심화학습", "Swift로 앱만들기", "8282 Swift"]
     
-    var swiftImage: [String] = ["Android", "swifr", "java", "kotlin"]
+    var swiftImage: [String] = ["Android", "swift", "java", "kotlin"]
     
     var SWnumOfItems: Int{
+        return swiftItem.count
+    }
+    
+    var KotlinItem: [String] = ["Kotlin 기초문법", "Kotlin 심화학습", "Kotlin으로 앱만들기", "8282 Kotlin"]
+    
+    var KotlinImage: [String] = ["Android", "swift", "java", "kotlin"]
+    
+    var ktnumOfItems: Int{
+        return swiftItem.count
+    }
+    
+    var JavaItem: [String] = ["Java 기초문법", "Java 심화학습", "Java로 앱만들기", "8282 Java"]
+    
+    var JavaImage: [String] = ["Android", "swift", "java", "kotlin"]
+    
+    var JVnumOfItems: Int{
         return swiftItem.count
     }
 }

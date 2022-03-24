@@ -19,6 +19,21 @@ class ProfileViewModel {
     
     var users: UserInfo?
     
+    func ifProfile(completionHandler: @escaping(Bool) -> ()) {
+        fireStore.collection("UserInfo").document(uid!).getDocument { snapshot, error in
+            guard let documents = snapshot?.data() else {
+                print("data없어")
+                return completionHandler(true)
+            }
+            let data = documents
+            let name = data["nickName"] as? String ?? ""
+            if name.isEmpty == false {
+                print("data 있어")
+                completionHandler(false)
+            }
+        }
+    }
+    
     func fireStorage(image: UIImage, name: String, job: String, language: String) {
         let metaData = StorageMetadata()
         let storageRef = storage.reference().child("\(uid!).jpg")

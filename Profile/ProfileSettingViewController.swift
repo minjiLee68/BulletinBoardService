@@ -12,12 +12,12 @@ class ProfileSettingViewController: UIViewController {
     @IBOutlet weak var language: UITextField!
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var nickName: UITextField!
-//    @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var currentJob: UITextField!
     
     var imgURL: URL? = nil
     var selectCity = ""
     let porpuseData = ["코린이", "직장인", "취준생"]
+    let languageData = ["Swift", "Kotlin", "Java"]
     
     let pickerView = UIPickerView()
     var configration = PHPickerConfiguration()
@@ -26,9 +26,11 @@ class ProfileSettingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        pickerView.delegate = self
-//        pickerView.dataSource = self
+        pickerView.delegate = self
+        pickerView.dataSource = self
         currentJob.inputView = pickerView
+        language.inputView = pickerView
+        pickerView.layer.backgroundColor = UIColor.white.cgColor
     }
     
     @IBAction func imageBtn(_ sender: UIButton) {
@@ -92,14 +94,26 @@ extension ProfileSettingViewController: UIPickerViewDelegate, UIPickerViewDataSo
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return porpuseData[row]
+        if currentJob.text?.isEmpty == true {
+            return porpuseData[row]
+        } else {
+            return languageData[row]
+        }
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return porpuseData.count
+        if currentJob.text?.isEmpty == true {
+            return porpuseData.count
+        } else {
+            return languageData.count
+        }
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        currentJob.text = porpuseData[row]
+        if currentJob.text?.isEmpty == true {
+            currentJob.text = porpuseData[row]
+        } else {
+            language.text = languageData[row]
+        }
     }
 }
