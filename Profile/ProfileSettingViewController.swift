@@ -9,18 +9,17 @@ import UIKit
 import PhotosUI
 
 class ProfileSettingViewController: UIViewController {
-    @IBOutlet weak var porpusePicker: UITextField!
+    @IBOutlet weak var language: UITextField!
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var nickName: UITextField!
-    @IBOutlet weak var pickerView: UIPickerView!
-    @IBOutlet weak var cm: UITextField!
-    @IBOutlet weak var kg: UITextField!
+//    @IBOutlet weak var pickerView: UIPickerView!
+    @IBOutlet weak var currentJob: UITextField!
     
     var imgURL: URL? = nil
     var selectCity = ""
-    let porpuseData = ["벌크업", "린매스업", "다이어트", "비건"]
+    let porpuseData = ["코린이", "직장인", "취준생"]
     
-//    let pickerView = UIPickerView()
+    let pickerView = UIPickerView()
     var configration = PHPickerConfiguration()
     let viewModel = ProfileViewModel.shared
     
@@ -29,7 +28,7 @@ class ProfileSettingViewController: UIViewController {
 
 //        pickerView.delegate = self
 //        pickerView.dataSource = self
-        porpusePicker.inputView = pickerView
+        currentJob.inputView = pickerView
     }
     
     @IBAction func imageBtn(_ sender: UIButton) {
@@ -48,9 +47,8 @@ class ProfileSettingViewController: UIViewController {
         viewModel.fireStorage(
             image: profileImage.image!,
             name: nickName.text ?? "",
-            kg: kg.text ?? "",
-            cm: cm.text ?? "",
-            porpuse: porpusePicker.text ?? ""
+            job: currentJob.text ?? "",
+            language: language.text ?? ""
         )
         guard let sb = self.storyboard?.instantiateViewController(withIdentifier: "MainViewController") as? MainViewController else { return }
         sb.modalTransitionStyle = .flipHorizontal
@@ -102,6 +100,6 @@ extension ProfileSettingViewController: UIPickerViewDelegate, UIPickerViewDataSo
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        porpusePicker.text = porpuseData[row]
+        currentJob.text = porpuseData[row]
     }
 }

@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0A2010EF27E0CFBB008B0BFE /* ProfileSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2010EE27E0CFBB008B0BFE /* ProfileSettingViewController.swift */; };
-		0A381AC027E1B7E500ECD255 /* dietViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A381ABF27E1B7E500ECD255 /* dietViewModel.swift */; };
+		0A381AC027E1B7E500ECD255 /* LanguageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A381ABF27E1B7E500ECD255 /* LanguageViewModel.swift */; };
 		0A381AC227E1C85100ECD255 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A381AC127E1C85100ECD255 /* ProfileViewModel.swift */; };
 		0A381AC427E1C87F00ECD255 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A381AC327E1C87F00ECD255 /* UserInfo.swift */; };
 		0A60BD0027D8D7F30046C8CB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A60BCFF27D8D7F30046C8CB /* LoginViewController.swift */; };
@@ -27,14 +27,14 @@
 		0AA069B827DA1BC3009D71E8 /* FirebaseFirestoreSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 0AA069B727DA1BC3009D71E8 /* FirebaseFirestoreSwift-Beta */; };
 		0AA069BA27DA1BC3009D71E8 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 0AA069B927DA1BC3009D71E8 /* FirebaseStorage */; };
 		0AA069BC27DA2D7F009D71E8 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA069BB27DA2D7F009D71E8 /* LoginViewModel.swift */; };
-		0AA069BE27DA3471009D71E8 /* dietCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA069BD27DA3471009D71E8 /* dietCategoryViewController.swift */; };
+		0AA069BE27DA3471009D71E8 /* LanguageCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA069BD27DA3471009D71E8 /* LanguageCategoryViewController.swift */; };
 		0AA069C027DA354E009D71E8 /* BestArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA069BF27DA354E009D71E8 /* BestArticleViewController.swift */; };
 		0AEFAFE227DB33770034A7B0 /* UIViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEFAFE127DB33770034A7B0 /* UIViewStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0A2010EE27E0CFBB008B0BFE /* ProfileSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingViewController.swift; sourceTree = "<group>"; };
-		0A381ABF27E1B7E500ECD255 /* dietViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dietViewModel.swift; sourceTree = "<group>"; };
+		0A381ABF27E1B7E500ECD255 /* LanguageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageViewModel.swift; sourceTree = "<group>"; };
 		0A381AC127E1C85100ECD255 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		0A381AC327E1C87F00ECD255 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		0A60BCFF27D8D7F30046C8CB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -51,7 +51,7 @@
 		0A7E46D127D3999D001AD8F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0AA069B027DA1AD1009D71E8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0AA069BB27DA2D7F009D71E8 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
-		0AA069BD27DA3471009D71E8 /* dietCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dietCategoryViewController.swift; sourceTree = "<group>"; };
+		0AA069BD27DA3471009D71E8 /* LanguageCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageCategoryViewController.swift; sourceTree = "<group>"; };
 		0AA069BF27DA354E009D71E8 /* BestArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestArticleViewController.swift; sourceTree = "<group>"; };
 		0AEFAFE127DB33770034A7B0 /* UIViewStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewStyle.swift; sourceTree = "<group>"; };
 		1B593F83D26A44265B2A0EF8 /* Pods-CalorieControl.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalorieControl.debug.xcconfig"; path = "Target Support Files/Pods-CalorieControl/Pods-CalorieControl.debug.xcconfig"; sourceTree = "<group>"; };
@@ -104,7 +104,7 @@
 				0AEFAFE827DB37FE0034A7B0 /* viewModel */,
 				0AEFAFE727DB37B70034A7B0 /* Privacy */,
 				0AEFAFE627DB378A0034A7B0 /* Community */,
-				0AEFAFE527DB37760034A7B0 /* Diet */,
+				0AEFAFE527DB37760034A7B0 /* Language */,
 				0AEFAFE427DB37600034A7B0 /* Main */,
 				0AEFAFE327DB373F0034A7B0 /* UIStyle */,
 				0A7E46C227D3999D001AD8F7 /* CalorieControl */,
@@ -154,12 +154,12 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
-		0AEFAFE527DB37760034A7B0 /* Diet */ = {
+		0AEFAFE527DB37760034A7B0 /* Language */ = {
 			isa = PBXGroup;
 			children = (
-				0AA069BD27DA3471009D71E8 /* dietCategoryViewController.swift */,
+				0AA069BD27DA3471009D71E8 /* LanguageCategoryViewController.swift */,
 			);
-			path = Diet;
+			path = Language;
 			sourceTree = "<group>";
 		};
 		0AEFAFE627DB378A0034A7B0 /* Community */ = {
@@ -183,7 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				0AA069BB27DA2D7F009D71E8 /* LoginViewModel.swift */,
-				0A381ABF27E1B7E500ECD255 /* dietViewModel.swift */,
+				0A381ABF27E1B7E500ECD255 /* LanguageViewModel.swift */,
 				0A381AC127E1C85100ECD255 /* ProfileViewModel.swift */,
 			);
 			path = viewModel;
@@ -310,13 +310,13 @@
 				0A60BD0427D8EC080046C8CB /* CategoryViewController.swift in Sources */,
 				0A60BD0027D8D7F30046C8CB /* LoginViewController.swift in Sources */,
 				0A7E46C427D3999D001AD8F7 /* AppDelegate.swift in Sources */,
-				0AA069BE27DA3471009D71E8 /* dietCategoryViewController.swift in Sources */,
+				0AA069BE27DA3471009D71E8 /* LanguageCategoryViewController.swift in Sources */,
 				0A381AC227E1C85100ECD255 /* ProfileViewModel.swift in Sources */,
 				0AA069C027DA354E009D71E8 /* BestArticleViewController.swift in Sources */,
 				0AA069BC27DA2D7F009D71E8 /* LoginViewModel.swift in Sources */,
 				0A7E46C627D3999D001AD8F7 /* SceneDelegate.swift in Sources */,
 				0A60BD0227D8EBF30046C8CB /* MainViewController.swift in Sources */,
-				0A381AC027E1B7E500ECD255 /* dietViewModel.swift in Sources */,
+				0A381AC027E1B7E500ECD255 /* LanguageViewModel.swift in Sources */,
 				0A60BD0827D91BFA0046C8CB /* UITextField.swift in Sources */,
 				0A381AC427E1C87F00ECD255 /* UserInfo.swift in Sources */,
 				0A2010EF27E0CFBB008B0BFE /* ProfileSettingViewController.swift in Sources */,

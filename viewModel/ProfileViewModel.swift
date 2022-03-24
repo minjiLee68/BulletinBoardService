@@ -19,7 +19,7 @@ class ProfileViewModel {
     
     var users: UserInfo?
     
-    func fireStorage(image: UIImage, name: String, kg: String, cm: String, porpuse: String) {
+    func fireStorage(image: UIImage, name: String, job: String, language: String) {
         let metaData = StorageMetadata()
         let storageRef = storage.reference().child("\(uid!).jpg")
         
@@ -30,14 +30,14 @@ class ProfileViewModel {
                 return
             } else {
                 storageRef.downloadURL { (url, error) in
-                    self.fireStoreSetDB(url: url!, name: name, kg: kg, cm: cm, porpuse: porpuse)
+                    self.fireStoreSetDB(url: url!, name: name, job: job, language: language)
                 }
             }
         }
     }
     
-    func fireStoreSetDB(url: URL, name: String, kg: String, cm: String, porpuse: String) {
-        let users = UserInfo(nickName: name, kg: kg, cm: cm, porpuse: porpuse, profile: url)
+    func fireStoreSetDB(url: URL, name: String, job: String, language: String) {
+        let users = UserInfo(nickName: name, language: language, job: job, profile: url)
         do {
             try fireStore.collection("UserInfo").document(uid!).setData(from: users)
         } catch let error {

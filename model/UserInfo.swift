@@ -11,16 +11,14 @@ import FirebaseFirestoreSwift
 struct UserInfo: Codable {
 //    @DocumentID var id: String?
     var nickName: String
-    var kg: String
-    var cm: String
-    var porpuse: String
+    var language: String
+    var job: String
     var profile: URL
     
-    init(nickName: String, kg: String, cm: String, porpuse: String, profile: URL) {
+    init(nickName: String,language: String, job: String, profile: URL) {
         self.nickName = nickName
-        self.kg = kg
-        self.cm = cm
-        self.porpuse = porpuse
+        self.language = language
+        self.job = job
         self.profile = profile
     }
 }
