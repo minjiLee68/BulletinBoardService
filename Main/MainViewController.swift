@@ -12,7 +12,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var profileImg: UIImageView!
     @IBOutlet weak var name: UILabel!
     
-    let viewModel = ProfileViewModel.shared
+    let viewModel = UserInfoViewModel.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()

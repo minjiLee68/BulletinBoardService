@@ -6,35 +6,86 @@
 //
 
 import UIKit
+import DropDown
 
 class LanguageCategoryViewController: UIViewController {
+    @IBOutlet weak var dropTextField: UITextField!
+    @IBOutlet weak var dropImage: UIImageView!
+    @IBOutlet weak var dropBtn: UIButton!
+    @IBOutlet weak var viewDrop: UIView!
     @IBOutlet weak var viewBG: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
     
-    let viewmodel = LanguageViewModel.shared
-    var lanSwift: String?
-    var lanKotlin: String?
-    var lanJava: String?
+    let dropdown = DropDown()
+    let dropItem = ["Swift", "Kotlin", "Java"]
+    let lanViewmodel = LanguageViewModel.shared
+    let userViewmodel = UserInfoViewModel.shared
+    
+    var lan: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         UIViewStyle.viewStyle(view: viewBG)
+        setUserData()
+        initDropUI()
+        setDropDown()
+    }
+    
+    func setUserData() {
+        userViewmodel.getData() { info in
+            let users = info
+            self.lan = users.language
+        }
+    }
+    
+    func initDropUI() {
+        DropDownUI.dropdownUI(dropdown: dropdown, dropField: dropTextField)
+        dropTextField.text = lan
+    }
+    
+    func setDropDown() {
+        DropDownUI.setDropDown(dropdown: dropdown, dropItem: dropItem, viewDrop: viewDrop, collectionView: collectionView, dropField: dropTextField)
+    }
+    
+    @IBAction func dropViewClicked(_ sender: Any) {
+        dropdown.show()
     }
 }
 
 extension LanguageCategoryViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewmodel.SWnumOfItems
+        if self.dropTextField.text == "Kotlin" {
+            return lanViewmodel.ktnumOfItems
+        } else if self.dropTextField.text == "Swift" {
+            return lanViewmodel.SWnumOfItems
+        } else if self.dropTextField.text == "Java" {
+            return lanViewmodel.JVnumOfItems
+        } else { return 0 }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "LanguageCell", for: indexPath) as? LanguageCell else { return UICollectionViewCell() }
         
-            let image = UIImage(named: viewmodel.swiftImage[indexPath.item]) ?? UIImage()
-            let text = viewmodel.swiftItem[indexPath.item]
+        if self.dropTextField.text == "Kotlin" {
+            let image = UIImage(named: lanViewmodel.KotlinImage[indexPath.item]) ?? UIImage()
+            let text = lanViewmodel.KotlinItem[indexPath.item]
             cell.updateUI(image: image, text: text)
             return cell
+        } else if self.dropTextField.text == "Swift" {
+            let image = UIImage(named: lanViewmodel.swiftImage[indexPath.item]) ?? UIImage()
+            let text = lanViewmodel.swiftItem[indexPath.item]
+            cell.updateUI(image: image, text: text)
+            return cell
+        } else if self.dropTextField.text == "Java" {
+            let image = UIImage(named: lanViewmodel.JavaImage[indexPath.item]) ?? UIImage()
+            let text = lanViewmodel.JavaItem[indexPath.item]
+            cell.updateUI(image: image, text: text)
+            return cell
+        } else {
+            print("..?")
+            return UICollectionViewCell()
+        }
     }
 }
 

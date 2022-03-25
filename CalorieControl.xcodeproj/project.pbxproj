@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0A0AE5D627EC894F006B8083 /* RecommendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0AE5D527EC894F006B8083 /* RecommendViewController.swift */; };
 		0A2010EF27E0CFBB008B0BFE /* ProfileSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2010EE27E0CFBB008B0BFE /* ProfileSettingViewController.swift */; };
+		0A2DB56727ED8805002E206C /* UserInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2DB56627ED8805002E206C /* UserInfoViewModel.swift */; };
+		0A2DB56927ED89BF002E206C /* DropDownUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2DB56827ED89BF002E206C /* DropDownUI.swift */; };
 		0A381AC027E1B7E500ECD255 /* LanguageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A381ABF27E1B7E500ECD255 /* LanguageViewModel.swift */; };
 		0A381AC227E1C85100ECD255 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A381AC127E1C85100ECD255 /* ProfileViewModel.swift */; };
 		0A381AC427E1C87F00ECD255 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A381AC327E1C87F00ECD255 /* UserInfo.swift */; };
@@ -37,6 +39,8 @@
 /* Begin PBXFileReference section */
 		0A0AE5D527EC894F006B8083 /* RecommendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendViewController.swift; sourceTree = "<group>"; };
 		0A2010EE27E0CFBB008B0BFE /* ProfileSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingViewController.swift; sourceTree = "<group>"; };
+		0A2DB56627ED8805002E206C /* UserInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewModel.swift; sourceTree = "<group>"; };
+		0A2DB56827ED89BF002E206C /* DropDownUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownUI.swift; sourceTree = "<group>"; };
 		0A381ABF27E1B7E500ECD255 /* LanguageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageViewModel.swift; sourceTree = "<group>"; };
 		0A381AC127E1C85100ECD255 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		0A381AC327E1C87F00ECD255 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
@@ -157,6 +161,7 @@
 			children = (
 				0AEFAFE127DB33770034A7B0 /* UIViewStyle.swift */,
 				0A60BD0727D91BFA0046C8CB /* UITextField.swift */,
+				0A2DB56827ED89BF002E206C /* DropDownUI.swift */,
 			);
 			path = UIStyle;
 			sourceTree = "<group>";
@@ -200,6 +205,7 @@
 				0AA069BB27DA2D7F009D71E8 /* LoginViewModel.swift */,
 				0A381ABF27E1B7E500ECD255 /* LanguageViewModel.swift */,
 				0A381AC127E1C85100ECD255 /* ProfileViewModel.swift */,
+				0A2DB56627ED8805002E206C /* UserInfoViewModel.swift */,
 			);
 			path = viewModel;
 			sourceTree = "<group>";
@@ -340,6 +346,7 @@
 			files = (
 				0A60BD0627D91B140046C8CB /* SignUpViewController.swift in Sources */,
 				0A0AE5D627EC894F006B8083 /* RecommendViewController.swift in Sources */,
+				0A2DB56727ED8805002E206C /* UserInfoViewModel.swift in Sources */,
 				0AEFAFE227DB33770034A7B0 /* UIViewStyle.swift in Sources */,
 				0A60BD0427D8EC080046C8CB /* CategoryViewController.swift in Sources */,
 				0A60BD0027D8D7F30046C8CB /* LoginViewController.swift in Sources */,
@@ -349,6 +356,7 @@
 				0AA069C027DA354E009D71E8 /* BestArticleViewController.swift in Sources */,
 				0AA069BC27DA2D7F009D71E8 /* LoginViewModel.swift in Sources */,
 				0A7E46C627D3999D001AD8F7 /* SceneDelegate.swift in Sources */,
+				0A2DB56927ED89BF002E206C /* DropDownUI.swift in Sources */,
 				0A60BD0227D8EBF30046C8CB /* MainViewController.swift in Sources */,
 				0A381AC027E1B7E500ECD255 /* LanguageViewModel.swift in Sources */,
 				0A60BD0827D91BFA0046C8CB /* UITextField.swift in Sources */,

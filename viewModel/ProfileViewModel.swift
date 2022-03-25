@@ -61,40 +61,22 @@ class ProfileViewModel {
     }
     
     //mapping
-    func getData(completionHandler: @escaping(UserInfo) -> ()) {
-        fireStore.collection("UserInfo").document(uid!).getDocument { snapshot, error in
-            guard let documents = snapshot?.data() else {
-                print("ERROR Firestore Fetching document \(String(describing: error))")
-                return
-            }
-            let data = documents
-            do {
-                let jsonDB = try JSONSerialization.data(withJSONObject: data, options: [])
-                let userDB = try JSONDecoder().decode(UserInfo.self, from: jsonDB)
-                DispatchQueue.main.async {
-                    completionHandler(userDB)
-                }
-            } catch let error {
-                print("ERROR JSON Pasing \(error)")
-            }
-        }
-        
-//        fireStore.collection("UserInfo").addSnapshotListener { snapshot, error in
-//            guard let documents = snapshot?.documents else {
+//    func getData(completionHandler: @escaping(UserInfo) -> ()) {
+//        fireStore.collection("UserInfo").document(uid!).getDocument { snapshot, error in
+//            guard let documents = snapshot?.data() else {
 //                print("ERROR Firestore Fetching document \(String(describing: error))")
 //                return
 //            }
-//
-//            let data = documents.compactMap { doc -> UserInfo? in
-//                do {
-//                    let jsonDB = try JSONSerialization.data(withJSONObject: doc.data(), options: [])
-//                    let userDB = try JSONDecoder().decode(UserInfo.self, from: jsonDB)
-//                    return userDB
-//                } catch let error {
-//                    print("ERROR JSON Pasing \(error)")
-//                    return nil
+//            let data = documents
+//            do {
+//                let jsonDB = try JSONSerialization.data(withJSONObject: data, options: [])
+//                let userDB = try JSONDecoder().decode(UserInfo.self, from: jsonDB)
+//                DispatchQueue.main.async {
+//                    completionHandler(userDB)
 //                }
+//            } catch let error {
+//                print("ERROR JSON Pasing \(error)")
 //            }
 //        }
-    }
+//    }
 }
