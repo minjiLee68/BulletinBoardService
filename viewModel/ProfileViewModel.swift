@@ -28,7 +28,7 @@ class ProfileViewModel {
             let data = documents
             let name = data["nickName"] as? String ?? ""
             if name.isEmpty == false {
-                print("data 있어")
+                print("data있어")
                 completionHandler(false)
             }
         }

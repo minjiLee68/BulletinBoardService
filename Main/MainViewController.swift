@@ -12,15 +12,21 @@ class MainViewController: UIViewController {
     @IBOutlet weak var profileImg: UIImageView!
     @IBOutlet weak var name: UILabel!
     
-    let viewModel = UserInfoViewModel.shared
+    let userInfoVM = UserInfoViewModel.shared
+    let profileVM = ProfileViewModel.shared
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        userInfoVM.getData() { info in
+            let name = info.nickName
+            self.name.text = name + "님 환영합니다."
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        viewModel.getData() { info in
-            let name = info.nickName
-            self.name.text = name + "님 환영합니다."
-        }
         UIViewStyle.viewStyle(view: viewBG)
     }
 }

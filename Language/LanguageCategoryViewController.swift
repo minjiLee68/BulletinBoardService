@@ -20,8 +20,7 @@ class LanguageCategoryViewController: UIViewController {
     let dropItem = ["Swift", "Kotlin", "Java"]
     let lanViewmodel = LanguageViewModel.shared
     let userViewmodel = UserInfoViewModel.shared
-    
-    var lan: String?
+    let dropViewmodel = DropdownViewModel.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,27 +28,26 @@ class LanguageCategoryViewController: UIViewController {
         UIViewStyle.viewStyle(view: viewBG)
         setUserData()
         initDropUI()
-        setDropDown()
     }
     
     func setUserData() {
         userViewmodel.getData() { info in
             let users = info
-            self.lan = users.language
+            self.dropTextField.text = users.language
         }
     }
     
     func initDropUI() {
         DropDownUI.dropdownUI(dropdown: dropdown, dropField: dropTextField)
-        dropTextField.text = lan
     }
     
     func setDropDown() {
-        DropDownUI.setDropDown(dropdown: dropdown, dropItem: dropItem, viewDrop: viewDrop, collectionView: collectionView, dropField: dropTextField)
+        dropViewmodel.setDropDown(dropdown: dropdown, dropItem: dropItem, viewDrop: viewDrop, collectionView: collectionView, dropField: dropTextField)
     }
     
     @IBAction func dropViewClicked(_ sender: Any) {
         dropdown.show()
+        setDropDown()
     }
 }
 
@@ -103,6 +101,7 @@ class LanguageCell: UICollectionViewCell {
     func updateUI(image: UIImage, text: String) {
         categoryImage.image = image
         categoryLabel.text = text
+        categoryLabel.lineBreakMode = .byCharWrapping
         
         categoryImage.layer.cornerRadius = 10
         imageViewBG.layer.cornerRadius = 10

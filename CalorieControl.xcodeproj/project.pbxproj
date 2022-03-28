@@ -11,6 +11,7 @@
 		0A12ECCE27F18553009C9CA6 /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A12ECCD27F18553009C9CA6 /* PopUpViewController.swift */; };
 		0A12ECD027F189ED009C9CA6 /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A12ECCF27F189ED009C9CA6 /* CategoryViewModel.swift */; };
 		0A12ECD227F19090009C9CA6 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A12ECD127F19090009C9CA6 /* Filter.swift */; };
+		0A12ECD427F1BCD8009C9CA6 /* AppTabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A12ECD327F1BCD8009C9CA6 /* AppTabbarViewController.swift */; };
 		0A2010EF27E0CFBB008B0BFE /* ProfileSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2010EE27E0CFBB008B0BFE /* ProfileSettingViewController.swift */; };
 		0A2DB56727ED8805002E206C /* UserInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2DB56627ED8805002E206C /* UserInfoViewModel.swift */; };
 		0A2DB56927ED89BF002E206C /* DropDownUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2DB56827ED89BF002E206C /* DropDownUI.swift */; };
@@ -44,6 +45,7 @@
 		0A12ECCD27F18553009C9CA6 /* PopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
 		0A12ECCF27F189ED009C9CA6 /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
 		0A12ECD127F19090009C9CA6 /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
+		0A12ECD327F1BCD8009C9CA6 /* AppTabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabbarViewController.swift; sourceTree = "<group>"; };
 		0A2010EE27E0CFBB008B0BFE /* ProfileSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingViewController.swift; sourceTree = "<group>"; };
 		0A2DB56627ED8805002E206C /* UserInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewModel.swift; sourceTree = "<group>"; };
 		0A2DB56827ED89BF002E206C /* DropDownUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownUI.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 		0A7E46B727D3999D001AD8F7 = {
 			isa = PBXGroup;
 			children = (
+				0A12ECD327F1BCD8009C9CA6 /* AppTabbarViewController.swift */,
 				0A12ECCC27F184F9009C9CA6 /* PopupView */,
 				0A0AE5D427EC88BF006B8083 /* Recommend */,
 				0A381AC627E1C98900ECD255 /* Profile */,
@@ -365,6 +368,7 @@
 				0A0AE5D627EC894F006B8083 /* RecommendViewController.swift in Sources */,
 				0A2DB56727ED8805002E206C /* UserInfoViewModel.swift in Sources */,
 				0AEFAFE227DB33770034A7B0 /* UIViewStyle.swift in Sources */,
+				0A12ECD427F1BCD8009C9CA6 /* AppTabbarViewController.swift in Sources */,
 				0A60BD0427D8EC080046C8CB /* CategoryViewController.swift in Sources */,
 				0A60BD0027D8D7F30046C8CB /* LoginViewController.swift in Sources */,
 				0A7E46C427D3999D001AD8F7 /* AppDelegate.swift in Sources */,

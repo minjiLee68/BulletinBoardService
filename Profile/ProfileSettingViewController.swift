@@ -45,6 +45,11 @@ class ProfileSettingViewController: UIViewController {
         saveUserInfo()
     }
     
+    @IBAction func tapGesture(_ sender: Any) {
+        language.resignFirstResponder()
+        currentJob.resignFirstResponder()
+    }
+    
     func saveUserInfo() {
         viewModel.fireStorage(
             image: profileImage.image!,
@@ -53,9 +58,8 @@ class ProfileSettingViewController: UIViewController {
             language: language.text ?? ""
         )
         guard let sb = self.storyboard?.instantiateViewController(withIdentifier: "MainViewController") as? MainViewController else { return }
-        sb.modalTransitionStyle = .flipHorizontal
         sb.modalPresentationStyle = .fullScreen
-        self.present(sb, animated: true, completion: nil)
+        self.present(sb, animated: false, completion: nil)
     }
 }
 

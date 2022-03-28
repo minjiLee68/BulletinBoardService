@@ -9,5 +9,4 @@ import UIKit
 
 struct Filter {
     var job: String
-    
 }
