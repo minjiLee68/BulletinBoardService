@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0A0AE5D627EC894F006B8083 /* RecommendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0AE5D527EC894F006B8083 /* RecommendViewController.swift */; };
+		0A12ECCE27F18553009C9CA6 /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A12ECCD27F18553009C9CA6 /* PopUpViewController.swift */; };
+		0A12ECD027F189ED009C9CA6 /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A12ECCF27F189ED009C9CA6 /* CategoryViewModel.swift */; };
+		0A12ECD227F19090009C9CA6 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A12ECD127F19090009C9CA6 /* Filter.swift */; };
 		0A2010EF27E0CFBB008B0BFE /* ProfileSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2010EE27E0CFBB008B0BFE /* ProfileSettingViewController.swift */; };
 		0A2DB56727ED8805002E206C /* UserInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2DB56627ED8805002E206C /* UserInfoViewModel.swift */; };
 		0A2DB56927ED89BF002E206C /* DropDownUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2DB56827ED89BF002E206C /* DropDownUI.swift */; };
@@ -38,6 +41,9 @@
 
 /* Begin PBXFileReference section */
 		0A0AE5D527EC894F006B8083 /* RecommendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendViewController.swift; sourceTree = "<group>"; };
+		0A12ECCD27F18553009C9CA6 /* PopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
+		0A12ECCF27F189ED009C9CA6 /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
+		0A12ECD127F19090009C9CA6 /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
 		0A2010EE27E0CFBB008B0BFE /* ProfileSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingViewController.swift; sourceTree = "<group>"; };
 		0A2DB56627ED8805002E206C /* UserInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewModel.swift; sourceTree = "<group>"; };
 		0A2DB56827ED89BF002E206C /* DropDownUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownUI.swift; sourceTree = "<group>"; };
@@ -98,10 +104,19 @@
 			path = Recommend;
 			sourceTree = "<group>";
 		};
+		0A12ECCC27F184F9009C9CA6 /* PopupView */ = {
+			isa = PBXGroup;
+			children = (
+				0A12ECCD27F18553009C9CA6 /* PopUpViewController.swift */,
+			);
+			path = PopupView;
+			sourceTree = "<group>";
+		};
 		0A381AC527E1C88F00ECD255 /* model */ = {
 			isa = PBXGroup;
 			children = (
 				0A381AC327E1C87F00ECD255 /* UserInfo.swift */,
+				0A12ECD127F19090009C9CA6 /* Filter.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -117,6 +132,7 @@
 		0A7E46B727D3999D001AD8F7 = {
 			isa = PBXGroup;
 			children = (
+				0A12ECCC27F184F9009C9CA6 /* PopupView */,
 				0A0AE5D427EC88BF006B8083 /* Recommend */,
 				0A381AC627E1C98900ECD255 /* Profile */,
 				0A381AC527E1C88F00ECD255 /* model */,
@@ -206,6 +222,7 @@
 				0A381ABF27E1B7E500ECD255 /* LanguageViewModel.swift */,
 				0A381AC127E1C85100ECD255 /* ProfileViewModel.swift */,
 				0A2DB56627ED8805002E206C /* UserInfoViewModel.swift */,
+				0A12ECCF27F189ED009C9CA6 /* CategoryViewModel.swift */,
 			);
 			path = viewModel;
 			sourceTree = "<group>";
@@ -351,13 +368,16 @@
 				0A60BD0427D8EC080046C8CB /* CategoryViewController.swift in Sources */,
 				0A60BD0027D8D7F30046C8CB /* LoginViewController.swift in Sources */,
 				0A7E46C427D3999D001AD8F7 /* AppDelegate.swift in Sources */,
+				0A12ECD227F19090009C9CA6 /* Filter.swift in Sources */,
 				0AA069BE27DA3471009D71E8 /* LanguageCategoryViewController.swift in Sources */,
 				0A381AC227E1C85100ECD255 /* ProfileViewModel.swift in Sources */,
 				0AA069C027DA354E009D71E8 /* BestArticleViewController.swift in Sources */,
 				0AA069BC27DA2D7F009D71E8 /* LoginViewModel.swift in Sources */,
 				0A7E46C627D3999D001AD8F7 /* SceneDelegate.swift in Sources */,
+				0A12ECD027F189ED009C9CA6 /* CategoryViewModel.swift in Sources */,
 				0A2DB56927ED89BF002E206C /* DropDownUI.swift in Sources */,
 				0A60BD0227D8EBF30046C8CB /* MainViewController.swift in Sources */,
+				0A12ECCE27F18553009C9CA6 /* PopUpViewController.swift in Sources */,
 				0A381AC027E1B7E500ECD255 /* LanguageViewModel.swift in Sources */,
 				0A60BD0827D91BFA0046C8CB /* UITextField.swift in Sources */,
 				0A381AC427E1C87F00ECD255 /* UserInfo.swift in Sources */,
