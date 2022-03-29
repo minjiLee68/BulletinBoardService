@@ -28,6 +28,7 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         
         UIViewStyle.viewStyle(view: viewBG)
+        profileImg.clipsToBounds = true
     }
 }
 

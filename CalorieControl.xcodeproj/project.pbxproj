@@ -106,12 +106,12 @@
 			path = Recommend;
 			sourceTree = "<group>";
 		};
-		0A12ECCC27F184F9009C9CA6 /* PopupView */ = {
+		0A12ECCC27F184F9009C9CA6 /* Popup */ = {
 			isa = PBXGroup;
 			children = (
 				0A12ECCD27F18553009C9CA6 /* PopUpViewController.swift */,
 			);
-			path = PopupView;
+			path = Popup;
 			sourceTree = "<group>";
 		};
 		0A381AC527E1C88F00ECD255 /* model */ = {
@@ -135,7 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				0A12ECD327F1BCD8009C9CA6 /* AppTabbarViewController.swift */,
-				0A12ECCC27F184F9009C9CA6 /* PopupView */,
+				0A12ECCC27F184F9009C9CA6 /* Popup */,
 				0A0AE5D427EC88BF006B8083 /* Recommend */,
 				0A381AC627E1C98900ECD255 /* Profile */,
 				0A381AC527E1C88F00ECD255 /* model */,

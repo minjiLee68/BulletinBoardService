@@ -17,19 +17,7 @@ class DropDownUI {
         DropDown.appearance().setupCornerRadius(8)
         dropdown.dismissMode = .automatic
     }
-//
-//    static func setDropDown(dropdown: DropDown, dropItem: [String], viewDrop: UIView, collectionView: UICollectionView, dropField: UITextField) {
-//        dropdown.dataSource = dropItem
-//        dropdown.anchorView = viewDrop
-//
-//        dropdown.bottomOffset = CGPoint(x: 0, y: dropdown.bounds.height)
-//        dropdown.selectionAction = { index, item in
-//            collectionView.reloadData()
-//            dropField.text = item
-//            print("--> \(item)")
-//        }
-//        dropdown.cancelAction = {}
-//    }
+
 }
 
 class DropdownViewModel {
@@ -39,11 +27,10 @@ class DropdownViewModel {
         dropdown.dataSource = dropItem
         dropdown.anchorView = viewDrop
         
-        dropdown.bottomOffset = CGPoint(x: 0, y: dropdown.bounds.height)
+        dropdown.bottomOffset = CGPoint(x: 0, y: viewDrop.bounds.height)
         dropdown.selectionAction = { index, item in
-            collectionView.reloadData()
             dropField.text = item
-            print("--> \(item)")
+            collectionView.reloadData()
         }
         dropdown.cancelAction = {}
     }

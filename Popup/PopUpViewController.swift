@@ -42,6 +42,10 @@ class PopUpViewController: UIViewController {
         viewBG.layer.maskedCorners = CACornerMask(arrayLiteral: .layerMinXMinYCorner, .layerMaxXMinYCorner)
     }
     
+    @IBAction func tapGesture(_ sender: Any) {
+        dismiss(animated: true)
+    }
+    
     @IBAction func preparation(_ sender: UIButton) {
         let a = sender.titleLabel?.text
         print(a ?? " ")

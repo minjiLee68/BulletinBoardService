@@ -22,11 +22,16 @@ class LanguageCategoryViewController: UIViewController {
     let userViewmodel = UserInfoViewModel.shared
     let dropViewmodel = DropdownViewModel.shared
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        setUserData()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         UIViewStyle.viewStyle(view: viewBG)
-        setUserData()
         initDropUI()
     }
     
@@ -34,6 +39,7 @@ class LanguageCategoryViewController: UIViewController {
         userViewmodel.getData() { info in
             let users = info
             self.dropTextField.text = users.language
+            self.collectionView.reloadData()
         }
     }
     
@@ -81,7 +87,6 @@ extension LanguageCategoryViewController: UICollectionViewDataSource {
             cell.updateUI(image: image, text: text)
             return cell
         } else {
-            print("..?")
             return UICollectionViewCell()
         }
     }
