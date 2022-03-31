@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Foundation
 
 class MainViewController: UIViewController {
     @IBOutlet weak var viewBG: UIView!

@@ -32,7 +32,7 @@ class LoginViewController: UIViewController {
                 self.present(dvc, animated: true, completion: nil)
                 
             } else {
-                guard let dvc = self.storyboard?.instantiateViewController(withIdentifier: "MainViewController") as? MainViewController else { return }
+                guard let dvc = self.storyboard?.instantiateViewController(withIdentifier: "taabar") as? AppTabbarViewController else { return }
                 dvc.modalTransitionStyle = .coverVertical
                 dvc.modalPresentationStyle = .fullScreen
                 self.present(dvc, animated: true, completion: nil)

@@ -19,7 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let sb = UIStoryboard(name: "Main", bundle: nil)
         
         if viewModel.isLogin == true {
-            guard let mainVC = sb.instantiateViewController(withIdentifier: "MainViewController") as? MainViewController else { return }
+            guard let mainVC = sb.instantiateViewController(withIdentifier: "tabbar") as? AppTabbarViewController else { return }
             window?.rootViewController = mainVC
         } else {
             guard let loginVC = sb.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController else { return }
