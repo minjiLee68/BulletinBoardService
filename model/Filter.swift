@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct Filter {
+struct Filter: Codable {
     var job: String
     var langauge: String
     var trem: String

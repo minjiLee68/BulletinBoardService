@@ -1023,6 +1023,9 @@
                                             <backgroundConfiguration key="background"/>
                                             <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="15"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="save:" destination="rrL-g7-cs2" eventType="touchUpInside" id="fA9-uZ-r2Y"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Po-3F-oCw">
                                         <rect key="frame" x="31" y="441.5" width="155" height="43"/>
@@ -1100,6 +1103,16 @@
                         </connections>
                     </view>
                     <connections>
+                        <outlet property="l1" destination="2YH-U1-2Jk" id="gGy-5j-0WD"/>
+                        <outlet property="l2" destination="fTA-tf-2Bg" id="ou6-st-XfS"/>
+                        <outlet property="l3" destination="Qdd-Ec-of1" id="rVW-mF-tMf"/>
+                        <outlet property="p1" destination="1o5-Db-AnB" id="QNN-5m-TeA"/>
+                        <outlet property="p2" destination="YOL-Sv-vTh" id="K97-vp-vjA"/>
+                        <outlet property="p3" destination="HpR-Rm-RcQ" id="hKo-MD-Qts"/>
+                        <outlet property="p4" destination="Idf-0y-20l" id="txq-J6-2CZ"/>
+                        <outlet property="t1" destination="4co-lh-EtZ" id="bXv-P5-cfx"/>
+                        <outlet property="t2" destination="Yon-rl-Zk6" id="OX2-Dx-pXS"/>
+                        <outlet property="t3" destination="9nc-f4-fUn" id="Bsb-kb-d3j"/>
                         <outlet property="viewBG" destination="PDa-4e-1A7" id="6SO-8E-Ft6"/>
                     </connections>
                 </viewController>
@@ -1268,6 +1281,7 @@
                 <tabBarController storyboardIdentifier="tabbar" automaticallyAdjustsScrollViewInsets="NO" id="fNk-ud-90M" customClass="AppTabbarViewController" customModule="CalorieControl" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ixv-7i-jEh">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="selectedImageTintColor" name="PrimaryColor"/>
