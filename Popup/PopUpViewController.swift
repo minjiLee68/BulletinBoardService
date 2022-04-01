@@ -23,6 +23,11 @@ class PopUpViewController: UIViewController {
     @IBOutlet weak var l2: UIButton!
     @IBOutlet weak var l3: UIButton!
     
+    @IBOutlet weak var e1: UIButton!
+    @IBOutlet weak var e2: UIButton!
+    @IBOutlet weak var e3: UIButton!
+    @IBOutlet weak var e4: UIButton!
+    
     let viewmodel = CategoryViewModel.shared
     
     var job: String?
@@ -44,7 +49,8 @@ class PopUpViewController: UIViewController {
     }
     
     @IBAction func tapGesture(_ sender: Any) {
-        dismiss(animated: true)
+        self.presentingViewController?.modalTransitionStyle = .coverVertical
+        self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func preparation(_ sender: UIButton) {
@@ -94,15 +100,25 @@ class PopUpViewController: UIViewController {
     
     
     @IBAction func etc(_ sender: UIButton) {
-        if sender.isSelected == true {
-            sender.backgroundColor = .primaryColor
-        } else if sender.isSelected == false {
-            sender.backgroundColor = UIColor.clear
+        if sender.titleLabel?.text == "의자" {
+            e1.tintColor = .primaryColor
+            self.eTintColor(e2, e3, e4)
+        } else if sender.titleLabel?.text == "책상" {
+            e2.tintColor = .primaryColor
+            self.eTintColor(e1, e3, e4)
+        } else if sender.titleLabel?.text == "PC" {
+            e3.tintColor = .primaryColor
+            self.eTintColor(e1, e2, e4)
+        } else if sender.titleLabel?.text == "안경" {
+            e4.tintColor = .primaryColor
+            self.eTintColor(e1, e2, e3)
         }
+        etc = sender.titleLabel?.text
     }
     
     @IBAction func save(_ sender: UIButton) {
         viewmodel.categoryClick(job: job ?? "", lan: language ?? "", trem: trem ?? "", etc: etc ?? "")
+        self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
 }
 
@@ -121,5 +137,11 @@ extension PopUpViewController {
     func lTintColor(_ l1: UIButton, _ l2: UIButton) {
         l1.tintColor = .clear
         l2.tintColor = .clear
+    }
+    
+    func eTintColor(_ e1: UIButton, _ e2: UIButton, _ e3: UIButton) {
+        e1.tintColor = .clear
+        e2.tintColor = .clear
+        e3.tintColor = .clear
     }
 }

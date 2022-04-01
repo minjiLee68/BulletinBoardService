@@ -724,7 +724,7 @@
                                 </buttonConfiguration>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SqH-v0-S94">
-                                <rect key="frame" x="20" y="125" width="54" height="37"/>
+                                <rect key="frame" x="20" y="125" width="54" height="36.5"/>
                                 <color key="tintColor" name="PrimaryColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="text.aligncenter" catalog="system">
@@ -734,33 +734,52 @@
                                     <action selector="popupView:" destination="Khn-Fy-FFV" eventType="touchUpInside" id="4sR-pn-5iJ"/>
                                 </connections>
                             </button>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vmP-ZH-Zeu">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ib5-mD-fbh">
                                 <rect key="frame" x="0.0" y="170" width="414" height="643"/>
-                            </scrollView>
+                                <subviews>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1bV-oA-YV8">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="643"/>
+                                    </scrollView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="1bV-oA-YV8" secondAttribute="bottom" id="DOg-Di-yr3"/>
+                                    <constraint firstItem="1bV-oA-YV8" firstAttribute="leading" secondItem="Ib5-mD-fbh" secondAttribute="leading" id="c3q-Un-g3a"/>
+                                    <constraint firstItem="1bV-oA-YV8" firstAttribute="top" secondItem="Ib5-mD-fbh" secondAttribute="top" id="kYc-lU-ha6"/>
+                                    <constraint firstAttribute="trailing" secondItem="1bV-oA-YV8" secondAttribute="trailing" id="sxD-fK-I01"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vA9-Eb-m6O"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Ib5-mD-fbh" firstAttribute="leading" secondItem="vA9-Eb-m6O" secondAttribute="leading" id="0Vm-Qa-miv"/>
                             <constraint firstItem="SqH-v0-S94" firstAttribute="leading" secondItem="vA9-Eb-m6O" secondAttribute="leading" constant="20" id="1J4-bO-XTN"/>
                             <constraint firstItem="rf0-8d-s8W" firstAttribute="leading" secondItem="pNK-qw-WkQ" secondAttribute="trailing" constant="22" id="2c3-4I-f95"/>
                             <constraint firstItem="vA9-Eb-m6O" firstAttribute="trailing" secondItem="tco-I8-6dG" secondAttribute="trailing" constant="20" id="48a-mb-BjD"/>
-                            <constraint firstItem="vA9-Eb-m6O" firstAttribute="bottom" secondItem="vmP-ZH-Zeu" secondAttribute="bottom" id="7HZ-8X-fow"/>
                             <constraint firstItem="tco-I8-6dG" firstAttribute="top" secondItem="vA9-Eb-m6O" secondAttribute="top" constant="37" id="A3u-OJ-gVM"/>
                             <constraint firstItem="2sU-VY-s8l" firstAttribute="leading" secondItem="SqH-v0-S94" secondAttribute="trailing" constant="8" symbolic="YES" id="COa-N3-jTe"/>
+                            <constraint firstItem="Ib5-mD-fbh" firstAttribute="top" secondItem="vA9-Eb-m6O" secondAttribute="top" constant="126" id="EQO-kH-Px5"/>
                             <constraint firstItem="3Rm-0l-TXh" firstAttribute="top" secondItem="tco-I8-6dG" secondAttribute="bottom" constant="11" id="IMo-oK-fVd"/>
                             <constraint firstItem="SqH-v0-S94" firstAttribute="top" secondItem="tco-I8-6dG" secondAttribute="bottom" constant="8" symbolic="YES" id="Jpy-hN-QKr"/>
                             <constraint firstItem="2sU-VY-s8l" firstAttribute="top" secondItem="tco-I8-6dG" secondAttribute="bottom" constant="11" id="VWb-n3-XlC"/>
-                            <constraint firstItem="vmP-ZH-Zeu" firstAttribute="top" secondItem="3Rm-0l-TXh" secondAttribute="bottom" constant="11" id="Zzt-8m-5Rd"/>
                             <constraint firstItem="pNK-qw-WkQ" firstAttribute="leading" secondItem="3Rm-0l-TXh" secondAttribute="trailing" constant="22" id="dVq-gs-Fgg"/>
                             <constraint firstItem="pNK-qw-WkQ" firstAttribute="top" secondItem="tco-I8-6dG" secondAttribute="bottom" constant="11" id="htA-95-pYL"/>
                             <constraint firstItem="tco-I8-6dG" firstAttribute="leading" secondItem="vA9-Eb-m6O" secondAttribute="leading" constant="20" id="jZz-yr-Yf2"/>
-                            <constraint firstItem="vA9-Eb-m6O" firstAttribute="trailing" secondItem="vmP-ZH-Zeu" secondAttribute="trailing" id="rqB-BA-yuR"/>
+                            <constraint firstItem="vA9-Eb-m6O" firstAttribute="trailing" secondItem="Ib5-mD-fbh" secondAttribute="trailing" id="jhw-ku-Yhq"/>
+                            <constraint firstItem="Ib5-mD-fbh" firstAttribute="bottom" secondItem="vA9-Eb-m6O" secondAttribute="bottom" id="nBW-aQ-ffL"/>
                             <constraint firstItem="3Rm-0l-TXh" firstAttribute="leading" secondItem="2sU-VY-s8l" secondAttribute="trailing" constant="22" id="tN2-Lm-l9p"/>
-                            <constraint firstItem="vmP-ZH-Zeu" firstAttribute="leading" secondItem="vA9-Eb-m6O" secondAttribute="leading" id="vMf-1X-BAQ"/>
                             <constraint firstItem="rf0-8d-s8W" firstAttribute="top" secondItem="tco-I8-6dG" secondAttribute="bottom" constant="11" id="zuZ-TO-7mG"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="추천" image="cursorarrow.click" catalog="system" id="Lix-MZ-5bi"/>
+                    <connections>
+                        <outlet property="etc" destination="rf0-8d-s8W" id="OgM-4s-nMR"/>
+                        <outlet property="job" destination="2sU-VY-s8l" id="Hrb-z6-jzz"/>
+                        <outlet property="lan" destination="pNK-qw-WkQ" id="nlM-xk-gj8"/>
+                        <outlet property="nickName" destination="tco-I8-6dG" id="jfW-2m-xwn"/>
+                        <outlet property="trem" destination="3Rm-0l-TXh" id="Qz0-Lk-kmM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eQK-cG-OVL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -967,10 +986,10 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PdZ-Rl-IcL">
-                                        <rect key="frame" x="195" y="361" width="61" height="31"/>
+                                        <rect key="frame" x="195" y="361" width="43" height="31"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="tinted" title="노트북" cornerStyle="capsule">
+                                        <buttonConfiguration key="configuration" style="tinted" title="PC" cornerStyle="capsule">
                                             <backgroundConfiguration key="background">
                                                 <color key="strokeColor" name="PrimaryColor"/>
                                             </backgroundConfiguration>
@@ -982,7 +1001,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vjt-pM-JcN">
-                                        <rect key="frame" x="283" y="361" width="49" height="31"/>
+                                        <rect key="frame" x="265" y="361" width="49" height="31"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="tinted" title="안경" cornerStyle="capsule">

@@ -24,4 +24,23 @@ class CategoryViewModel {
             print("Error writing city to Firestore: \(error)")
         }
     }
+    
+    func getFilterData(completionHandler: @escaping(String, String, String, String) -> ()) {
+        fireStore.collection("Filter").document(uid!).getDocument { snapshot, error in
+            guard let documents = snapshot?.data() else {
+                print("ERROR Firestore Fetching document \(String(describing: error))")
+                return
+            }
+            let data = documents
+            do {
+                let jsonDB = try JSONSerialization.data(withJSONObject: data, options: [])
+                let filterDB = try JSONDecoder().decode(Filter.self, from: jsonDB)
+                DispatchQueue.main.async {
+                    completionHandler(filterDB.job, filterDB.langauge, filterDB.trem, filterDB.etc)
+                }
+            } catch let error {
+                print("ERROR JSON Pasing \(error)")
+            }
+        }
+    }
 }
