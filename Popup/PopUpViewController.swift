@@ -118,6 +118,7 @@ class PopUpViewController: UIViewController {
     
     @IBAction func save(_ sender: UIButton) {
         viewmodel.categoryClick(job: job ?? "", lan: language ?? "", trem: trem ?? "", etc: etc ?? "")
+        NotificationCenter.default.post(name: .notiName, object: viewmodel)
         self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
 }

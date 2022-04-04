@@ -17,9 +17,14 @@ class RecommendViewController: UIViewController {
     let categoryVM = CategoryViewModel.shared
     let usersVM = UserInfoViewModel.shared
 
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        setTitleLabel()
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        setFilterData()
+        NotificationCenter.default.addObserver(self, selector: #selector(rotate(_:)), name: .notiName, object: nil)
     }
     
     override func viewDidLoad() {
@@ -27,14 +32,18 @@ class RecommendViewController: UIViewController {
 
     }
     
-    func setFilterData() {
-        categoryVM.getFilterData { job,language,trem,etc in
-            self.job.titleLabel?.text = job
-            self.lan.titleLabel?.text = language
-            self.trem.titleLabel?.text = trem
-            self.etc.titleLabel?.text = etc
+    @objc func rotate(_ notification: Notification) {
+        if let noti = notification.object as? CategoryViewModel {
+            noti.getFilterData { job, lan, trem, etc in
+                self.job.titleLabel?.text = job
+                self.lan.titleLabel?.text = lan
+                self.trem.titleLabel?.text = trem
+                self.etc.titleLabel?.text = etc
+            }
         }
-        
+    }
+    
+    func setTitleLabel() {
         usersVM.getData { info in
             self.nickName.text = info.nickName + "님에게 추천합니다!"
         }
