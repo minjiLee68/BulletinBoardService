@@ -10,6 +10,6 @@ import UIKit
 class AppTabbarViewController: UITabBarController {
     
     override func viewDidLoad() {
-        
+        super.viewDidLoad()
     }
 }

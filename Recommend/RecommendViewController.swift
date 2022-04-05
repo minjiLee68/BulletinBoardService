@@ -14,7 +14,6 @@ class RecommendViewController: UIViewController {
     @IBOutlet weak var trem: UIButton!
     @IBOutlet weak var etc: UIButton!
     
-    let categoryVM = CategoryViewModel.shared
     let usersVM = UserInfoViewModel.shared
 
     override func viewWillLayoutSubviews() {

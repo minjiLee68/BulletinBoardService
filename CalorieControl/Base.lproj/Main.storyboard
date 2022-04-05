@@ -709,7 +709,7 @@
                                     <color key="baseBackgroundColor" name="PrimaryColor"/>
                                 </buttonConfiguration>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Rm-0l-TXh">
+                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Rm-0l-TXh">
                                 <rect key="frame" x="148" y="127.5" width="66" height="28.5"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="상관없음" cornerStyle="capsule">
@@ -788,7 +788,7 @@
                         <constraints>
                             <constraint firstItem="1bV-oA-YV8" firstAttribute="centerX" secondItem="vA9-Eb-m6O" secondAttribute="centerX" id="0g7-Ya-Ypy"/>
                             <constraint firstItem="vA9-Eb-m6O" firstAttribute="bottom" secondItem="1bV-oA-YV8" secondAttribute="bottom" id="2NQ-qn-1o7"/>
-                            <constraint firstItem="rf0-8d-s8W" firstAttribute="leading" secondItem="pNK-qw-WkQ" secondAttribute="trailing" constant="15" id="2c3-4I-f95"/>
+                            <constraint firstItem="rf0-8d-s8W" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="pNK-qw-WkQ" secondAttribute="trailing" constant="8" symbolic="YES" id="2c3-4I-f95"/>
                             <constraint firstItem="vA9-Eb-m6O" firstAttribute="trailing" secondItem="tco-I8-6dG" secondAttribute="trailing" constant="20" id="48a-mb-BjD"/>
                             <constraint firstItem="3Rm-0l-TXh" firstAttribute="centerY" secondItem="2sU-VY-s8l" secondAttribute="centerY" id="6ya-ws-aKE"/>
                             <constraint firstItem="tco-I8-6dG" firstAttribute="top" secondItem="vA9-Eb-m6O" secondAttribute="top" constant="37" id="A3u-OJ-gVM"/>
@@ -800,9 +800,10 @@
                             <constraint firstItem="pNK-qw-WkQ" firstAttribute="centerY" secondItem="3Rm-0l-TXh" secondAttribute="centerY" id="NHg-sa-Jib"/>
                             <constraint firstItem="vA9-Eb-m6O" firstAttribute="trailing" secondItem="1bV-oA-YV8" secondAttribute="trailing" id="NI2-20-gzT"/>
                             <constraint firstItem="pNK-qw-WkQ" firstAttribute="leading" secondItem="3Rm-0l-TXh" secondAttribute="trailing" constant="15" id="dVq-gs-Fgg"/>
+                            <constraint firstItem="vA9-Eb-m6O" firstAttribute="trailing" secondItem="rf0-8d-s8W" secondAttribute="trailing" constant="44.5" id="g0G-CG-D83"/>
                             <constraint firstItem="tco-I8-6dG" firstAttribute="leading" secondItem="vA9-Eb-m6O" secondAttribute="leading" constant="20" id="jZz-yr-Yf2"/>
                             <constraint firstItem="rf0-8d-s8W" firstAttribute="centerY" secondItem="pNK-qw-WkQ" secondAttribute="centerY" id="nuk-as-dFO"/>
-                            <constraint firstItem="1bV-oA-YV8" firstAttribute="top" secondItem="vA9-Eb-m6O" secondAttribute="top" constant="150" id="vay-Yl-KQQ"/>
+                            <constraint firstItem="1bV-oA-YV8" firstAttribute="top" secondItem="3Rm-0l-TXh" secondAttribute="bottom" constant="38" id="q8k-c9-gzf"/>
                             <constraint firstItem="3Rm-0l-TXh" firstAttribute="leading" secondItem="2sU-VY-s8l" secondAttribute="trailing" constant="15" id="xIQ-KY-dTL"/>
                         </constraints>
                     </view>
@@ -1352,10 +1353,10 @@
             </objects>
             <point key="canvasLocation" x="2426" y="-657"/>
         </scene>
-        <!--View Controller-->
+        <!--Job Selected View Controller-->
         <scene sceneID="P2S-VZ-jNr">
             <objects>
-                <viewController id="YrM-ui-JpQ" sceneMemberID="viewController">
+                <viewController id="YrM-ui-JpQ" customClass="JobSelectedViewController" customModule="CalorieControl" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OlJ-x8-Iq2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1554,6 +1555,7 @@
                                 </cells>
                             </collectionView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="GFC-Sb-toP"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Owe-vQ-Fmd" firstAttribute="leading" secondItem="ybO-4E-3xx" secondAttribute="leading" constant="15" id="0tV-Xl-Fmd"/>
@@ -1567,7 +1569,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gn0-2n-XiZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3951" y="454"/>
+            <point key="canvasLocation" x="3951" y="405"/>
         </scene>
     </scenes>
     <resources>
