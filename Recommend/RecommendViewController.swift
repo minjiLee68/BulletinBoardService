@@ -15,6 +15,7 @@ class RecommendViewController: UIViewController {
     @IBOutlet weak var etc: UIButton!
     
     let usersVM = UserInfoViewModel.shared
+    let favoriteVM = FavoriteViewModel.shared
 
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()

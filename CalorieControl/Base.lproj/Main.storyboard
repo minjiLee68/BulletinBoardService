@@ -1380,7 +1380,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="szs-mq-Mth">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="JobSelectedCell" id="szs-mq-Mth" customClass="JobSelectedCell" customModule="CalorieControl" customModuleProvider="target">
                                         <rect key="frame" x="12" y="0.0" width="360" height="215"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="7Wx-D1-Vz9">
@@ -1412,6 +1412,10 @@
                                         </collectionViewCellContentView>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="YrM-ui-JpQ" id="u67-Hk-774"/>
+                                    <outlet property="delegate" destination="YrM-ui-JpQ" id="T1Z-wt-5KT"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="KtE-gZ-TFD"/>
@@ -1425,6 +1429,9 @@
                             <constraint firstItem="P3g-h3-Jxr" firstAttribute="leading" secondItem="KtE-gZ-TFD" secondAttribute="leading" constant="15" id="zin-39-ORf"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="P3g-h3-Jxr" id="tRC-4K-WWi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2pp-d4-SKu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
