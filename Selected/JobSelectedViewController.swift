@@ -10,7 +10,8 @@ import UIKit
 class JobSelectedViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
-    let viewmodel = FavoriteViewModel.shared
+    let favoriteVM = FavoriteViewModel.shared
+    let categoryVM = CategoryViewModel.shared
     var page: String = ""
     
     override func viewWillLayoutSubviews() {
@@ -23,6 +24,8 @@ class JobSelectedViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        initPageTitle()
         NotificationCenter.default.addObserver(self, selector: #selector(pageTitleObserver(_:)), name: .notiName, object: nil)
     }
     
@@ -35,9 +38,15 @@ class JobSelectedViewController: UIViewController {
         if let noti = notification.object as? CategoryViewModel {
             noti.getFilterData { filter in
                 self.page = filter.job
+                self.collectionView.reloadData()
             }
         }
-        self.collectionView.reloadData()
+    }
+    
+    func initPageTitle() {
+        categoryVM.getFilterData { filter in
+            self.page = filter.job
+        }
     }
 }
 
@@ -45,13 +54,13 @@ extension JobSelectedViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if page == "취준생" {
-            return viewmodel.preparationCount
+            return favoriteVM.preparationCount
         } else if page == "직장인" {
-            return viewmodel.officworkersCount
+            return favoriteVM.officworkersCount
         } else if page == "학생" {
-            return viewmodel.studentsCount
+            return favoriteVM.studentsCount
         } else {
-            return viewmodel.hobbyCount
+            return favoriteVM.hobbyCount
         }
     }
     
@@ -60,24 +69,28 @@ extension JobSelectedViewController: UICollectionViewDataSource {
         
         switch page {
         case "취준생":
-            let title = viewmodel.preparationList[indexPath.item]
-            cell.updateUI(title: title)
-            cell.pageControlStyle(listCount: viewmodel.preparationCount)
+            let title = favoriteVM.preparationList[indexPath.item]
+            let image = UIImage(named: favoriteVM.preparetionImage[indexPath.item]) ?? UIImage()
+            cell.updateUI(title: title, image: image)
+            cell.pageControlStyle(listCount: favoriteVM.preparationCount)
             return cell
         case "직장인":
-            let title = viewmodel.officworkersList[indexPath.item]
-            cell.updateUI(title: title)
-            cell.pageControlStyle(listCount: viewmodel.officworkersCount)
+            let title = favoriteVM.officworkersList[indexPath.item]
+            let image = UIImage(named: favoriteVM.preparetionImage[indexPath.item]) ?? UIImage()
+            cell.updateUI(title: title, image: image)
+            cell.pageControlStyle(listCount: favoriteVM.officworkersCount)
             return cell
         case "학생":
-            let title = viewmodel.studentsList[indexPath.item]
-            cell.updateUI(title: title)
-            cell.pageControlStyle(listCount: viewmodel.studentsCount)
+            let title = favoriteVM.studentsList[indexPath.item]
+            let image = UIImage(named: favoriteVM.preparetionImage[indexPath.item]) ?? UIImage()
+            cell.updateUI(title: title, image: image)
+            cell.pageControlStyle(listCount: favoriteVM.studentsCount)
             return cell
         default:
-            let title = viewmodel.hobbyList[indexPath.item]
-            cell.updateUI(title: title)
-            cell.pageControlStyle(listCount: viewmodel.hobbyCount)
+            let title = favoriteVM.hobbyList[indexPath.item]
+            let image = UIImage(named: favoriteVM.preparetionImage[indexPath.item]) ?? UIImage()
+            cell.updateUI(title: title, image: image)
+            cell.pageControlStyle(listCount: favoriteVM.hobbyCount)
             return cell
         }
     }
@@ -91,30 +104,17 @@ extension JobSelectedViewController: UICollectionViewDelegateFlowLayout {
 
 extension JobSelectedViewController: UIScrollViewDelegate {
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        guard let layout = self.collectionView.collectionViewLayout as? UICollectionViewFlowLayout else { return }
-        
-        let cellWidthIncludingSpacing = layout.itemSize.width + layout.minimumLineSpacing
-        
-        let estimatedIndex = scrollView.contentOffset.x / cellWidthIncludingSpacing
-        let index: Int
-        if velocity.x > 0 {
-            index = Int(ceil(estimatedIndex))
-        } else if velocity.x < 0 {
-            index = Int(floor(estimatedIndex))
-        } else {
-            index = Int(round(estimatedIndex))
-        }
-        targetContentOffset.pointee = CGPoint(x: CGFloat(index) * cellWidthIncludingSpacing, y: 0)
-        
+        CollectionViewCenterCGRect.collectionViewCenter(collectionView: collectionView, scrollView: scrollView, velocity: velocity, targetContentOffset: targetContentOffset)
      }
-    
 }
 
 class JobSelectedCell: UICollectionViewCell {
     @IBOutlet weak var titleText: UILabel!
+    @IBOutlet weak var pageImage: UIImageView!
     @IBOutlet weak var pageControl: UIPageControl!
     
-    func updateUI(title: String) {
+    func updateUI(title: String, image: UIImage) {
+        pageImage.image = image
         titleText.text = title
         titleText.lineBreakMode = .byCharWrapping
     }
@@ -123,14 +123,14 @@ class JobSelectedCell: UICollectionViewCell {
         pageControl.hidesForSinglePage = true
         pageControl.numberOfPages = listCount
         pageControl.pageIndicatorTintColor = .darkGray
+        print("--> \(pageControl.currentPage)")
     }
 }
 
-extension JobSelectedCell: UIScrollViewDelegate {
-    
+extension JobSelectedCell: UICollectionViewDelegate {
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         let page = Int(targetContentOffset.pointee.x / self.frame.width)
         self.pageControl.currentPage = page
-        print("page -> \(pageControl.currentPage)")
+        print(page)
     }
 }

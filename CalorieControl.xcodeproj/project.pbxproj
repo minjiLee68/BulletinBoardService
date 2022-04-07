@@ -38,6 +38,8 @@
 		0AA069BE27DA3471009D71E8 /* LanguageCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA069BD27DA3471009D71E8 /* LanguageCategoryViewController.swift */; };
 		0AA069C027DA354E009D71E8 /* BestArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA069BF27DA354E009D71E8 /* BestArticleViewController.swift */; };
 		0AB7954327FC2D8800F1C81B /* JobSelectedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB7954227FC2D8800F1C81B /* JobSelectedViewController.swift */; };
+		0AC7610027FF2943008004F5 /* TermViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC760FF27FF2943008004F5 /* TermViewController.swift */; };
+		0AC7610227FF2A3E008004F5 /* CollectionViewCenterCGRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC7610127FF2A3E008004F5 /* CollectionViewCenterCGRect.swift */; };
 		0AEFAFE227DB33770034A7B0 /* UIViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEFAFE127DB33770034A7B0 /* UIViewStyle.swift */; };
 		905D427911C4D36D3BD2C076 /* Pods_CalorieControl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ACDD3164E5AB99F44E4DB19 /* Pods_CalorieControl.framework */; };
 /* End PBXBuildFile section */
@@ -72,6 +74,8 @@
 		0AA069BD27DA3471009D71E8 /* LanguageCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageCategoryViewController.swift; sourceTree = "<group>"; };
 		0AA069BF27DA354E009D71E8 /* BestArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestArticleViewController.swift; sourceTree = "<group>"; };
 		0AB7954227FC2D8800F1C81B /* JobSelectedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobSelectedViewController.swift; sourceTree = "<group>"; };
+		0AC760FF27FF2943008004F5 /* TermViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermViewController.swift; sourceTree = "<group>"; };
+		0AC7610127FF2A3E008004F5 /* CollectionViewCenterCGRect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCenterCGRect.swift; sourceTree = "<group>"; };
 		0AEFAFE127DB33770034A7B0 /* UIViewStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewStyle.swift; sourceTree = "<group>"; };
 		1ACDD3164E5AB99F44E4DB19 /* Pods_CalorieControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CalorieControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B593F83D26A44265B2A0EF8 /* Pods-CalorieControl.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalorieControl.debug.xcconfig"; path = "Target Support Files/Pods-CalorieControl/Pods-CalorieControl.debug.xcconfig"; sourceTree = "<group>"; };
@@ -139,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				0A12ECD327F1BCD8009C9CA6 /* AppTabbarViewController.swift */,
+				0AC7610327FF2AFF008004F5 /* CollectionStyle */,
 				0AB7953F27FC2D0F00F1C81B /* Selected */,
 				0A12ECCC27F184F9009C9CA6 /* Popup */,
 				0A0AE5D427EC88BF006B8083 /* Recommend */,
@@ -184,8 +189,17 @@
 			isa = PBXGroup;
 			children = (
 				0AB7954227FC2D8800F1C81B /* JobSelectedViewController.swift */,
+				0AC760FF27FF2943008004F5 /* TermViewController.swift */,
 			);
 			path = Selected;
+			sourceTree = "<group>";
+		};
+		0AC7610327FF2AFF008004F5 /* CollectionStyle */ = {
+			isa = PBXGroup;
+			children = (
+				0AC7610127FF2A3E008004F5 /* CollectionViewCenterCGRect.swift */,
+			);
+			path = CollectionStyle;
 			sourceTree = "<group>";
 		};
 		0AEFAFE327DB373F0034A7B0 /* UIStyle */ = {
@@ -379,6 +393,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A60BD0627D91B140046C8CB /* SignUpViewController.swift in Sources */,
+				0AC7610027FF2943008004F5 /* TermViewController.swift in Sources */,
 				0A0AE5D627EC894F006B8083 /* RecommendViewController.swift in Sources */,
 				0A2DB56727ED8805002E206C /* UserInfoViewModel.swift in Sources */,
 				0AEFAFE227DB33770034A7B0 /* UIViewStyle.swift in Sources */,
@@ -389,6 +404,7 @@
 				0A60BD0027D8D7F30046C8CB /* LoginViewController.swift in Sources */,
 				0A7E46C427D3999D001AD8F7 /* AppDelegate.swift in Sources */,
 				0A12ECD227F19090009C9CA6 /* Filter.swift in Sources */,
+				0AC7610227FF2A3E008004F5 /* CollectionViewCenterCGRect.swift in Sources */,
 				0AA069BE27DA3471009D71E8 /* LanguageCategoryViewController.swift in Sources */,
 				0A381AC227E1C85100ECD255 /* ProfileViewModel.swift in Sources */,
 				0AA069C027DA354E009D71E8 /* BestArticleViewController.swift in Sources */,

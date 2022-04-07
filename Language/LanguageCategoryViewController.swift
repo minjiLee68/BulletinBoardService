@@ -18,6 +18,7 @@ class LanguageCategoryViewController: UIViewController {
     
     let dropdown = DropDown()
     let dropItem = ["Swift", "Kotlin", "Java"]
+    
     let lanViewmodel = LanguageViewModel.shared
     let userViewmodel = UserInfoViewModel.shared
     let dropViewmodel = DropdownViewModel.shared

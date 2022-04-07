@@ -16,8 +16,8 @@ class CategoryViewModel {
     let uid = Auth.auth().currentUser?.uid
     var filter: Filter?
 
-    func categoryClick(job: String, lan: String, trem: String, etc: String) {
-        let data = Filter.init(job: job, lan: lan, trem: trem, etc: etc)
+    func categoryClick(job: String, lan: String, term: String, etc: String) {
+        let data = Filter.init(job: job, lan: lan, trem: term, etc: etc)
         do {
             try fireStore.collection("Filter").document(uid!).setData(from: data)
         } catch let error {

@@ -31,7 +31,7 @@ class PopUpViewController: UIViewController {
     let viewmodel = CategoryViewModel.shared
     
     var job: String?
-    var trem: String?
+    var term: String?
     var language: String?
     var etc: String?
     var filter: Filter?
@@ -85,7 +85,7 @@ class PopUpViewController: UIViewController {
             t3.tintColor = .primaryColor
             self.tTintColor(t2, t1)
         }
-        trem = sender.titleLabel?.text
+        term = sender.titleLabel?.text
     }
     
     @IBAction func language(_ sender: UIButton) {
@@ -121,7 +121,7 @@ class PopUpViewController: UIViewController {
     }
     
     @IBAction func save(_ sender: UIButton) {
-        viewmodel.categoryClick(job: job ?? "", lan: language ?? "", trem: trem ?? "", etc: etc ?? "")
+        viewmodel.categoryClick(job: job ?? "", lan: language ?? "", term: term ?? "", etc: etc ?? "")
         self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
 }
