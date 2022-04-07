@@ -33,6 +33,6 @@ class FavoriteViewModel {
 
 extension Notification.Name {
     static let notiName = Notification.Name("observer")
-    static let favoriteNoti = Notification.Name("favoriteNoti")
+    static let jobNoti = Notification.Name("jobNoti")
 
 }

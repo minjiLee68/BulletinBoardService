@@ -15,6 +15,7 @@ class RecommendViewController: UIViewController {
     @IBOutlet weak var etc: UIButton!
     
     let usersVM = UserInfoViewModel.shared
+    let catogoryVM = CategoryViewModel.shared
     let favoriteVM = FavoriteViewModel.shared
 
     override func viewWillLayoutSubviews() {
@@ -24,6 +25,7 @@ class RecommendViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        setFilterData()
         NotificationCenter.default.addObserver(self, selector: #selector(rotate(_:)), name: .notiName, object: nil)
     }
     
@@ -34,12 +36,21 @@ class RecommendViewController: UIViewController {
     
     @objc func rotate(_ notification: Notification) {
         if let noti = notification.object as? CategoryViewModel {
-            noti.getFilterData { job, lan, trem, etc in
-                self.job.titleLabel?.text = job
-                self.lan.titleLabel?.text = lan
-                self.trem.titleLabel?.text = trem
-                self.etc.titleLabel?.text = etc
+            noti.getFilterData { filter in
+                self.job.titleLabel?.text = filter.job
+                self.lan.titleLabel?.text = filter.langauge
+                self.trem.titleLabel?.text = filter.trem
+                self.etc.titleLabel?.text = filter.etc
             }
+        }
+    }
+    
+    func setFilterData() {
+        catogoryVM.getFilterData { filter in
+            self.job.titleLabel?.text = filter.job
+            self.lan.titleLabel?.text = filter.langauge
+            self.trem.titleLabel?.text = filter.trem
+            self.etc.titleLabel?.text = filter.etc
         }
     }
     

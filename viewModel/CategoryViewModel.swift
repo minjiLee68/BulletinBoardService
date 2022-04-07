@@ -25,7 +25,7 @@ class CategoryViewModel {
         }
     }
     
-    func getFilterData(completionHandler: @escaping(String, String, String, String) -> ()) {
+    func getFilterData(completionHandler: @escaping(Filter) -> ()) {
         fireStore.collection("Filter").document(uid!).getDocument { snapshot, error in
             guard let documents = snapshot?.data() else {
                 print("ERROR Firestore Fetching document \(String(describing: error))")
@@ -36,7 +36,7 @@ class CategoryViewModel {
                 let jsonDB = try JSONSerialization.data(withJSONObject: data, options: [])
                 let filterDB = try JSONDecoder().decode(Filter.self, from: jsonDB)
                 DispatchQueue.main.async {
-                    completionHandler(filterDB.job, filterDB.langauge, filterDB.trem, filterDB.etc)
+                    completionHandler(filterDB)
                 }
             } catch let error {
                 print("ERROR JSON Pasing \(error)")

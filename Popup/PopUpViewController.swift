@@ -35,6 +35,10 @@ class PopUpViewController: UIViewController {
     var language: String?
     var etc: String?
     var filter: Filter?
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        NotificationCenter.default.post(name: .notiName, object: viewmodel)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -118,8 +122,6 @@ class PopUpViewController: UIViewController {
     
     @IBAction func save(_ sender: UIButton) {
         viewmodel.categoryClick(job: job ?? "", lan: language ?? "", trem: trem ?? "", etc: etc ?? "")
-        NotificationCenter.default.post(name: .notiName, object: viewmodel)
-        NotificationCenter.default.post(name: .favoriteNoti, object: job)
         self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
 }
