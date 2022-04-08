@@ -46,6 +46,7 @@ class JobSelectedViewController: UIViewController {
     func initPageTitle() {
         categoryVM.getFilterData { filter in
             self.page = filter.job
+            self.collectionView.reloadData()
         }
     }
 }
@@ -129,8 +130,15 @@ class JobSelectedCell: UICollectionViewCell {
 
 extension JobSelectedCell: UICollectionViewDelegate {
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        let page = Int(targetContentOffset.pointee.x / self.frame.width)
-        self.pageControl.currentPage = page
-        print(page)
+//        let page = Int(targetContentOffset.pointee.x / self.frame.width)
+//        self.pageControl.currentPage = page
+//        print(page)
+        let width = scrollView.bounds.size.width // 너비 저장
+        let x = scrollView.contentOffset.x + (width / 2.0) // 현재 스크롤한 x좌표 저장
+        
+        let newPage = Int(x / width)
+        if self.pageControl.currentPage != newPage {
+            self.pageControl.currentPage = newPage
+        }
     }
 }

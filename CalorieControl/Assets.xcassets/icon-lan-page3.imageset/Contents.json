@@ -1,11 +1,11 @@
 {
   "images" : [
     {
+      "filename" : "app-store.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "LogoSample_ByTailorBrands-5.jpg",
       "idiom" : "universal",
       "scale" : "2x"
     },

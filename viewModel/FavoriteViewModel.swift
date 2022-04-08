@@ -57,15 +57,15 @@ class TermSelectedViewModel {
     }
     
     var shortTitle: String {
-        return "우리는 8282민족 아이가!"
+        return "우리는 8282민족 아이가!🏃‍♀️"
     }
     
     var longTitle: String {
-        return "오래보아야 이쁘다 너도 그렇다"
+        return "오래보아야 이쁘다 너도 그렇다🙈"
     }
     
     var nottingTitle: String {
-        return "상관없어! 진행쉬켜.."
+        return "상관없어! 진행쉬켜🤟"
     }
 }
 

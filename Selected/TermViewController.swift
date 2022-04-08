@@ -56,13 +56,13 @@ class TermViewController: UIViewController {
     func termTitle(term: String) {
         switch term {
         case "단기간":
-            titleText.text = term
+            titleText.text = termVM.shortTitle
             break
         case "장기간":
-            titleText.text = term
+            titleText.text = termVM.longTitle
             break
         default:
-            titleText.text = term
+            titleText.text = termVM.nottingTitle
             break
         }
     }
