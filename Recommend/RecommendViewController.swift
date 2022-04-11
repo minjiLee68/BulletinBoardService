@@ -18,11 +18,6 @@ class RecommendViewController: UIViewController {
     let catogoryVM = CategoryViewModel.shared
     let favoriteVM = FavoriteViewModel.shared
 
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        setTitleLabel()
-    }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setFilterData()
@@ -52,9 +47,6 @@ class RecommendViewController: UIViewController {
             self.trem.titleLabel?.text = filter.trem
             self.etc.titleLabel?.text = filter.etc
         }
-    }
-    
-    func setTitleLabel() {
         usersVM.getData { info in
             self.nickName.text = info.nickName + "님에게 추천합니다!"
         }

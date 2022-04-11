@@ -26,12 +26,13 @@ class JobSelectedViewController: UIViewController {
         super.viewWillAppear(animated)
         
         initPageTitle()
+        self.collectionView.reloadData()
         NotificationCenter.default.addObserver(self, selector: #selector(pageTitleObserver(_:)), name: .notiName, object: nil)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
     }
     
     @objc func pageTitleObserver(_ notification: Notification) {
@@ -42,7 +43,7 @@ class JobSelectedViewController: UIViewController {
             }
         }
     }
-    
+
     func initPageTitle() {
         categoryVM.getFilterData { filter in
             self.page = filter.job

@@ -19,7 +19,7 @@ class UIViewStyle {
     static func collectionViewStyle(collectionView: UICollectionView) {
         collectionView.layer.cornerRadius = 15
         collectionView.layer.shadowOffset = CGSize(width: -2, height: 0)
-        collectionView.layer.shadowOpacity = 0.15
+        collectionView.layer.shadowOpacity = 0.1
         collectionView.layer.shadowRadius = 5
     }
 }

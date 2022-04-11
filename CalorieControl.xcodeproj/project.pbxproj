@@ -21,7 +21,7 @@
 		0A45AFF427FB68060030957B /* FavoriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A45AFF327FB68060030957B /* FavoriteViewModel.swift */; };
 		0A60BD0027D8D7F30046C8CB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A60BCFF27D8D7F30046C8CB /* LoginViewController.swift */; };
 		0A60BD0227D8EBF30046C8CB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A60BD0127D8EBF30046C8CB /* MainViewController.swift */; };
-		0A60BD0427D8EC080046C8CB /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A60BD0327D8EC080046C8CB /* CategoryViewController.swift */; };
+		0A60BD0427D8EC080046C8CB /* CommunityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A60BD0327D8EC080046C8CB /* CommunityViewController.swift */; };
 		0A60BD0627D91B140046C8CB /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A60BD0527D91B140046C8CB /* SignUpViewController.swift */; };
 		0A60BD0827D91BFA0046C8CB /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A60BD0727D91BFA0046C8CB /* UITextField.swift */; };
 		0A7E46C427D3999D001AD8F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7E46C327D3999D001AD8F7 /* AppDelegate.swift */; };
@@ -40,6 +40,8 @@
 		0AB7954327FC2D8800F1C81B /* JobSelectedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB7954227FC2D8800F1C81B /* JobSelectedViewController.swift */; };
 		0AC7610027FF2943008004F5 /* TermViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC760FF27FF2943008004F5 /* TermViewController.swift */; };
 		0AC7610227FF2A3E008004F5 /* CollectionViewCenterCGRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC7610127FF2A3E008004F5 /* CollectionViewCenterCGRect.swift */; };
+		0ACCAF0D28043136003C6040 /* boardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACCAF0C28043136003C6040 /* boardViewController.swift */; };
+		0ACCAF0F2804554E003C6040 /* NoticeBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACCAF0E2804554E003C6040 /* NoticeBoardViewController.swift */; };
 		0AEFAFE227DB33770034A7B0 /* UIViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEFAFE127DB33770034A7B0 /* UIViewStyle.swift */; };
 		905D427911C4D36D3BD2C076 /* Pods_CalorieControl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ACDD3164E5AB99F44E4DB19 /* Pods_CalorieControl.framework */; };
 /* End PBXBuildFile section */
@@ -59,7 +61,7 @@
 		0A45AFF327FB68060030957B /* FavoriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewModel.swift; sourceTree = "<group>"; };
 		0A60BCFF27D8D7F30046C8CB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0A60BD0127D8EBF30046C8CB /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		0A60BD0327D8EC080046C8CB /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
+		0A60BD0327D8EC080046C8CB /* CommunityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityViewController.swift; sourceTree = "<group>"; };
 		0A60BD0527D91B140046C8CB /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		0A60BD0727D91BFA0046C8CB /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		0A7E46C027D3999D001AD8F7 /* CalorieControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CalorieControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,6 +78,8 @@
 		0AB7954227FC2D8800F1C81B /* JobSelectedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobSelectedViewController.swift; sourceTree = "<group>"; };
 		0AC760FF27FF2943008004F5 /* TermViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermViewController.swift; sourceTree = "<group>"; };
 		0AC7610127FF2A3E008004F5 /* CollectionViewCenterCGRect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCenterCGRect.swift; sourceTree = "<group>"; };
+		0ACCAF0C28043136003C6040 /* boardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = boardViewController.swift; sourceTree = "<group>"; };
+		0ACCAF0E2804554E003C6040 /* NoticeBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeBoardViewController.swift; sourceTree = "<group>"; };
 		0AEFAFE127DB33770034A7B0 /* UIViewStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewStyle.swift; sourceTree = "<group>"; };
 		1ACDD3164E5AB99F44E4DB19 /* Pods_CalorieControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CalorieControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B593F83D26A44265B2A0EF8 /* Pods-CalorieControl.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalorieControl.debug.xcconfig"; path = "Target Support Files/Pods-CalorieControl/Pods-CalorieControl.debug.xcconfig"; sourceTree = "<group>"; };
@@ -177,7 +181,6 @@
 				0A7E46C327D3999D001AD8F7 /* AppDelegate.swift */,
 				0A7E46C527D3999D001AD8F7 /* SceneDelegate.swift */,
 				0A7E46C927D3999D001AD8F7 /* Main.storyboard */,
-				0A60BD0327D8EC080046C8CB /* CategoryViewController.swift */,
 				0A7E46CC27D3999D001AD8F7 /* Assets.xcassets */,
 				0A7E46CE27D3999D001AD8F7 /* LaunchScreen.storyboard */,
 				0A7E46D127D3999D001AD8F7 /* Info.plist */,
@@ -231,7 +234,10 @@
 		0AEFAFE627DB378A0034A7B0 /* Community */ = {
 			isa = PBXGroup;
 			children = (
+				0A60BD0327D8EC080046C8CB /* CommunityViewController.swift */,
+				0ACCAF0C28043136003C6040 /* boardViewController.swift */,
 				0AA069BF27DA354E009D71E8 /* BestArticleViewController.swift */,
+				0ACCAF0E2804554E003C6040 /* NoticeBoardViewController.swift */,
 			);
 			path = Community;
 			sourceTree = "<group>";
@@ -395,12 +401,13 @@
 				0A60BD0627D91B140046C8CB /* SignUpViewController.swift in Sources */,
 				0AC7610027FF2943008004F5 /* TermViewController.swift in Sources */,
 				0A0AE5D627EC894F006B8083 /* RecommendViewController.swift in Sources */,
+				0ACCAF0F2804554E003C6040 /* NoticeBoardViewController.swift in Sources */,
 				0A2DB56727ED8805002E206C /* UserInfoViewModel.swift in Sources */,
 				0AEFAFE227DB33770034A7B0 /* UIViewStyle.swift in Sources */,
 				0A45AFF427FB68060030957B /* FavoriteViewModel.swift in Sources */,
 				0AB7954327FC2D8800F1C81B /* JobSelectedViewController.swift in Sources */,
 				0A12ECD427F1BCD8009C9CA6 /* AppTabbarViewController.swift in Sources */,
-				0A60BD0427D8EC080046C8CB /* CategoryViewController.swift in Sources */,
+				0A60BD0427D8EC080046C8CB /* CommunityViewController.swift in Sources */,
 				0A60BD0027D8D7F30046C8CB /* LoginViewController.swift in Sources */,
 				0A7E46C427D3999D001AD8F7 /* AppDelegate.swift in Sources */,
 				0A12ECD227F19090009C9CA6 /* Filter.swift in Sources */,
@@ -417,6 +424,7 @@
 				0A381AC027E1B7E500ECD255 /* LanguageViewModel.swift in Sources */,
 				0A60BD0827D91BFA0046C8CB /* UITextField.swift in Sources */,
 				0A381AC427E1C87F00ECD255 /* UserInfo.swift in Sources */,
+				0ACCAF0D28043136003C6040 /* boardViewController.swift in Sources */,
 				0A2010EF27E0CFBB008B0BFE /* ProfileSettingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
