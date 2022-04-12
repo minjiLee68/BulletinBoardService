@@ -43,6 +43,7 @@
 		0ACCAF0D28043136003C6040 /* boardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACCAF0C28043136003C6040 /* boardViewController.swift */; };
 		0ACCAF0F2804554E003C6040 /* NoticeBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACCAF0E2804554E003C6040 /* NoticeBoardViewController.swift */; };
 		0AEFAFE227DB33770034A7B0 /* UIViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEFAFE127DB33770034A7B0 /* UIViewStyle.swift */; };
+		0AFF3A342805D65D0050E161 /* NewEditerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFF3A332805D65D0050E161 /* NewEditerViewController.swift */; };
 		905D427911C4D36D3BD2C076 /* Pods_CalorieControl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ACDD3164E5AB99F44E4DB19 /* Pods_CalorieControl.framework */; };
 /* End PBXBuildFile section */
 
@@ -81,6 +82,7 @@
 		0ACCAF0C28043136003C6040 /* boardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = boardViewController.swift; sourceTree = "<group>"; };
 		0ACCAF0E2804554E003C6040 /* NoticeBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeBoardViewController.swift; sourceTree = "<group>"; };
 		0AEFAFE127DB33770034A7B0 /* UIViewStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewStyle.swift; sourceTree = "<group>"; };
+		0AFF3A332805D65D0050E161 /* NewEditerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEditerViewController.swift; sourceTree = "<group>"; };
 		1ACDD3164E5AB99F44E4DB19 /* Pods_CalorieControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CalorieControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B593F83D26A44265B2A0EF8 /* Pods-CalorieControl.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalorieControl.debug.xcconfig"; path = "Target Support Files/Pods-CalorieControl/Pods-CalorieControl.debug.xcconfig"; sourceTree = "<group>"; };
 		DD2C77A4C8C40F4ECEF24D61 /* Pods-CalorieControl.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalorieControl.release.xcconfig"; path = "Target Support Files/Pods-CalorieControl/Pods-CalorieControl.release.xcconfig"; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 				0ACCAF0C28043136003C6040 /* boardViewController.swift */,
 				0AA069BF27DA354E009D71E8 /* BestArticleViewController.swift */,
 				0ACCAF0E2804554E003C6040 /* NoticeBoardViewController.swift */,
+				0AFF3A332805D65D0050E161 /* NewEditerViewController.swift */,
 			);
 			path = Community;
 			sourceTree = "<group>";
@@ -413,6 +416,7 @@
 				0A12ECD227F19090009C9CA6 /* Filter.swift in Sources */,
 				0AC7610227FF2A3E008004F5 /* CollectionViewCenterCGRect.swift in Sources */,
 				0AA069BE27DA3471009D71E8 /* LanguageCategoryViewController.swift in Sources */,
+				0AFF3A342805D65D0050E161 /* NewEditerViewController.swift in Sources */,
 				0A381AC227E1C85100ECD255 /* ProfileViewModel.swift in Sources */,
 				0AA069C027DA354E009D71E8 /* BestArticleViewController.swift in Sources */,
 				0AA069BC27DA2D7F009D71E8 /* LoginViewModel.swift in Sources */,

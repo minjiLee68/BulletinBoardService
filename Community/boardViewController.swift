@@ -9,11 +9,33 @@ import UIKit
 
 class boardViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
- 
+    @IBOutlet weak var editButton: UIButton!
+    @IBOutlet weak var titleText: UILabel!
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        vcStyle()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    func vcStyle() {
         tableView.rowHeight = 100
-        self.navigationController?.navigationItem.backBarButtonItem?.tintColor = .primaryColor
+        editButton.layer.borderWidth = 1
+        editButton.layer.borderColor = UIColor.primaryColor?.cgColor
+    }
+    
+    @IBAction func editButtonClick(_ sender: UIButton) {
+        guard let dvc = self.storyboard?.instantiateViewController(withIdentifier: "newedit") as? NewEditerViewController else { return }
+        dvc.modalPresentationStyle = .fullScreen
+        dvc.titleText = self.titleText.text
+        self.present(dvc, animated: false)
+    }
+    
+    @IBAction func backButton(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
     }
 }
 
