@@ -9,7 +9,7 @@ import UIKit
 
 class NoticeBoardViewController: UIViewController {
     @IBOutlet weak var viewBG: UIView!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -37,7 +37,7 @@ class NoticeBoardViewController: UIViewController {
     }
     
     func buttonClickPassOver() {
-        print("clicked")
+        NotificationCenter.default.post(name: .datapass, object: nil)
     }
 }
 

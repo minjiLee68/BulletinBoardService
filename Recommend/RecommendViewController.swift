@@ -21,6 +21,7 @@ class RecommendViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setFilterData()
+        titleLabelStyle()
         NotificationCenter.default.addObserver(self, selector: #selector(rotate(_:)), name: .notiName, object: nil)
     }
     
@@ -50,6 +51,13 @@ class RecommendViewController: UIViewController {
         usersVM.getData { info in
             self.nickName.text = info.nickName + "님에게 추천합니다!"
         }
+    }
+    
+    func titleLabelStyle() {
+        self.job.titleLabel?.textAlignment = .center
+        self.lan.titleLabel?.textAlignment = .center
+        self.trem.titleLabel?.textAlignment = .center
+        self.etc.titleLabel?.textAlignment = .center
     }
     
     @IBAction func popupView(_ sender: Any) {
