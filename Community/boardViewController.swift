@@ -24,6 +24,7 @@ class boardViewController: UIViewController {
     func vcStyle() {
         tableView.rowHeight = 100
         editButton.layer.borderWidth = 1
+        editButton.layer.cornerRadius = 10
         editButton.layer.borderColor = UIColor.primaryColor?.cgColor
     }
     

@@ -13,6 +13,9 @@
 		0A12ECD227F19090009C9CA6 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A12ECD127F19090009C9CA6 /* Filter.swift */; };
 		0A12ECD427F1BCD8009C9CA6 /* AppTabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A12ECD327F1BCD8009C9CA6 /* AppTabbarViewController.swift */; };
 		0A2010EF27E0CFBB008B0BFE /* ProfileSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2010EE27E0CFBB008B0BFE /* ProfileSettingViewController.swift */; };
+		0A21FB882806935F00D33F61 /* ReplyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A21FB872806935F00D33F61 /* ReplyViewController.swift */; };
+		0A21FB8A28069B9E00D33F61 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A21FB8928069B9E00D33F61 /* Board.swift */; };
+		0A21FB8C2806A38300D33F61 /* BoardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A21FB8B2806A38300D33F61 /* BoardViewModel.swift */; };
 		0A2DB56727ED8805002E206C /* UserInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2DB56627ED8805002E206C /* UserInfoViewModel.swift */; };
 		0A2DB56927ED89BF002E206C /* DropDownUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2DB56827ED89BF002E206C /* DropDownUI.swift */; };
 		0A381AC027E1B7E500ECD255 /* LanguageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A381ABF27E1B7E500ECD255 /* LanguageViewModel.swift */; };
@@ -54,6 +57,9 @@
 		0A12ECD127F19090009C9CA6 /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
 		0A12ECD327F1BCD8009C9CA6 /* AppTabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabbarViewController.swift; sourceTree = "<group>"; };
 		0A2010EE27E0CFBB008B0BFE /* ProfileSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingViewController.swift; sourceTree = "<group>"; };
+		0A21FB872806935F00D33F61 /* ReplyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplyViewController.swift; sourceTree = "<group>"; };
+		0A21FB8928069B9E00D33F61 /* Board.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
+		0A21FB8B2806A38300D33F61 /* BoardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardViewModel.swift; sourceTree = "<group>"; };
 		0A2DB56627ED8805002E206C /* UserInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewModel.swift; sourceTree = "<group>"; };
 		0A2DB56827ED89BF002E206C /* DropDownUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownUI.swift; sourceTree = "<group>"; };
 		0A381ABF27E1B7E500ECD255 /* LanguageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageViewModel.swift; sourceTree = "<group>"; };
@@ -133,6 +139,7 @@
 			children = (
 				0A381AC327E1C87F00ECD255 /* UserInfo.swift */,
 				0A12ECD127F19090009C9CA6 /* Filter.swift */,
+				0A21FB8928069B9E00D33F61 /* Board.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -241,6 +248,7 @@
 				0AA069BF27DA354E009D71E8 /* BestArticleViewController.swift */,
 				0ACCAF0E2804554E003C6040 /* NoticeBoardViewController.swift */,
 				0AFF3A332805D65D0050E161 /* NewEditerViewController.swift */,
+				0A21FB872806935F00D33F61 /* ReplyViewController.swift */,
 			);
 			path = Community;
 			sourceTree = "<group>";
@@ -263,6 +271,7 @@
 				0A2DB56627ED8805002E206C /* UserInfoViewModel.swift */,
 				0A12ECCF27F189ED009C9CA6 /* CategoryViewModel.swift */,
 				0A45AFF327FB68060030957B /* FavoriteViewModel.swift */,
+				0A21FB8B2806A38300D33F61 /* BoardViewModel.swift */,
 			);
 			path = viewModel;
 			sourceTree = "<group>";
@@ -402,11 +411,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A60BD0627D91B140046C8CB /* SignUpViewController.swift in Sources */,
+				0A21FB882806935F00D33F61 /* ReplyViewController.swift in Sources */,
 				0AC7610027FF2943008004F5 /* TermViewController.swift in Sources */,
 				0A0AE5D627EC894F006B8083 /* RecommendViewController.swift in Sources */,
 				0ACCAF0F2804554E003C6040 /* NoticeBoardViewController.swift in Sources */,
 				0A2DB56727ED8805002E206C /* UserInfoViewModel.swift in Sources */,
 				0AEFAFE227DB33770034A7B0 /* UIViewStyle.swift in Sources */,
+				0A21FB8C2806A38300D33F61 /* BoardViewModel.swift in Sources */,
 				0A45AFF427FB68060030957B /* FavoriteViewModel.swift in Sources */,
 				0AB7954327FC2D8800F1C81B /* JobSelectedViewController.swift in Sources */,
 				0A12ECD427F1BCD8009C9CA6 /* AppTabbarViewController.swift in Sources */,
@@ -429,6 +440,7 @@
 				0A60BD0827D91BFA0046C8CB /* UITextField.swift in Sources */,
 				0A381AC427E1C87F00ECD255 /* UserInfo.swift in Sources */,
 				0ACCAF0D28043136003C6040 /* boardViewController.swift in Sources */,
+				0A21FB8A28069B9E00D33F61 /* Board.swift in Sources */,
 				0A2010EF27E0CFBB008B0BFE /* ProfileSettingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

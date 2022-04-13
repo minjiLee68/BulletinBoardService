@@ -15,7 +15,7 @@ struct UserInfo: Codable {
     var job: String
     var profile: URL
     
-    init(nickName: String,language: String, job: String, profile: URL) {
+    mutating func update(nickName: String,language: String, job: String, profile: URL) {
         self.nickName = nickName
         self.language = language
         self.job = job

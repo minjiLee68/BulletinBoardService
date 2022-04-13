@@ -13,7 +13,7 @@ struct Filter: Codable {
     var trem: String
     var etc: String
     
-    init(job: String, lan: String, trem: String, etc: String) {
+    mutating func update(job: String, lan: String, trem: String, etc: String) {
         self.job = job
         self.langauge = lan
         self.trem = trem

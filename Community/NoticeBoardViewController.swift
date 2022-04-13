@@ -9,7 +9,7 @@ import UIKit
 
 class NoticeBoardViewController: UIViewController {
     @IBOutlet weak var viewBG: UIView!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -17,27 +17,32 @@ class NoticeBoardViewController: UIViewController {
     }
     
     @IBAction func btn1(_ sender: UIButton) {
-        buttonClickPassOver()
+        let titleText = sender.titleLabel?.text ?? "nil"
+        buttonClickPassOver(titleText: titleText)
     }
     
     @IBAction func btn2(_ sender: UIButton) {
-        buttonClickPassOver()
+        let titleText = sender.titleLabel?.text ?? "nil"
+        buttonClickPassOver(titleText: titleText)
     }
     
     @IBAction func btn3(_ sender: UIButton) {
-        buttonClickPassOver()
+        let titleText = sender.titleLabel?.text ?? "nil"
+        buttonClickPassOver(titleText: titleText)
     }
     
     @IBAction func btn4(_ sender: UIButton) {
-        buttonClickPassOver()
+        let titleText = sender.titleLabel?.text ?? "nil"
+        buttonClickPassOver(titleText: titleText)
     }
     
     @IBAction func btn5(_ sender: UIButton) {
-        buttonClickPassOver()
+        let titleText = sender.titleLabel?.text ?? "nil"
+        buttonClickPassOver(titleText: titleText)
     }
     
-    func buttonClickPassOver() {
-        NotificationCenter.default.post(name: .datapass, object: nil)
+    func buttonClickPassOver(titleText: String) {
+        NotificationCenter.default.post(name: .datapass, object: titleText)
     }
 }
 
