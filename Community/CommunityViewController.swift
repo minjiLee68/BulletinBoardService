@@ -16,11 +16,11 @@ class CommunityViewController: UIViewController {
     }
     
     @objc func screenChange(_ notification: Notification) {
-        let noti = notification.object as? String
-        print("--> \(String(describing: noti))")
-        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "board") as? boardViewController else { return }
-        vc.modalPresentationStyle = .fullScreen
-        vc.titleText.text = noti
-        self.present(vc, animated: true, completion: nil)
+        if let noti = notification.object as? String {
+            guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "board") as? boardViewController else { return }
+            vc.modalPresentationStyle = .fullScreen
+            vc.titleLabel = noti
+            self.present(vc, animated: false, completion: nil)
+        }
     }
 }

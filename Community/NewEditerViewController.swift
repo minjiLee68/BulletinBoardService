@@ -30,6 +30,7 @@ class NewEditerViewController: UIViewController {
     func setContents() {
         guard let title = titleLabel.text else { return }
         guard let contents = contents.text else { return }
+        viewmodel.collectionName = titleText ?? "nil"
         viewmodel.createboard(title: title, contents: contents, time: "04/12")
     }
     

@@ -8,18 +8,19 @@
 import UIKit
 
 struct Board: Codable, Equatable {
-    var id: Int = 0
+    var id: String
     var title: String
     var contents: String
     var time: String
     
-    mutating func update(title: String, contents: String, time: String) {
+    init(id: String, title: String, contents: String, time: String) {
+        self.id = id
         self.title = title
         self.contents = contents
         self.time = time
     }
-    
-    static func == (lhs: Self, rhs: Self) -> Bool {
-        return lhs.id == rhs.id
-    }
+//
+//    static func == (lhs: Self, rhs: Self) -> Bool {
+//        return lhs.id == rhs.id
+//    }
 }
