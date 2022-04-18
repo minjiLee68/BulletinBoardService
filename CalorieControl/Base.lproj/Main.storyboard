@@ -589,10 +589,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="03/14" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7eO-To-f9C">
-                                                            <rect key="frame" x="20" y="72" width="40" height="12"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="40" id="VQ3-21-5t7"/>
-                                                            </constraints>
+                                                            <rect key="frame" x="20" y="72" width="29.5" height="12"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -1769,12 +1766,8 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vjL-l8-XAM">
-                                <rect key="frame" x="147" y="744" width="120" height="42"/>
+                                <rect key="frame" x="140" y="734" width="134" height="39"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="120" id="Fqv-Og-h0N"/>
-                                    <constraint firstAttribute="height" constant="42" id="cEm-2d-9fH"/>
-                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" image="pencil" catalog="system" title="글쓰기" imagePadding="8" cornerStyle="capsule">
                                     <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="21" scale="default" weight="bold"/>
@@ -1800,8 +1793,10 @@
                             <constraint firstItem="0kx-jG-OXt" firstAttribute="leading" secondItem="nkQ-c3-33a" secondAttribute="leading" id="X1W-ge-ynd"/>
                             <constraint firstItem="LYK-Mv-an2" firstAttribute="top" secondItem="nkQ-c3-33a" secondAttribute="top" constant="15" id="YR3-2I-g2d"/>
                             <constraint firstItem="3Kv-fU-mDS" firstAttribute="centerY" secondItem="LYK-Mv-an2" secondAttribute="centerY" id="YpJ-Li-hHB"/>
+                            <constraint firstItem="nkQ-c3-33a" firstAttribute="trailing" secondItem="vjL-l8-XAM" secondAttribute="trailing" constant="140" id="hAu-rX-5ja"/>
                             <constraint firstItem="uzU-l1-OjI" firstAttribute="centerY" secondItem="LYK-Mv-an2" secondAttribute="centerY" id="i5F-kw-XYk"/>
-                            <constraint firstItem="vjL-l8-XAM" firstAttribute="top" secondItem="nkQ-c3-33a" secondAttribute="top" constant="700" id="oFP-a0-rzf"/>
+                            <constraint firstItem="vjL-l8-XAM" firstAttribute="leading" secondItem="nkQ-c3-33a" secondAttribute="leading" constant="140" id="lDi-eZ-7mW"/>
+                            <constraint firstItem="vjL-l8-XAM" firstAttribute="top" secondItem="nkQ-c3-33a" secondAttribute="top" constant="690" id="oFP-a0-rzf"/>
                         </constraints>
                     </view>
                     <connections>
@@ -1840,10 +1835,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PMy-fF-Wt0">
-                                <rect key="frame" x="334" y="62" width="60" height="37"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="axY-yj-W1F"/>
-                                </constraints>
+                                <rect key="frame" x="337" y="62" width="57" height="37"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="완료" cornerStyle="capsule">
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="19"/>

@@ -13,7 +13,7 @@ class boardViewController: UIViewController {
     @IBOutlet weak var titleText: UILabel!
     
     let viewmodel = BoardViewModel.shard
-    var titleLabel: String?
+    var titleLabel: String = ""
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -24,19 +24,24 @@ class boardViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        viewmodel.collectionName = titleLabel ?? ""
-        tableView.reloadData()
     }
    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(tableRelod), name: .reload, object: nil)
+    }
     
+    @objc func tableRelod() {
+        OperationQueue.main.addOperation {
+            self.tableView.reloadData()
+        }
     }
     
     @IBAction func editButtonClick(_ sender: UIButton) {
         guard let dvc = self.storyboard?.instantiateViewController(withIdentifier: "newedit") as? NewEditerViewController else { return }
         dvc.modalPresentationStyle = .fullScreen
-        dvc.titleText = titleLabel ?? ""
+        dvc.titleText = titleLabel
         self.present(dvc, animated: false)
     }
     
@@ -54,17 +59,15 @@ class boardViewController: UIViewController {
 
 extension boardViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewmodel.counts ?? 0
+        return viewmodel.counts
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "boardCell", for: indexPath) as? boardCell else { return UITableViewCell() }
-        viewmodel.getdocuments(tableview: tableView) { boards in
-            if ((boards?.isEmpty) != nil) {
-                let title = boards?[indexPath.row].title ?? ""
-                let contents = boards?[indexPath.row].contents ?? ""
-                cell.update(title: title, contents: contents)
-            }
+        viewmodel.getdocuments(id: titleLabel) { boards in
+            let title = boards?[indexPath.row].title ?? ""
+            let contents = boards?[indexPath.row].contents ?? ""
+            cell.update(title: title, contents: contents)
         }
         return cell
     }
@@ -83,5 +86,6 @@ class boardCell: UITableViewCell {
     func update(title: String, contents: String) {
         self.titleLabel.text = title
         self.contents.text = contents
+        print("title \(title)")
     }
 }

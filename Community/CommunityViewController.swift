@@ -20,8 +20,6 @@ class CommunityViewController: UIViewController {
             guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "board") as? boardViewController else { return }
             vc.modalPresentationStyle = .fullScreen
             vc.titleLabel = noti
-            vc.viewmodel.collectionName = noti
-            vc.viewmodel.documentCount()
             self.present(vc, animated: false, completion: nil)
         }
     }

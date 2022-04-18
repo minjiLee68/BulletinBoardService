@@ -16,57 +16,61 @@ class BoardViewModel {
     let firestore = Firestore.firestore()
     let uid = Auth.auth().currentUser?.uid
     
-    var collectionName: String = ""
-    var boards: [Board] = []
-    var counts: Int?
+    var title: String = ""
+    var counts: Int = 0
     
-    func createboard(title: String, contents: String, time: String) {
-        let board = Board.init(title: title, contents: contents, time: time)
+    func createboard(id: String, title: String, contents: String, time: String) {
+        let board = Board.init(id: id, title: title, contents: contents, time: time)
         do {
-            try  firestore.collection("C-\(self.collectionName)").document().setData(from: board)
+            try  firestore.collection(id).document().setData(from: board)
         }catch let error {
             print("Error writing city to Firestore: \(error)")
         }
     }
     
-    func documentCount() {
-        firestore.collection("C-\(self.collectionName)").getDocuments { (document, error) in
-            guard let data = document else {
-                print("Error fetching document: \(error!)")
-                return
-            }
+    func documentCount(id: String) {
+        firestore.collection(id).getDocuments { (document, error) in
+            guard let data = document else { return }
             self.counts = data.count
+            print("count \(self.counts)")
         }
     }
     
-    func getdocuments(tableview: UITableView, completion: @escaping([Board]?) -> ()) {
-        firestore.collection("C-\(self.collectionName)").addSnapshotListener { (documentSnapshot, error) in
+    func getdocuments(id: String, completion: @escaping([Board]?) -> ()) {
+        firestore.collection(id).addSnapshotListener { (documentSnapshot, error) in
             guard let document = documentSnapshot else {
                 print("Error fetching document: \(error!)")
                 return
             }
+            var boards: [Board] = []
             document.documentChanges.forEach { change in
-                self.jsonData(change: change)
+                do {
+                    let data = change.document.data()
+                    let jsonDB = try JSONSerialization.data(withJSONObject: data, options: [])
+                    let userDB = try JSONDecoder().decode(Board.self, from: jsonDB)
+                    boards.append(userDB)
+                } catch let error {
+                    print("ERROR JSON Pasing \(error)")
+                }
             }
             DispatchQueue.main.async {
-                completion(self.boards)
-                tableview.reloadData()
+                completion(boards)
             }
         }
     }
      
-    func jsonData(change: DocumentChange) {
-        let data = change.document.data()
-        do {
-            switch change.type {
-            case .added, .modified:
-                let jsonDB = try JSONSerialization.data(withJSONObject: data, options: [])
-                let userDB = try JSONDecoder().decode(Board.self, from: jsonDB)
-                self.boards.append(userDB)
-            default: break
-            }
-        } catch let error {
-            print("ERROR JSON Pasing \(error)")
-        }
-    }
+//    func jsonData(change: DocumentChange) {
+//        let data = change.document.data()
+//        do {
+//            switch change.type {
+//            case .added, .modified:
+//                let jsonDB = try JSONSerialization.data(withJSONObject: data, options: [])
+//                let userDB = try JSONDecoder().decode(Board.self, from: jsonDB)
+//                self.boards.append(userDB)
+//            default: break
+//            }
+//        } catch let error {
+//            print("ERROR JSON Pasing \(error)")
+//        }
+//    }
 }

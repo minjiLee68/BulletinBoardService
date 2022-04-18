@@ -30,10 +30,11 @@ class NewEditerViewController: UIViewController {
     func setContents() {
         guard let title = titleLabel.text else { return }
         guard let contents = contents.text else { return }
-        viewmodel.createboard(title: title, contents: contents, time: "04/12")
+        viewmodel.createboard(id: titleText, title: title, contents: contents, time: "04/12")
     }
     
     @IBAction func backButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
+        NotificationCenter.default.post(name: .reload, object: nil)
     }
 }

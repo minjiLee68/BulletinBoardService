@@ -15,6 +15,8 @@ class NoticeBoardViewController: UIViewController {
     @IBOutlet weak var androidquestion: UILabel!
     @IBOutlet weak var freeboard: UILabel!
     
+    let viewmodel = BoardViewModel.shard
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -48,6 +50,7 @@ class NoticeBoardViewController: UIViewController {
     
     func buttonClickPassOver(titleText: String) {
         NotificationCenter.default.post(name: .datapass, object: titleText)
+        viewmodel.documentCount(id: titleText)
     }
 }
 
