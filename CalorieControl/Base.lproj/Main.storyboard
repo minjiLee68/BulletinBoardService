@@ -690,7 +690,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4NJ-Af-gGU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1680" y="710"/>
+            <point key="canvasLocation" x="1678" y="710"/>
         </scene>
         <!--Recommend View Controller-->
         <scene sceneID="a04-3t-8vt">
@@ -1199,7 +1199,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2512" y="808"/>
+            <point key="canvasLocation" x="2512" y="757"/>
         </scene>
         <!--Language Category View Controller-->
         <scene sceneID="ysE-hi-27Z">
@@ -1647,7 +1647,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s5O-Nj-0oo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3962" y="81"/>
+            <point key="canvasLocation" x="3959" y="82"/>
         </scene>
         <!--Board View Controller-->
         <scene sceneID="11P-9w-uvm">
@@ -1812,7 +1812,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="95r-Je-zFy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4807" y="82"/>
+            <point key="canvasLocation" x="4652" y="82"/>
         </scene>
         <!--New Editer View Controller-->
         <scene sceneID="xez-3s-UvR">
@@ -1895,7 +1895,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XZj-ze-WGJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4806" y="749"/>
+            <point key="canvasLocation" x="4651" y="748"/>
         </scene>
         <!--Reply View Controller-->
         <scene sceneID="hf4-Jg-juF">
@@ -2141,7 +2141,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9WW-RK-lDf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5541" y="80"/>
+            <point key="canvasLocation" x="5346" y="82"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="lMv-Yv-wzc">
@@ -2308,7 +2308,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sFN-oY-dLe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3962" y="546"/>
+            <point key="canvasLocation" x="3957" y="591"/>
         </scene>
         <!--Notice Board View Controller-->
         <scene sceneID="E2h-kq-dfd">
@@ -2352,8 +2352,8 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iOS 개발질문" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z6b-Fa-elK">
-                                        <rect key="frame" x="49" y="99" width="96.5" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iOS개발질문" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z6b-Fa-elK">
+                                        <rect key="frame" x="49" y="99" width="92" height="21"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -2364,8 +2364,8 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Android 개발질문" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yiv-x4-nS8">
-                                        <rect key="frame" x="49" y="217" width="133.5" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Android개발질문" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yiv-x4-nS8">
+                                        <rect key="frame" x="49" y="217" width="129" height="21"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -2385,7 +2385,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZJ0-TN-ayx">
-                                        <rect key="frame" x="15" y="99" width="130.5" height="21"/>
+                                        <rect key="frame" x="15" y="99" width="126" height="21"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain"/>
                                         <connections>
@@ -2401,7 +2401,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="un0-gd-K4A">
-                                        <rect key="frame" x="15" y="217" width="167.5" height="21"/>
+                                        <rect key="frame" x="15" y="217" width="163" height="21"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain"/>
                                         <connections>
@@ -2487,7 +2487,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9VW-YO-ObO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3960.8695652173915" y="818.97321428571422"/>
+            <point key="canvasLocation" x="3957" y="892"/>
         </scene>
     </scenes>
     <resources>

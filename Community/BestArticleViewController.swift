@@ -14,7 +14,6 @@ class BestArticleViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
         tableView.rowHeight = 100
         viewBG.layer.cornerRadius = 12
         UIViewStyle.viewStyle(view: viewBG)

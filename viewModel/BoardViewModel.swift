@@ -15,20 +15,32 @@ class BoardViewModel {
     static let shard = BoardViewModel()
     let firestore = Firestore.firestore()
     let uid = Auth.auth().currentUser?.uid
+    
     var collectionName: String = ""
     var boards: [Board] = []
+    var counts: Int?
     
     func createboard(title: String, contents: String, time: String) {
-        let board = Board.init(id: uid!, title: title, contents: contents, time: time)
+        let board = Board.init(title: title, contents: contents, time: time)
         do {
-            try  firestore.collection("B-\(self.collectionName)").document().setData(from: board)
+            try  firestore.collection("C-\(self.collectionName)").document().setData(from: board)
         }catch let error {
             print("Error writing city to Firestore: \(error)")
         }
     }
     
-    func getdocuments(completion: @escaping([Board]) -> ()) {
-        firestore.collection("B-\(self.collectionName)").addSnapshotListener { (documentSnapshot, error) in
+    func documentCount() {
+        firestore.collection("C-\(self.collectionName)").getDocuments { (document, error) in
+            guard let data = document else {
+                print("Error fetching document: \(error!)")
+                return
+            }
+            self.counts = data.count
+        }
+    }
+    
+    func getdocuments(tableview: UITableView, completion: @escaping([Board]?) -> ()) {
+        firestore.collection("C-\(self.collectionName)").addSnapshotListener { (documentSnapshot, error) in
             guard let document = documentSnapshot else {
                 print("Error fetching document: \(error!)")
                 return
@@ -38,10 +50,11 @@ class BoardViewModel {
             }
             DispatchQueue.main.async {
                 completion(self.boards)
+                tableview.reloadData()
             }
         }
     }
-    
+     
     func jsonData(change: DocumentChange) {
         let data = change.document.data()
         do {

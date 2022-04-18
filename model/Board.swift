@@ -7,13 +7,13 @@
 
 import UIKit
 
-struct Board: Codable, Equatable {
-    var id: String
+struct Board: Codable {
+    var id: Int
     var title: String
     var contents: String
     var time: String
     
-    init(id: String, title: String, contents: String, time: String) {
+    init(id: Int, title: String, contents: String, time: String) {
         self.id = id
         self.title = title
         self.contents = contents

@@ -72,4 +72,5 @@ class TermSelectedViewModel {
 extension Notification.Name {
     static let notiName = Notification.Name("observer")
     static let datapass = Notification.Name("datapass")
+    static let reload = Notification.Name("reload")
 }

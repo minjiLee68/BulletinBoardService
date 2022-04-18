@@ -12,7 +12,7 @@ class NewEditerViewController: UIViewController {
     @IBOutlet weak var titleLabel: UITextField!
     @IBOutlet weak var contents: UITextView!
     
-    var titleText: String?
+    var titleText: String = ""
     let viewmodel = BoardViewModel.shard
     
     override func viewDidLoad() {
@@ -30,7 +30,6 @@ class NewEditerViewController: UIViewController {
     func setContents() {
         guard let title = titleLabel.text else { return }
         guard let contents = contents.text else { return }
-        viewmodel.collectionName = titleText ?? "nil"
         viewmodel.createboard(title: title, contents: contents, time: "04/12")
     }
     
