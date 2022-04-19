@@ -23,7 +23,7 @@ class boardViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        tableView.reloadData()
     }
    
     override func viewDidLoad() {
@@ -65,11 +65,25 @@ extension boardViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "boardCell", for: indexPath) as? boardCell else { return UITableViewCell() }
         viewmodel.getdocuments(id: titleLabel) { boards in
-            let title = boards?[indexPath.row].title ?? ""
-            let contents = boards?[indexPath.row].contents ?? ""
+            let title = boards[indexPath.row].title
+            let contents = boards[indexPath.row].contents
+            print("id \(boards[indexPath.row].id)")
             cell.update(title: title, contents: contents)
         }
         return cell
+    }
+}
+
+extension boardViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "reply") as? ReplyViewController else { return }
+        vc.modalPresentationStyle = .fullScreen
+        vc.index = indexPath.row
+        vc.titleText = titleLabel
+        viewmodel.getdocuments(id: titleLabel) { board in
+            vc.documnetId = board[indexPath.row].id
+        }
+        self.present(vc, animated: false, completion: nil)
     }
 }
 

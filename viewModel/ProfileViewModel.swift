@@ -20,7 +20,8 @@ class ProfileViewModel {
     var users: UserInfo?
     
     func ifProfile(completionHandler: @escaping(Bool) -> ()) {
-        fireStore.collection("UserInfo").document(uid!).getDocument { snapshot, error in
+        guard let id = uid else { return }
+        fireStore.collection("UserInfo").document(id).getDocument { snapshot, error in
             guard let documents = snapshot?.data() else {
                 print("data없어 \(self.uid!)")
                 return completionHandler(true)

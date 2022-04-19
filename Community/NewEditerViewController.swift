@@ -24,6 +24,7 @@ class NewEditerViewController: UIViewController {
     
     @IBAction func save(_ sender: UIButton) {
         setContents()
+        NotificationCenter.default.post(name: .reload, object: nil)
         self.dismiss(animated: false, completion: nil)
     }
     
@@ -35,6 +36,5 @@ class NewEditerViewController: UIViewController {
     
     @IBAction func backButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
-        NotificationCenter.default.post(name: .reload, object: nil)
     }
 }

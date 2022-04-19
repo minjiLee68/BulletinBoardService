@@ -20,9 +20,9 @@ class BoardViewModel {
     var counts: Int = 0
     
     func createboard(id: String, title: String, contents: String, time: String) {
-        let board = Board.init(id: id, title: title, contents: contents, time: time)
+        let board = Board.init(id: "", title: title, contents: contents, time: time)
         do {
-            try  firestore.collection(id).document().setData(from: board)
+            try  firestore.collection(id).document(uid!).setData(from: board)
         }catch let error {
             print("Error writing city to Firestore: \(error)")
         }
@@ -32,11 +32,10 @@ class BoardViewModel {
         firestore.collection(id).getDocuments { (document, error) in
             guard let data = document else { return }
             self.counts = data.count
-            print("count \(self.counts)")
         }
     }
     
-    func getdocuments(id: String, completion: @escaping([Board]?) -> ()) {
+    func getdocuments(id: String, completion: @escaping([Board]) -> ()) {
         firestore.collection(id).addSnapshotListener { (documentSnapshot, error) in
             guard let document = documentSnapshot else {
                 print("Error fetching document: \(error!)")
@@ -47,7 +46,8 @@ class BoardViewModel {
                 do {
                     let data = change.document.data()
                     let jsonDB = try JSONSerialization.data(withJSONObject: data, options: [])
-                    let userDB = try JSONDecoder().decode(Board.self, from: jsonDB)
+                    var userDB = try JSONDecoder().decode(Board.self, from: jsonDB)
+                    userDB.id = change.document.documentID
                     boards.append(userDB)
                 } catch let error {
                     print("ERROR JSON Pasing \(error)")
@@ -59,14 +59,14 @@ class BoardViewModel {
         }
     }
      
-//    func jsonData(change: DocumentChange) {
+//    func jsonData(change: DocumentChange, boards: [Board]) {
 //        let data = change.document.data()
 //        do {
 //            switch change.type {
 //            case .added, .modified:
 //                let jsonDB = try JSONSerialization.data(withJSONObject: data, options: [])
 //                let userDB = try JSONDecoder().decode(Board.self, from: jsonDB)
-//                self.boards.append(userDB)
+//                boards.append(userDB)
 //            default: break
 //            }
 //        } catch let error {

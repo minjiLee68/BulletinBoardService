@@ -41,6 +41,8 @@
 		0AA069BE27DA3471009D71E8 /* LanguageCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA069BD27DA3471009D71E8 /* LanguageCategoryViewController.swift */; };
 		0AA069C027DA354E009D71E8 /* BestArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA069BF27DA354E009D71E8 /* BestArticleViewController.swift */; };
 		0AB7954327FC2D8800F1C81B /* JobSelectedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB7954227FC2D8800F1C81B /* JobSelectedViewController.swift */; };
+		0ABBBA15280E814C0063D5A5 /* Reply.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABBBA14280E814C0063D5A5 /* Reply.swift */; };
+		0ABBBA17280E81F00063D5A5 /* ReplyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABBBA16280E81F00063D5A5 /* ReplyViewModel.swift */; };
 		0AC7610027FF2943008004F5 /* TermViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC760FF27FF2943008004F5 /* TermViewController.swift */; };
 		0AC7610227FF2A3E008004F5 /* CollectionViewCenterCGRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC7610127FF2A3E008004F5 /* CollectionViewCenterCGRect.swift */; };
 		0ACCAF0D28043136003C6040 /* boardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACCAF0C28043136003C6040 /* boardViewController.swift */; };
@@ -83,6 +85,8 @@
 		0AA069BD27DA3471009D71E8 /* LanguageCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageCategoryViewController.swift; sourceTree = "<group>"; };
 		0AA069BF27DA354E009D71E8 /* BestArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestArticleViewController.swift; sourceTree = "<group>"; };
 		0AB7954227FC2D8800F1C81B /* JobSelectedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobSelectedViewController.swift; sourceTree = "<group>"; };
+		0ABBBA14280E814C0063D5A5 /* Reply.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reply.swift; sourceTree = "<group>"; };
+		0ABBBA16280E81F00063D5A5 /* ReplyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplyViewModel.swift; sourceTree = "<group>"; };
 		0AC760FF27FF2943008004F5 /* TermViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermViewController.swift; sourceTree = "<group>"; };
 		0AC7610127FF2A3E008004F5 /* CollectionViewCenterCGRect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCenterCGRect.swift; sourceTree = "<group>"; };
 		0ACCAF0C28043136003C6040 /* boardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = boardViewController.swift; sourceTree = "<group>"; };
@@ -140,6 +144,7 @@
 				0A381AC327E1C87F00ECD255 /* UserInfo.swift */,
 				0A12ECD127F19090009C9CA6 /* Filter.swift */,
 				0A21FB8928069B9E00D33F61 /* Board.swift */,
+				0ABBBA14280E814C0063D5A5 /* Reply.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -272,6 +277,7 @@
 				0A12ECCF27F189ED009C9CA6 /* CategoryViewModel.swift */,
 				0A45AFF327FB68060030957B /* FavoriteViewModel.swift */,
 				0A21FB8B2806A38300D33F61 /* BoardViewModel.swift */,
+				0ABBBA16280E81F00063D5A5 /* ReplyViewModel.swift */,
 			);
 			path = viewModel;
 			sourceTree = "<group>";
@@ -413,6 +419,7 @@
 				0A60BD0627D91B140046C8CB /* SignUpViewController.swift in Sources */,
 				0A21FB882806935F00D33F61 /* ReplyViewController.swift in Sources */,
 				0AC7610027FF2943008004F5 /* TermViewController.swift in Sources */,
+				0ABBBA17280E81F00063D5A5 /* ReplyViewModel.swift in Sources */,
 				0A0AE5D627EC894F006B8083 /* RecommendViewController.swift in Sources */,
 				0ACCAF0F2804554E003C6040 /* NoticeBoardViewController.swift in Sources */,
 				0A2DB56727ED8805002E206C /* UserInfoViewModel.swift in Sources */,
@@ -431,6 +438,7 @@
 				0A381AC227E1C85100ECD255 /* ProfileViewModel.swift in Sources */,
 				0AA069C027DA354E009D71E8 /* BestArticleViewController.swift in Sources */,
 				0AA069BC27DA2D7F009D71E8 /* LoginViewModel.swift in Sources */,
+				0ABBBA15280E814C0063D5A5 /* Reply.swift in Sources */,
 				0A7E46C627D3999D001AD8F7 /* SceneDelegate.swift in Sources */,
 				0A12ECD027F189ED009C9CA6 /* CategoryViewModel.swift in Sources */,
 				0A2DB56927ED89BF002E206C /* DropDownUI.swift in Sources */,

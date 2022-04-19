@@ -8,7 +8,7 @@
 import UIKit
 
 struct Board: Codable {
-    var id: String
+    var id: String = ""
     var title: String
     var contents: String
     var time: String
