@@ -22,18 +22,23 @@ class BoardViewModel {
     func createboard(id: String, title: String, contents: String, time: String) {
         let board = Board.init(id: "", title: title, contents: contents, time: time)
         do {
-            try  firestore.collection(id).document(uid!).setData(from: board)
+            try firestore.collection(id).document(uid!).setData(from: board)
         }catch let error {
             print("Error writing city to Firestore: \(error)")
         }
-    }
-    
-    func documentCount(id: String) {
         firestore.collection(id).getDocuments { (document, error) in
             guard let data = document else { return }
             self.counts = data.count
+            print("count \(self.counts)")
         }
     }
+    
+//    func documentCount(id: String) {
+//        firestore.collection(id).getDocuments { (document, error) in
+//            guard let data = document else { return }
+//            self.counts = data.count
+//        }
+//    }
     
     func getdocuments(id: String, completion: @escaping([Board]) -> ()) {
         firestore.collection(id).addSnapshotListener { (documentSnapshot, error) in
@@ -58,19 +63,4 @@ class BoardViewModel {
             }
         }
     }
-     
-//    func jsonData(change: DocumentChange, boards: [Board]) {
-//        let data = change.document.data()
-//        do {
-//            switch change.type {
-//            case .added, .modified:
-//                let jsonDB = try JSONSerialization.data(withJSONObject: data, options: [])
-//                let userDB = try JSONDecoder().decode(Board.self, from: jsonDB)
-//                boards.append(userDB)
-//            default: break
-//            }
-//        } catch let error {
-//            print("ERROR JSON Pasing \(error)")
-//        }
-//    }
 }

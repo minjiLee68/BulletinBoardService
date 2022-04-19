@@ -50,7 +50,6 @@ class NoticeBoardViewController: UIViewController {
     
     func buttonClickPassOver(titleText: String) {
         NotificationCenter.default.post(name: .datapass, object: titleText)
-        viewmodel.documentCount(id: titleText)
     }
 }
 

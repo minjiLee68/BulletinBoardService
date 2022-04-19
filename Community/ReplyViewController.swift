@@ -21,7 +21,7 @@ class ReplyViewController: UIViewController {
     
     var titleText: String = ""
     var index: Int = 0
-    var documnetId: String = ""
+    var counts: Int = 0
     
     override func viewWillLayoutSubviews() {
         tableview.rowHeight = 80
@@ -43,8 +43,7 @@ class ReplyViewController: UIViewController {
     @IBAction func sendButton(_ sender: UIButton) {
         let name = nickName.text ?? ""
         let reply = reply.text ?? ""
-        replyVM.addReply(id: titleText, documentId: documnetId, nickName: name, reply: reply)
-        replyVM.documentCount(id: titleText, documentId: documnetId, tableview: tableview)
+        replyVM.addReply(id: titleText, nickName: name, reply: reply)
         self.tableview.reloadData()
         self.reply.text = ""
     }
@@ -70,12 +69,12 @@ extension ReplyViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "reply", for: indexPath) as? ReplyCell else { return UITableViewCell() }
-        replyVM.subscribe(id: titleText, documentId: documnetId) { reply in
+        replyVM.getReplyData(id: titleText) { reply in
             let nickName = reply[indexPath.row].nickName
-            let reply = reply[indexPath.row].reply
-            cell.update(nickName: nickName, contents: reply)
+            let replys = reply[indexPath.row].reply
+            print("id \(reply[indexPath.row].id)")
+            cell.update(nickName: nickName, contents: replys)
         }
-        print("cell \(cell.nickName.text ?? "")")
         return cell
     }
 }

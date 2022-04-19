@@ -81,7 +81,9 @@ extension boardViewController: UITableViewDelegate {
         vc.index = indexPath.row
         vc.titleText = titleLabel
         viewmodel.getdocuments(id: titleLabel) { board in
-            vc.documnetId = board[indexPath.row].id
+            let id = board[indexPath.row].id
+            vc.replyVM.documentId = id
+            vc.replyVM.documentCount(id: self.titleLabel, Did: id)
         }
         self.present(vc, animated: false, completion: nil)
     }
