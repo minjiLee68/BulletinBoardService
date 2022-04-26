@@ -19,26 +19,21 @@ class BoardViewModel {
     var title: String = ""
     var counts: Int = 0
     
-    func createboard(id: String, title: String, contents: String, time: String) {
-        let board = Board.init(id: "", title: title, contents: contents, time: time)
+    func createboard(id: String, title: String, contents: String) {
+        let board = Board.init(id: "", title: title, contents: contents)
         do {
             try firestore.collection(id).document(uid!).setData(from: board)
         }catch let error {
             print("Error writing city to Firestore: \(error)")
         }
+    }
+    
+    func documentCount(id: String) {
         firestore.collection(id).getDocuments { (document, error) in
             guard let data = document else { return }
             self.counts = data.count
-            print("count \(self.counts)")
         }
     }
-    
-//    func documentCount(id: String) {
-//        firestore.collection(id).getDocuments { (document, error) in
-//            guard let data = document else { return }
-//            self.counts = data.count
-//        }
-//    }
     
     func getdocuments(id: String, completion: @escaping([Board]) -> ()) {
         firestore.collection(id).addSnapshotListener { (documentSnapshot, error) in

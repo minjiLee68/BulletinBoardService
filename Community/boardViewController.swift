@@ -67,7 +67,6 @@ extension boardViewController: UITableViewDataSource {
         viewmodel.getdocuments(id: titleLabel) { boards in
             let title = boards[indexPath.row].title
             let contents = boards[indexPath.row].contents
-            print("id \(boards[indexPath.row].id)")
             cell.update(title: title, contents: contents)
         }
         return cell
@@ -82,8 +81,7 @@ extension boardViewController: UITableViewDelegate {
         vc.titleText = titleLabel
         viewmodel.getdocuments(id: titleLabel) { board in
             let id = board[indexPath.row].id
-            vc.replyVM.documentId = id
-            vc.replyVM.documentCount(id: self.titleLabel, Did: id)
+            vc.documentId = id
         }
         self.present(vc, animated: false, completion: nil)
     }

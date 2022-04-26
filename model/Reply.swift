@@ -11,22 +11,15 @@ struct Reply: Codable {
     var id: String
     var nickName: String
     var reply: String
-    var time: Date
+    var time: String
     
-    init(id: String, nickName: String, reply: String) {
-        self.id = id
-        self.nickName = nickName
-        self.reply = reply
-        self.time = Date()
-    }
-    
-    private enum CodingKeys: String, CodingKey {
-        case id
-        case nickName
-        case reply
-        case time
-    }
-    
+//    private enum CodingKeys: String, CodingKey {
+//        case id
+//        case nickName
+//        case reply
+//        case time
+//    }
+//    
 //    init(from decoder: Decoder) throws {
 //        let values = try decoder.container(keyedBy: CodingKeys.self)
 //        id = try values.decode(String.self, forKey: .id)
@@ -43,9 +36,5 @@ struct Reply: Codable {
 //extension Reply: Comparable {
 //    static func == (lhs: Reply, rhs: Reply) -> Bool {
 //        return lhs.id == rhs.id
-//    }
-//
-//    static func < (lhs: Reply, rhs: Reply) -> Bool {
-//        return lhs.time == rhs.time
 //    }
 //}
