@@ -19,27 +19,14 @@ class ReplyViewModel {
     var documentId: String = ""
     var counts: Int = 0
     
-    func addReply(id: String, nickName: String, reply: String, tableview: UITableView) {
+    func addReply(id: String, nickName: String, reply: String) {
         let collectionListener = firestore.collection(id).document(self.documentId).collection("Reply")
         let document = collectionListener.document()
         let reply = Reply(id: self.documentId, nickName: nickName, reply: reply, time: "04/12")
         do {
             try document.setData(from: reply)
-            DispatchQueue.main.async {
-                tableview.reloadData()
-            }
         } catch { return }
     }
-    
-//    func documentCount(id: String, uid: String)  {
-//        firestore.collection(id).document(uid).collection("Reply").getDocuments { (document, error) in
-//            if let err = error {
-//                print("Error getting documents: \(err)")
-//            } else {
-//                self.counts = document?.count ?? 0
-//            }
-//        }
-//    }
     
     func getReplyData(collectionName: String, Did: String, completion: @escaping(Reply) -> ()) {
         firestore.collection(collectionName).document(Did).collection("Reply").getDocuments { (document, error) in
@@ -50,6 +37,7 @@ class ReplyViewModel {
                     let jsonDB = try JSONSerialization.data(withJSONObject: data, options: [])
                     let userDB = try JSONDecoder().decode(Reply.self, from: jsonDB)
                     DispatchQueue.main.async {
+                        self.counts = document?.count ?? 0
                         completion(userDB)
                     }
                 } catch let error {

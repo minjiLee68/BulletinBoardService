@@ -19,9 +19,8 @@ class ReplyViewController: UIViewController {
     let userVM = UserInfoViewModel.shared
     let replyVM = ReplyViewModel.shard
     
-    var documentId: String = ""
-    var titleText: String = ""
     var replys: [Reply] = []
+    var titleText: String = ""
     var index: Int = 0
     var counts: Int = 0
     
@@ -39,15 +38,15 @@ class ReplyViewController: UIViewController {
     }
     
     @IBAction func backButton(_ sender: UIButton) {
-        self.replys.removeAll()
         self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func sendButton(_ sender: UIButton) {
         let name = nickName.text ?? ""
         let reply = reply.text ?? ""
-        replyVM.addReply(id: titleText, nickName: name, reply: reply, tableview: tableview)
+        replyVM.addReply(id: titleText, nickName: name, reply: reply)
         self.reply.text = ""
+        self.tableview.reloadData()
     }
     
     func userData() {
@@ -61,16 +60,12 @@ class ReplyViewController: UIViewController {
             self.titleLabel.text = board[self.index].title
             self.contents.text = board[self.index].contents
         }
-        replyVM.getReplyData(collectionName: titleText, Did: documentId) { [weak self] reply in
-            self?.replys.append(reply)
-            self?.counts = self?.replys.count ?? 0
-        }
     }
 }
 
 extension ReplyViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.counts
+        return replyVM.counts
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -79,12 +74,11 @@ extension ReplyViewController: UITableViewDataSource {
         let replys = self.replys[indexPath.row].reply
         debugPrint(self.replys)
         cell.update(nickName: nickName, contents: replys)
-//        replyVM.getReplyData(id: titleText) { [weak self] reply in
-//            self?.replys.append(reply)
-//            let nickName = self?.replys[indexPath.row].nickName
-//            let replys = self?.replys[indexPath.row].reply
-//            debugPrint(self?.replys)
-//            cell.update(nickName: nickName ?? "", contents: replys ?? "")
+//        replyVM.getReplyData(collectionName: titleText) { reply in
+//            let nickName = reply[indexPath.row].nickName
+//            let replys = reply[indexPath.row].reply
+//            print(reply.count)
+//            cell.update(nickName: nickName, contents: replys)
 //        }
         return cell
     }

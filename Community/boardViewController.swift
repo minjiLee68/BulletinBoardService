@@ -81,7 +81,11 @@ extension boardViewController: UITableViewDelegate {
         vc.titleText = titleLabel
         viewmodel.getdocuments(id: titleLabel) { board in
             let id = board[indexPath.row].id
-            vc.documentId = id
+            vc.replyVM.getReplyData(collectionName: self.titleLabel, Did: id) { reply in
+                vc.replys.append(reply)
+                vc.tableview.reloadData()
+            }
+            vc.replyVM.documentId = id
         }
         self.present(vc, animated: false, completion: nil)
     }
