@@ -19,22 +19,42 @@ class ReplyViewController: UIViewController {
     let userVM = UserInfoViewModel.shared
     let replyVM = ReplyViewModel.shard
     
-    var replys: [Reply] = []
     var titleText: String = ""
     var index: Int = 0
     var counts: Int = 0
     
-    override func viewWillLayoutSubviews() {
-        tableview.rowHeight = 80
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        titleLabel.sizeToFit()
-        contents.sizeToFit()
-        userData()
         communityBoard()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        replyGetData()
+    }
+    
+    func communityBoard() {
+        boardVM.getdocuments() { [weak self] board in
+            guard let self = self else { return }
+            self.titleLabel.text = board[self.index].title
+            self.contents.text = board[self.index].contents
+            self.titleLabel.sizeToFit()
+            self.contents.sizeToFit()
+        }
+        userVM.getData { [weak self] user in
+            self?.nickName.text = user.nickName
+        }
+    }
+    
+    func replyGetData() {
+        replyVM.getReplyData { _,count in
+            self.counts = count
+            OperationQueue.main.addOperation {
+                self.tableview.reloadData()
+            }
+        }
     }
     
     @IBAction func backButton(_ sender: UIButton) {
@@ -42,44 +62,33 @@ class ReplyViewController: UIViewController {
     }
     
     @IBAction func sendButton(_ sender: UIButton) {
-        let name = nickName.text ?? ""
-        let reply = reply.text ?? ""
-        replyVM.addReply(id: titleText, nickName: name, reply: reply)
+        guard let name = nickName.text else { return }
+        guard let reply = reply.text else { return }
         self.reply.text = ""
-        self.tableview.reloadData()
-    }
-    
-    func userData() {
-        userVM.getData { user in
-            self.nickName.text = user.nickName
-        }
-    }
-    
-    func communityBoard() {
-        boardVM.getdocuments(id: titleText) { board in
-            self.titleLabel.text = board[self.index].title
-            self.contents.text = board[self.index].contents
-        }
+        replyVM.addReply(nickName: name, reply: reply)
+        self.replyGetData()
     }
 }
 
 extension ReplyViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return replyVM.counts
+        tableview.rowHeight = 80
+        return self.counts
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "reply", for: indexPath) as? ReplyCell else { return UITableViewCell() }
-        let nickName = self.replys[indexPath.row].nickName
-        let replys = self.replys[indexPath.row].reply
-        debugPrint(self.replys)
-        cell.update(nickName: nickName, contents: replys)
-//        replyVM.getReplyData(collectionName: titleText) { reply in
-//            let nickName = reply[indexPath.row].nickName
-//            let replys = reply[indexPath.row].reply
-//            print(reply.count)
-//            cell.update(nickName: nickName, contents: replys)
-//        }
+        
+        replyVM.getReplyData() { reply,_ in
+            if reply.isEmpty {
+                cell.update(nickName: "", contents: "")
+            } else {
+                let nickName = reply[indexPath.row].nickName
+                let replys = reply[indexPath.row].reply
+                cell.update(nickName: nickName, contents: replys)
+                print(reply)
+            }
+        }
         return cell
     }
 }

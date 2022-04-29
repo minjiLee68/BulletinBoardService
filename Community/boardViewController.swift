@@ -15,21 +15,21 @@ class boardViewController: UIViewController {
     let viewmodel = BoardViewModel.shard
     var titleLabel: String = ""
     
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         vcStyle()
-        titleText.text = titleLabel
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        tableView.reloadData()
+//        titleText.text = titleLabel
     }
    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         NotificationCenter.default.addObserver(self, selector: #selector(tableRelod), name: .reload, object: nil)
+        navigationRightButton()
     }
     
     @objc func tableRelod() {
@@ -38,16 +38,28 @@ class boardViewController: UIViewController {
         }
     }
     
-    @IBAction func editButtonClick(_ sender: UIButton) {
+    func navigationRightButton() {
+        let editBtn = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(submit(_:)))
+        self.navigationItem.rightBarButtonItem = editBtn
+    }
+    
+    @objc func submit(_ sender: Any) {
         guard let dvc = self.storyboard?.instantiateViewController(withIdentifier: "newedit") as? NewEditerViewController else { return }
         dvc.modalPresentationStyle = .fullScreen
         dvc.titleText = titleLabel
-        self.present(dvc, animated: false)
+        self.navigationController?.pushViewController(dvc, animated: true)
     }
     
-    @IBAction func backButton(_ sender: UIButton) {
-        self.dismiss(animated: true, completion: nil)
-    }
+//    @IBAction func editButtonClick(_ sender: UIButton) {
+//        guard let dvc = self.storyboard?.instantiateViewController(withIdentifier: "newedit") as? NewEditerViewController else { return }
+//        dvc.modalPresentationStyle = .fullScreen
+//        dvc.titleText = titleLabel
+//        self.present(dvc, animated: false)
+//    }
+    
+//    @IBAction func backButton(_ sender: UIButton) {
+//        self.dismiss(animated: true, completion: nil)
+//    }
     
     func vcStyle() {
         tableView.rowHeight = 100
@@ -64,7 +76,7 @@ extension boardViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "boardCell", for: indexPath) as? boardCell else { return UITableViewCell() }
-        viewmodel.getdocuments(id: titleLabel) { boards in
+        viewmodel.getdocuments() { boards in
             let title = boards[indexPath.row].title
             let contents = boards[indexPath.row].contents
             cell.update(title: title, contents: contents)
@@ -77,17 +89,23 @@ extension boardViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "reply") as? ReplyViewController else { return }
         vc.modalPresentationStyle = .fullScreen
+//        vc.index = indexPath.row
+//        vc.titleText = titleLabel
+//        viewmodel.getdocuments(id: titleLabel) { board in
+//            let id = board[indexPath.row].id
+//            vc.replyVM.documentCount(id: self.titleLabel, Did: id)
+//            vc.replyVM.documentId = id
+//        }
+//        DispatchQueue.main.async {
+//            vc.tableview.reloadData()
+//        }
         vc.index = indexPath.row
         vc.titleText = titleLabel
-        viewmodel.getdocuments(id: titleLabel) { board in
+        viewmodel.getdocuments() { board in
             let id = board[indexPath.row].id
-            vc.replyVM.getReplyData(collectionName: self.titleLabel, Did: id) { reply in
-                vc.replys.append(reply)
-                vc.tableview.reloadData()
-            }
             vc.replyVM.documentId = id
         }
-        self.present(vc, animated: false, completion: nil)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 

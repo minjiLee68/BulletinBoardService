@@ -33,24 +33,25 @@ class RecommendViewController: UIViewController {
     @objc func rotate(_ notification: Notification) {
         if let noti = notification.object as? CategoryViewModel {
             noti.getFilterData { filter in
-                self.job.titleLabel?.text = filter.job
-                self.lan.titleLabel?.text = filter.langauge
-                self.trem.titleLabel?.text = filter.trem
-                self.etc.titleLabel?.text = filter.etc
+                self.filterName(job: filter.job, lan: filter.langauge, trem: filter.trem, etc: filter.etc)
             }
         }
     }
     
     func setFilterData() {
         catogoryVM.getFilterData { filter in
-            self.job.titleLabel?.text = filter.job
-            self.lan.titleLabel?.text = filter.langauge
-            self.trem.titleLabel?.text = filter.trem
-            self.etc.titleLabel?.text = filter.etc
+            self.filterName(job: filter.job, lan: filter.langauge, trem: filter.trem, etc: filter.etc)
         }
         usersVM.getData { info in
             self.nickName.text = info.nickName + "님에게 추천합니다!"
         }
+    }
+    
+    func filterName(job: String, lan: String, trem: String, etc: String) {
+        self.job.titleLabel?.text = job
+        self.lan.titleLabel?.text = lan
+        self.trem.titleLabel?.text = trem
+        self.etc.titleLabel?.text = etc
     }
     
     func titleLabelStyle() {

@@ -31,7 +31,7 @@ class NewEditerViewController: UIViewController {
     func setContents() {
         guard let title = titleLabel.text else { return }
         guard let contents = contents.text else { return }
-        viewmodel.createboard(id: titleText, title: title, contents: contents)
+        viewmodel.createboard(title: title, contents: contents)
     }
     
     @IBAction func backButton(_ sender: Any) {

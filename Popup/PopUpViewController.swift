@@ -34,7 +34,7 @@ class PopUpViewController: UIViewController {
     var term: String?
     var language: String?
     var etc: String?
-    var filter: Filter?
+//    var filter: Filter?
     
     override func viewWillDisappear(_ animated: Bool) {
         NotificationCenter.default.post(name: .notiName, object: viewmodel)

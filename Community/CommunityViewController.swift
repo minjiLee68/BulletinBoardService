@@ -21,7 +21,8 @@ class CommunityViewController: UIViewController {
             vc.modalPresentationStyle = .fullScreen
             vc.titleLabel = noti
             vc.viewmodel.documentCount(id: noti)
-            self.present(vc, animated: false, completion: nil)
+//            self.present(vc, animated: false, completion: nil)
+            self.navigationController?.pushViewController(vc, animated: true)
         }
     }
 }
