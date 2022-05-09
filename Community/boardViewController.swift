@@ -22,7 +22,7 @@ class boardViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         vcStyle()
-//        titleText.text = titleLabel
+        NavigationCustom.navigationCustomUI(self.navigationController, title: titleLabel)
     }
    
     override func viewDidLoad() {
@@ -50,16 +50,13 @@ class boardViewController: UIViewController {
         self.navigationController?.pushViewController(dvc, animated: true)
     }
     
-//    @IBAction func editButtonClick(_ sender: UIButton) {
-//        guard let dvc = self.storyboard?.instantiateViewController(withIdentifier: "newedit") as? NewEditerViewController else { return }
-//        dvc.modalPresentationStyle = .fullScreen
-//        dvc.titleText = titleLabel
-//        self.present(dvc, animated: false)
-//    }
+    @IBAction func editButtonClick(_ sender: UIButton) {
+        guard let dvc = self.storyboard?.instantiateViewController(withIdentifier: "newedit") as? NewEditerViewController else { return }
+        dvc.modalPresentationStyle = .fullScreen
+        dvc.titleText = titleLabel
+        self.present(dvc, animated: false)
+    }
     
-//    @IBAction func backButton(_ sender: UIButton) {
-//        self.dismiss(animated: true, completion: nil)
-//    }
     
     func vcStyle() {
         tableView.rowHeight = 100
@@ -89,22 +86,13 @@ extension boardViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "reply") as? ReplyViewController else { return }
         vc.modalPresentationStyle = .fullScreen
-//        vc.index = indexPath.row
-//        vc.titleText = titleLabel
-//        viewmodel.getdocuments(id: titleLabel) { board in
-//            let id = board[indexPath.row].id
-//            vc.replyVM.documentCount(id: self.titleLabel, Did: id)
-//            vc.replyVM.documentId = id
-//        }
-//        DispatchQueue.main.async {
-//            vc.tableview.reloadData()
-//        }
         vc.index = indexPath.row
         vc.titleText = titleLabel
         viewmodel.getdocuments() { board in
             let id = board[indexPath.row].id
             vc.replyVM.documentId = id
         }
+        self.navigationController?.navigationBar.topItem?.title = ""
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }

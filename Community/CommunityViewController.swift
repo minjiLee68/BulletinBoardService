@@ -22,6 +22,7 @@ class CommunityViewController: UIViewController {
             vc.titleLabel = noti
             vc.viewmodel.documentCount(id: noti)
 //            self.present(vc, animated: false, completion: nil)
+            self.navigationController?.navigationBar.topItem?.title = ""
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }

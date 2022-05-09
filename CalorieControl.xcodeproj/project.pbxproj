@@ -21,12 +21,15 @@
 		0A381AC027E1B7E500ECD255 /* LanguageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A381ABF27E1B7E500ECD255 /* LanguageViewModel.swift */; };
 		0A381AC227E1C85100ECD255 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A381AC127E1C85100ECD255 /* ProfileViewModel.swift */; };
 		0A381AC427E1C87F00ECD255 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A381AC327E1C87F00ECD255 /* UserInfo.swift */; };
+		0A3F7DB92826B91800D6A181 /* NavigationCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3F7DB82826B91800D6A181 /* NavigationCustom.swift */; };
 		0A45AFF427FB68060030957B /* FavoriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A45AFF327FB68060030957B /* FavoriteViewModel.swift */; };
 		0A60BD0027D8D7F30046C8CB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A60BCFF27D8D7F30046C8CB /* LoginViewController.swift */; };
 		0A60BD0227D8EBF30046C8CB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A60BD0127D8EBF30046C8CB /* MainViewController.swift */; };
 		0A60BD0427D8EC080046C8CB /* CommunityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A60BD0327D8EC080046C8CB /* CommunityViewController.swift */; };
 		0A60BD0627D91B140046C8CB /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A60BD0527D91B140046C8CB /* SignUpViewController.swift */; };
 		0A60BD0827D91BFA0046C8CB /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A60BD0727D91BFA0046C8CB /* UITextField.swift */; };
+		0A6C3DD92828F7DE005767BB /* ShopingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6C3DD82828F7DE005767BB /* ShopingViewController.swift */; };
+		0A6C3DDB2828F7F5005767BB /* Shoping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6C3DDA2828F7F5005767BB /* Shoping.swift */; };
 		0A7E46C427D3999D001AD8F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7E46C327D3999D001AD8F7 /* AppDelegate.swift */; };
 		0A7E46C627D3999D001AD8F7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7E46C527D3999D001AD8F7 /* SceneDelegate.swift */; };
 		0A7E46CB27D3999D001AD8F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A7E46C927D3999D001AD8F7 /* Main.storyboard */; };
@@ -67,12 +70,15 @@
 		0A381ABF27E1B7E500ECD255 /* LanguageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageViewModel.swift; sourceTree = "<group>"; };
 		0A381AC127E1C85100ECD255 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		0A381AC327E1C87F00ECD255 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		0A3F7DB82826B91800D6A181 /* NavigationCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationCustom.swift; sourceTree = "<group>"; };
 		0A45AFF327FB68060030957B /* FavoriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewModel.swift; sourceTree = "<group>"; };
 		0A60BCFF27D8D7F30046C8CB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0A60BD0127D8EBF30046C8CB /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		0A60BD0327D8EC080046C8CB /* CommunityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityViewController.swift; sourceTree = "<group>"; };
 		0A60BD0527D91B140046C8CB /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		0A60BD0727D91BFA0046C8CB /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
+		0A6C3DD82828F7DE005767BB /* ShopingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopingViewController.swift; sourceTree = "<group>"; };
+		0A6C3DDA2828F7F5005767BB /* Shoping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shoping.swift; sourceTree = "<group>"; };
 		0A7E46C027D3999D001AD8F7 /* CalorieControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CalorieControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A7E46C327D3999D001AD8F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0A7E46C527D3999D001AD8F7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -145,6 +151,7 @@
 				0A12ECD127F19090009C9CA6 /* Filter.swift */,
 				0A21FB8928069B9E00D33F61 /* Board.swift */,
 				0ABBBA14280E814C0063D5A5 /* Reply.swift */,
+				0A6C3DDA2828F7F5005767BB /* Shoping.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -157,10 +164,19 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
+		0A6C3DD72828F7B6005767BB /* ShopingCategory */ = {
+			isa = PBXGroup;
+			children = (
+				0A6C3DD82828F7DE005767BB /* ShopingViewController.swift */,
+			);
+			path = ShopingCategory;
+			sourceTree = "<group>";
+		};
 		0A7E46B727D3999D001AD8F7 = {
 			isa = PBXGroup;
 			children = (
 				0A12ECD327F1BCD8009C9CA6 /* AppTabbarViewController.swift */,
+				0A6C3DD72828F7B6005767BB /* ShopingCategory */,
 				0AC7610327FF2AFF008004F5 /* CollectionStyle */,
 				0AB7953F27FC2D0F00F1C81B /* Selected */,
 				0A12ECCC27F184F9009C9CA6 /* Popup */,
@@ -225,6 +241,7 @@
 				0AEFAFE127DB33770034A7B0 /* UIViewStyle.swift */,
 				0A60BD0727D91BFA0046C8CB /* UITextField.swift */,
 				0A2DB56827ED89BF002E206C /* DropDownUI.swift */,
+				0A3F7DB82826B91800D6A181 /* NavigationCustom.swift */,
 			);
 			path = UIStyle;
 			sourceTree = "<group>";
@@ -270,10 +287,10 @@
 		0AEFAFE827DB37FE0034A7B0 /* viewModel */ = {
 			isa = PBXGroup;
 			children = (
-				0AA069BB27DA2D7F009D71E8 /* LoginViewModel.swift */,
 				0A381ABF27E1B7E500ECD255 /* LanguageViewModel.swift */,
 				0A381AC127E1C85100ECD255 /* ProfileViewModel.swift */,
 				0A2DB56627ED8805002E206C /* UserInfoViewModel.swift */,
+				0AA069BB27DA2D7F009D71E8 /* LoginViewModel.swift */,
 				0A12ECCF27F189ED009C9CA6 /* CategoryViewModel.swift */,
 				0A45AFF327FB68060030957B /* FavoriteViewModel.swift */,
 				0A21FB8B2806A38300D33F61 /* BoardViewModel.swift */,
@@ -422,12 +439,14 @@
 				0ABBBA17280E81F00063D5A5 /* ReplyViewModel.swift in Sources */,
 				0A0AE5D627EC894F006B8083 /* RecommendViewController.swift in Sources */,
 				0ACCAF0F2804554E003C6040 /* NoticeBoardViewController.swift in Sources */,
+				0A3F7DB92826B91800D6A181 /* NavigationCustom.swift in Sources */,
 				0A2DB56727ED8805002E206C /* UserInfoViewModel.swift in Sources */,
 				0AEFAFE227DB33770034A7B0 /* UIViewStyle.swift in Sources */,
 				0A21FB8C2806A38300D33F61 /* BoardViewModel.swift in Sources */,
 				0A45AFF427FB68060030957B /* FavoriteViewModel.swift in Sources */,
 				0AB7954327FC2D8800F1C81B /* JobSelectedViewController.swift in Sources */,
 				0A12ECD427F1BCD8009C9CA6 /* AppTabbarViewController.swift in Sources */,
+				0A6C3DD92828F7DE005767BB /* ShopingViewController.swift in Sources */,
 				0A60BD0427D8EC080046C8CB /* CommunityViewController.swift in Sources */,
 				0A60BD0027D8D7F30046C8CB /* LoginViewController.swift in Sources */,
 				0A7E46C427D3999D001AD8F7 /* AppDelegate.swift in Sources */,
@@ -440,6 +459,7 @@
 				0AA069BC27DA2D7F009D71E8 /* LoginViewModel.swift in Sources */,
 				0ABBBA15280E814C0063D5A5 /* Reply.swift in Sources */,
 				0A7E46C627D3999D001AD8F7 /* SceneDelegate.swift in Sources */,
+				0A6C3DDB2828F7F5005767BB /* Shoping.swift in Sources */,
 				0A12ECD027F189ED009C9CA6 /* CategoryViewModel.swift in Sources */,
 				0A2DB56927ED89BF002E206C /* DropDownUI.swift in Sources */,
 				0A60BD0227D8EBF30046C8CB /* MainViewController.swift in Sources */,

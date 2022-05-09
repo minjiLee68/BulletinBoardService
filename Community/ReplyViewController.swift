@@ -27,6 +27,7 @@ class ReplyViewController: UIViewController {
         super.viewDidLoad()
 
         communityBoard()
+        customNavigation()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -57,8 +58,9 @@ class ReplyViewController: UIViewController {
         }
     }
     
-    @IBAction func backButton(_ sender: UIButton) {
-        self.dismiss(animated: true, completion: nil)
+    func customNavigation() {
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.primaryColor!]
+        self.navigationController?.navigationItem.leftBarButtonItem?.tintColor = .primaryColor
     }
     
     @IBAction func sendButton(_ sender: UIButton) {
