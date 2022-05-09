@@ -20,9 +20,8 @@ class CommunityViewController: UIViewController {
             guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "board") as? boardViewController else { return }
             vc.modalPresentationStyle = .fullScreen
             vc.titleLabel = noti
-            vc.viewmodel.documentCount(id: noti)
+            vc.boardGetCount()
 //            self.present(vc, animated: false, completion: nil)
-            self.navigationController?.navigationBar.topItem?.title = ""
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }

@@ -13,6 +13,7 @@ class boardViewController: UIViewController {
     @IBOutlet weak var titleText: UILabel!
     
     let viewmodel = BoardViewModel.shard
+    var count: Int = 0
     var titleLabel: String = ""
     
     deinit {
@@ -33,14 +34,13 @@ class boardViewController: UIViewController {
     }
     
     @objc func tableRelod() {
-        OperationQueue.main.addOperation {
-            self.tableView.reloadData()
-        }
+        self.boardGetCount()
     }
     
     func navigationRightButton() {
         let editBtn = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(submit(_:)))
         self.navigationItem.rightBarButtonItem = editBtn
+        NavigationCustom.navigationCustomUI(self.navigationController, title: titleLabel)
     }
     
     @objc func submit(_ sender: Any) {
@@ -54,9 +54,17 @@ class boardViewController: UIViewController {
         guard let dvc = self.storyboard?.instantiateViewController(withIdentifier: "newedit") as? NewEditerViewController else { return }
         dvc.modalPresentationStyle = .fullScreen
         dvc.titleText = titleLabel
-        self.present(dvc, animated: false)
+        self.navigationController?.pushViewController(dvc, animated: true)
     }
     
+    func boardGetCount() {
+        viewmodel.getdocuments(titleLabel) { _,count in
+            self.count = count
+            OperationQueue.main.addOperation {
+                self.tableView.reloadData()
+            }
+        }
+    }
     
     func vcStyle() {
         tableView.rowHeight = 100
@@ -68,12 +76,12 @@ class boardViewController: UIViewController {
 
 extension boardViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewmodel.counts
+        return self.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "boardCell", for: indexPath) as? boardCell else { return UITableViewCell() }
-        viewmodel.getdocuments() { boards in
+        viewmodel.getdocuments(titleLabel) { boards, _ in
             let title = boards[indexPath.row].title
             let contents = boards[indexPath.row].contents
             cell.update(title: title, contents: contents)
@@ -88,7 +96,7 @@ extension boardViewController: UITableViewDelegate {
         vc.modalPresentationStyle = .fullScreen
         vc.index = indexPath.row
         vc.titleText = titleLabel
-        viewmodel.getdocuments() { board in
+        viewmodel.getdocuments(titleLabel) { board, _ in
             let id = board[indexPath.row].id
             vc.replyVM.documentId = id
         }
@@ -110,6 +118,5 @@ class boardCell: UITableViewCell {
     func update(title: String, contents: String) {
         self.titleLabel.text = title
         self.contents.text = contents
-        print("title \(title)")
     }
 }

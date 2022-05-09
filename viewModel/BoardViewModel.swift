@@ -17,9 +17,10 @@ class BoardViewModel {
     
     var title: String = ""
     var counts: Int = 0
+    var collectionName: String = ""
     
-    func createboard(title: String, contents: String) {
-        let newDoc = firestore.collection("board").document()
+    func createboard(collectionName: String, title: String, contents: String) {
+        let newDoc = firestore.collection(collectionName).document()
         let board = Board.init(id: newDoc.documentID, title: title, contents: contents)
         do {
             try newDoc.setData(from: board)
@@ -28,15 +29,15 @@ class BoardViewModel {
         }
     }
     
-    func documentCount(id: String) {
-        firestore.collection(id).getDocuments { (document, error) in
+    func documentCount(_ collectionName: String) {
+        firestore.collection(collectionName).getDocuments { (document, error) in
             guard let data = document else { return }
             self.counts = data.count
         }
     }
     
-    func getdocuments(completion: @escaping([Board]) -> ()) {
-        firestore.collection("board").getDocuments { (documentSnapshot, error) in
+    func getdocuments(_ collectionName: String, completion: @escaping([Board], Int) -> ()) {
+        firestore.collection(collectionName).getDocuments { (documentSnapshot, error) in
             guard let document = documentSnapshot else {
                 print("Error fetching document: \(error!)")
                 return
@@ -53,7 +54,7 @@ class BoardViewModel {
                 }
             }
             DispatchQueue.main.async {
-                completion(boards)
+                completion(boards, document.count)
             }
         }
     }

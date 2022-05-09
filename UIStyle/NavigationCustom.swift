@@ -10,8 +10,6 @@ import UIKit
 class NavigationCustom {
     static func navigationCustomUI(_ navigationController: UINavigationController?, title: String) {
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.primaryColor!]
-        navigationController?.navigationItem.rightBarButtonItem?.tintColor = .primaryColor
-        navigationController?.navigationItem.leftBarButtonItem?.tintColor = .primaryColor
-        navigationController?.navigationItem.title = title
+        navigationController?.navigationBar.tintColor = .primaryColor
     }
 }

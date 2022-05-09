@@ -37,7 +37,7 @@ class ReplyViewController: UIViewController {
     }
     
     func communityBoard() {
-        boardVM.getdocuments() { [weak self] board in
+        boardVM.getdocuments(titleText) { [weak self] board, _ in
             guard let self = self else { return }
             self.titleLabel.text = board[self.index].title
             self.contents.text = board[self.index].contents
@@ -59,8 +59,7 @@ class ReplyViewController: UIViewController {
     }
     
     func customNavigation() {
-        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.primaryColor!]
-        self.navigationController?.navigationItem.leftBarButtonItem?.tintColor = .primaryColor
+        NavigationCustom.navigationCustomUI(self.navigationController, title: titleText)
     }
     
     @IBAction func sendButton(_ sender: UIButton) {

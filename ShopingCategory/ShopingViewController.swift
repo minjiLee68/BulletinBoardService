@@ -77,7 +77,7 @@ class ShopingCell: UICollectionViewCell {
 
 class ShopingCategory {
     static func category(_ items: String, completion: @escaping ([Field]) -> ()) {
-
+        
         let clientID = "V2kFdPDbE1jCHcRNs7Bi"
         let clientKEY = "EMDufaZVi7"
         
@@ -107,18 +107,5 @@ class ShopingCategory {
                     completion([])
                 }
             }
-//
-//        let encodingQuery = query.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)!
-//        let queryURL = URL(string: encodingQuery)!
-//
-//        var requestURL = URLRequest(url: queryURL)
-//        requestURL.addValue(clientID, forHTTPHeaderField: "X-Naver-Client-Id")
-//        requestURL.addValue(clientKEY, forHTTPHeaderField: "X-Naver-Client-Secret")
-//
-//        let dataTask = session.dataTask(with: requestURL) { data, response, error in
-//            let successRange = 200..<300
-//
-//            guard error == nil, let statuCode = (response as? HTTPURLResponse)?.statusCode, successRange.contains(statuCode) else { return completion([]) }
-//        }
     }
 }
