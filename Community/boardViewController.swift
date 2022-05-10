@@ -81,6 +81,7 @@ extension boardViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "boardCell", for: indexPath) as? boardCell else { return UITableViewCell() }
+                        
         viewmodel.getdocuments(titleLabel) { boards, _ in
             let title = boards[indexPath.row].title
             let contents = boards[indexPath.row].contents
@@ -96,10 +97,10 @@ extension boardViewController: UITableViewDelegate {
         vc.modalPresentationStyle = .fullScreen
         vc.index = indexPath.row
         vc.titleText = titleLabel
-        viewmodel.getdocuments(titleLabel) { [weak self] board, _ in
+        viewmodel.getdocuments(titleLabel) { board, _ in
             let id = board[indexPath.row].id
             vc.replyVM.documentId = id
-            vc.replyVM.collectionName = self?.titleLabel ?? ""
+            vc.replyVM.collectionName = self.titleLabel
         }
         self.navigationController?.navigationBar.topItem?.title = ""
         self.navigationController?.pushViewController(vc, animated: true)
@@ -110,6 +111,8 @@ class boardCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var contents: UILabel!
     @IBOutlet weak var time: UILabel!
+    @IBOutlet weak var likeCount: UILabel!
+    @IBOutlet weak var replyCount: UILabel!
     
     override func awakeFromNib() {
         titleLabel.sizeToFit()

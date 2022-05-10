@@ -21,19 +21,15 @@ class BoardViewModel {
     
     func createboard(collectionName: String, title: String, contents: String) {
         let newDoc = firestore.collection(collectionName).document()
-        let board = Board.init(id: newDoc.documentID, title: title, contents: contents)
+        let board = Board.init(id: newDoc.documentID, title: title, contents: contents, like: 0)
         do {
             try newDoc.setData(from: board)
         }catch let error {
             print("Error writing city to Firestore: \(error)")
         }
-    }
-    
-    func documentCount(_ collectionName: String) {
-        firestore.collection(collectionName).getDocuments { (document, error) in
-            guard let data = document else { return }
-            self.counts = data.count
-        }
+//        let like = ["like" : 0]
+//        let docLike = firestore.collection(collectionName).document(newDoc.documentID).collection("Like").document("likes")
+//        docLike.setData(like)
     }
     
     func getdocuments(_ collectionName: String, completion: @escaping([Board], Int) -> ()) {

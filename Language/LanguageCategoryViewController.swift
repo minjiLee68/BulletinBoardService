@@ -37,9 +37,9 @@ class LanguageCategoryViewController: UIViewController {
     }
     
     func setUserData() {
-        userViewmodel.getData() { info in
-            let users = info
-            self.dropTextField.text = users.language
+        userViewmodel.getData() { [weak self] info in
+            guard let self = self else { return }
+            self.dropTextField.text = info.language
             self.collectionView.reloadData()
         }
     }
@@ -49,7 +49,11 @@ class LanguageCategoryViewController: UIViewController {
     }
     
     func setDropDown() {
-        dropViewmodel.setDropDown(dropdown: dropdown, dropItem: dropItem, viewDrop: viewDrop, collectionView: collectionView, dropField: dropTextField)
+        dropViewmodel.setDropDown(
+            dropdown: dropdown, dropItem: dropItem,
+            viewDrop: viewDrop, collectionView: collectionView,
+            dropField: dropTextField
+        )
     }
     
     @IBAction func dropViewClicked(_ sender: Any) {

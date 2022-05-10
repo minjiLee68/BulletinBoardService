@@ -26,6 +26,7 @@ class ReplyViewController: UIViewController {
     var titleText: String = ""
     var index: Int = 0
     var counts: Int = 0
+    var likes: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,12 +55,16 @@ class ReplyViewController: UIViewController {
     }
     
     func replyGetData() {
-        replyVM.getReplyData { _,count in
+        replyVM.getReplyData() { [weak self] _,count in
+            guard let self = self else { return }
             self.counts = count
             OperationQueue.main.addOperation {
                 self.replyCount.text = String(count)
                 self.tableview.reloadData()
             }
+        }
+        replyVM.likeCount { [weak self] likes in
+            self?.likeCount.text = String(likes)
         }
     }
     
@@ -76,7 +81,11 @@ class ReplyViewController: UIViewController {
     }
     
     @IBAction func likeButton(_ sender: UIButton) {
-        
+        replyVM.addLike()
+        replyVM.likeCount { likes in
+            let likeCount = likes + 1
+            self.likeCount.text = String(likeCount)
+        }
     }
 }
 
