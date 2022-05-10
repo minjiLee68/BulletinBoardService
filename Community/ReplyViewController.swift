@@ -14,6 +14,10 @@ class ReplyViewController: UIViewController {
     @IBOutlet weak var contents: UILabel!
     @IBOutlet weak var reply: UITextField!
     @IBOutlet weak var tableview: UITableView!
+    @IBOutlet weak var likeCount: UILabel!
+    @IBOutlet weak var replyCount: UILabel!
+    @IBOutlet weak var likeBtn: UIButton!
+    
     
     let boardVM = BoardViewModel.shard
     let userVM = UserInfoViewModel.shared
@@ -53,6 +57,7 @@ class ReplyViewController: UIViewController {
         replyVM.getReplyData { _,count in
             self.counts = count
             OperationQueue.main.addOperation {
+                self.replyCount.text = String(count)
                 self.tableview.reloadData()
             }
         }
@@ -68,6 +73,10 @@ class ReplyViewController: UIViewController {
         self.reply.text = ""
         replyVM.addReply(nickName: name, reply: reply)
         self.replyGetData()
+    }
+    
+    @IBAction func likeButton(_ sender: UIButton) {
+        
     }
 }
 
@@ -100,7 +109,7 @@ class ReplyCell: UITableViewCell {
     @IBOutlet weak var time: UILabel!
     
     override func awakeFromNib() {
-        contents.sizeToFit()
+        contents.frame.size = contents.intrinsicContentSize
     }
     
     func update(nickName: String, contents: String) {

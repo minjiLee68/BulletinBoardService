@@ -13,26 +13,25 @@ import FirebaseAuth
 class ReplyViewModel {
     static let shard = ReplyViewModel()
     let firestore = Firestore.firestore()
+    
+    var collectionName: String = ""
     var documentId: String = ""
     var counts: Int = 0
     
     func addReply(nickName: String, reply: String) {
-        let document = firestore.collection("board").document(self.documentId).collection("Reply").document()
+        let document = firestore.collection(self.collectionName).document(self.documentId).collection("Reply").document()
         let reply = Reply(id: self.documentId, nickName: nickName, reply: reply, time: "04/12")
         do {
             try document.setData(from: reply)
         } catch { return }
     }
     
-    func documentCount(id: String) {
-        firestore.collection("Reply").whereField("id", isEqualTo: self.documentId).getDocuments { (document, error) in
-            guard let data = document else { return }
-            self.counts = data.count
-        }
+    func addLike() {
+        let doc = firestore.collection(self.collectionName).document(self.documentId).collection("Like").document()
     }
     
     func getReplyData(completion: @escaping([Reply], Int) -> ()) {
-        let document = firestore.collection("board").document(self.documentId).collection("Reply")
+        let document = firestore.collection(self.collectionName).document(self.documentId).collection("Reply")
         document.whereField("id", isEqualTo: self.documentId).getDocuments { (document, error) in
             guard let doc = document else { return }
             var reply: [Reply] = []

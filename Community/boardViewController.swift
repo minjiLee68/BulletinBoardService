@@ -96,9 +96,10 @@ extension boardViewController: UITableViewDelegate {
         vc.modalPresentationStyle = .fullScreen
         vc.index = indexPath.row
         vc.titleText = titleLabel
-        viewmodel.getdocuments(titleLabel) { board, _ in
+        viewmodel.getdocuments(titleLabel) { [weak self] board, _ in
             let id = board[indexPath.row].id
             vc.replyVM.documentId = id
+            vc.replyVM.collectionName = self?.titleLabel ?? ""
         }
         self.navigationController?.navigationBar.topItem?.title = ""
         self.navigationController?.pushViewController(vc, animated: true)

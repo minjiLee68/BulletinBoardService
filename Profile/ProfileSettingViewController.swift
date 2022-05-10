@@ -72,7 +72,7 @@ extension ProfileSettingViewController: UITextFieldDelegate {
 
 extension ProfileSettingViewController: PHPickerViewControllerDelegate {
     func openLibray() {
-        configration.selectionLimit = 0
+        configration.selectionLimit = 1
         configration.filter = .images
         let picker = PHPickerViewController(configuration: configration)
         picker.delegate = self
