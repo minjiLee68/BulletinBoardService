@@ -7,8 +7,6 @@ FirebaseAuth로 간단하게 구현하였다. 로그인을 한번 하면 자동 
 3. viewmodel에서 UserDefaults에 저장한 로그인여부를 가져와서 로그인이 true이면 어플을 켰을 때 바로 메인화면으로 넘어가고,
 false이면, 로그인화면으로 넘어간다.
 
-
-
 ## 프로필 셋팅  
 처음 로그인을 하게 되면 프로필 셋팅 화면으로 넘어간다. 
 
@@ -25,6 +23,8 @@ PHPickerConfiguration() 프로퍼티를 만들어주고 selectionLimit을 지정
 4. 저장버튼을 누르면 이미지주소, 닉네임, 직무, 언어, 4가지의 정보가 firestore (UserInfo)에 저장된다. 이미지는 storage에 저장된 후 url로 생성되어 저장된다.
 
 5. 프로필셋팅이 완성되면 메인 화면으로 넘어간다.
+
+<img src="https://user-images.githubusercontent.com/88191880/167785407-4e767a14-f795-4881-a56a-39ec677ac9a9.png" width="200" height="400"/> <img src="https://user-images.githubusercontent.com/88191880/167785526-deeead6f-15e9-45e1-a641-e0367014e99f.png" width="200" height="400"/>
 
 ## MainViewController
 메인화면에서는 기능구현은 거의 없고 보여지는 ui만 그려줬다(?)
@@ -48,3 +48,21 @@ collectionView reload를 하고, 해당하는 타이틀과 이미지를 가진 c
 
 5. 네이버 오픈 검색 api를 alamofire를 통해서 서버에서 데이터를 가져왔다. 
 선택한 기타(pc, 책상, 안경, 의자) 즉, 해당 아이템을 서버에 요청하고 데이터가 있으면 해당 데이터의 이미지와 타이틀을 가져왔다.
+
+<img src="https://user-images.githubusercontent.com/88191880/167789055-dfd54b62-857d-4c7a-b3ca-36bb8ca51e52.mp4" width="200" height="400"/>
+
+## CommunityViewController / NewPostViewController / ReplyViewController
+게시물을 올리고 해당 게시물에 좋아요를 누르며 댓글을 달 수 있다.
+
+1. 새로운 게시물을 올리면 서버에 저장되고, 서버에 저장된 데이터의 개수와 데이터를 가져와서 보여준다. 해당 게시판에 들어갈 때 collectionView를 reload해주고, 게시물을 새로 만들 때 reload해준다.
+
+2. 새로운 게시물을 저장하면 NotificationCenter에 등록된 이벤트가 발생하도록 해서 메세지를 전달하고 해당 이벤트에 대한 행동을 취한다.
+
+3. transaction을 통해 좋아요 기능을 구현하였다. 공감 버튼을 누를 때마다 firestore like 필드 값을 +1 시켜준다.
+
+4. 댓글을 올리면 실시간으로 댓글이 올라가도록 viewmodel에서 서버에 있는 데이터와 파라미터로 받은 데이터가 동일하면 서버에 있는 데이터를 배열에 저장한 후
+데이터타입으로 디코딩해 클로져를 통해 비동기처리로 데이터를 viewcontroller에 넘거주고 tableview를 reload해준다.
+
+<img src="https://user-images.githubusercontent.com/88191880/167790486-26f76759-acef-4851-9170-fc93d5f5dea4.png" width="200" height="400"/> <img src="https://user-images.githubusercontent.com/88191880/167790581-305dda72-2044-4191-9192-88c6360d41ea.png" width="200" height="400"/>
+
+<img src="https://user-images.githubusercontent.com/88191880/167790668-ec6dab9e-1776-4eed-b105-8860cb49f76d.png" width="200" height="400"/> <img src="https://user-images.githubusercontent.com/88191880/167790673-d9405977-0352-4aff-b7d7-543a220db227.png" width="200" height="400"/>
