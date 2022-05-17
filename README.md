@@ -49,7 +49,7 @@ collectionView reload를 하고, 해당하는 타이틀과 이미지를 가진 c
 5. 네이버 오픈 검색 api를 alamofire를 통해서 서버에서 데이터를 가져왔다. 
 선택한 기타(pc, 책상, 안경, 의자) 즉, 해당 아이템을 서버에 요청하고 데이터가 있으면 해당 데이터의 이미지와 타이틀을 가져왔다.
 
-<img src="https://user-images.githubusercontent.com/88191880/167789055-dfd54b62-857d-4c7a-b3ca-36bb8ca51e52.mp4" width="200" height="400"/>
+<img src="https://user-images.githubusercontent.com/88191880/167789055-dfd54b62-857d-4c7a-b3ca-36bb8ca51e52.mp4" width="200" height="400"/> <img src="https://user-images.githubusercontent.com/88191880/168850956-987596f4-f19e-4c02-ab94-2b524ea8d0ff.mov" width="200" height="400"/> 
 
 ## CommunityViewController / NewPostViewController / ReplyViewController
 게시물을 올리고 해당 게시물에 좋아요를 누르며 댓글을 달 수 있다.
